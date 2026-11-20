@@ -1,0 +1,85 @@
+{
+  "name": "Progress",
+  "origin": "figma",
+  "originLabel": "Figma 来源",
+  "purpose": "展示调用方提供的百分比进度。",
+  "constraints": [
+    "不把百分比推导为审批进度或成功概率；Step 和步骤标签未交付。"
+  ],
+  "marker": "<div data-pd=\"Progress\" data-options='{}'></div>",
+  "options": [
+    {
+      "name": "value",
+      "types": [
+        "Number"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "20",
+        "value": 20
+      },
+      "required": false
+    },
+    {
+      "name": "label",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Progress title'",
+        "value": "Progress title"
+      },
+      "required": false
+    },
+    {
+      "name": "showLabel",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "true",
+        "value": true
+      },
+      "required": false
+    },
+    {
+      "name": "accessibleLabel",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Progress'",
+        "value": "Progress"
+      },
+      "required": false
+    }
+  ],
+  "events": [],
+  "contents": [],
+  "methods": [],
+  "knownDifferences": [],
+  "designTarget": {
+    "origin": "figma",
+    "figma": {
+      "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+      "page": "2:105",
+      "master": "480:29401",
+      "reference": "480:29402",
+      "snapshot": "tokens/sources/figma-library/Progress.json"
+    },
+    "tokenReference": "tokens/component.json#progress",
+    "gaps": "Step与步骤标签结构"
+  },
+  "verification": {
+    "status": "requires-current-evidence",
+    "report": "verification/report.json",
+    "scope": "当前 HTML 构建的交互、尺寸和截图对照；不扩大为完整设计认证。"
+  },
+  "examples": [
+    "progress--playground",
+    "progress--examples"
+  ]
+}

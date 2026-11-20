@@ -1,0 +1,26 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="24" height="24" fill="#F5F5F5"/>
+<g id="Product">
+<rect width="1840" height="12984" transform="translate(-204 -3899.99)" fill="white"/>
+<g id="Content">
+<g id="Desc">
+<g id="Block">
+<rect x="-124.5" y="-680.5" width="1681" height="1457" stroke="#8B95A5"/>
+<g id="Row">
+<g id="grid">
+<rect x="-104" y="-24" width="260" height="72" stroke="#8B95A5" stroke-dasharray="8 8"/>
+<g id="Outline=False, Duotone=False, Fill=True, Small=False">
+<g id="path">
+<path d="M22.75 11.25V7.81C22.75 4 20 1.25 16.19 1.25H12.75V11.25H22.75Z" fill="#FFBC25"/>
+<path d="M11.25 22.75V12.75H1.25V16.19C1.25 20 4 22.75 7.81 22.75H11.25Z" fill="#FFBC25"/>
+<path d="M11.25 1.25V11.25H1.25V7.81C1.25 4 4 1.25 7.81 1.25H11.25Z" fill="#FFBC25"/>
+<path d="M22.75 16.19V12.75H12.75V22.75H16.19C20 22.75 22.75 20 22.75 16.19Z" fill="#FFBC25"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>

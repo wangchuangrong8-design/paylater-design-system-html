@@ -1,0 +1,66 @@
+{
+  "name": "Icon",
+  "origin": "figma",
+  "originLabel": "Figma 来源",
+  "purpose": "按本地名称展示已有图标资源。",
+  "constraints": [
+    "兼容原有 13 个别名；新 ID 必须来自本地正式图标清单，插画 ID 不用于 PdIcon。",
+    "按条目逻辑尺寸渲染，保留原颜色和变体；页面负责图标语义与可访问标签。"
+  ],
+  "marker": "<div data-pd=\"Icon\" data-options='{}'></div>",
+  "options": [
+    {
+      "name": "name",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'empty'",
+        "value": "empty"
+      },
+      "required": false
+    },
+    {
+      "name": "label",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "''",
+        "value": ""
+      },
+      "required": false
+    }
+  ],
+  "events": [],
+  "contents": [],
+  "methods": [],
+  "knownDifferences": [],
+  "designTarget": {
+    "origin": "figma",
+    "figma": {
+      "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+      "reference": "39:2887",
+      "snapshot": "assets/figma/manifest.json",
+      "additionalReferences": [
+        {
+          "page": "2:81",
+          "snapshot": "assets/figma/catalog/source.json"
+        }
+      ]
+    },
+    "tokenReference": "tokens/component.json#icon",
+    "gaps": "仅覆盖冻结的正式图库；画布外参考不公开为运行时资产。全量加载与几何验收和代表性视觉对照见独立图库报告，不等于逐项像素对照。"
+  },
+  "verification": {
+    "status": "requires-current-evidence",
+    "report": "verification/report.json",
+    "scope": "当前 HTML 构建的交互、尺寸和截图对照；不扩大为完整设计认证。"
+  },
+  "examples": [
+    "icon--playground",
+    "icon--examples"
+  ]
+}

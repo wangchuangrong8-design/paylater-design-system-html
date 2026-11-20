@@ -1,0 +1,468 @@
+{
+  "name": "Input",
+  "origin": "mixed",
+  "originLabel": "Figma + 自主扩展",
+  "purpose": "使用 当前基准实现 value/input 编辑字段并呈现说明与错误。",
+  "constraints": [
+    "国家选择由调用方实现；不向真实空值注入示例 Value 来对齐有冲突的 Figma Blank/Disabled 样例。",
+    "Input 默认不预留外层左右间距；页面级间距由父容器负责，输入框内部左右与底部间距仍为12px。"
+  ],
+  "marker": "<div data-pd=\"Input\" data-options='{}'></div>",
+  "options": [
+    {
+      "name": "value",
+      "types": [
+        "String",
+        "Number"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "''",
+        "value": ""
+      },
+      "required": false
+    },
+    {
+      "name": "id",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "''",
+        "value": ""
+      },
+      "required": false
+    },
+    {
+      "name": "label",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Label'",
+        "value": "Label"
+      },
+      "required": false
+    },
+    {
+      "name": "variant",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'basic'",
+        "value": "basic"
+      },
+      "required": false,
+      "allowed": [
+        "basic",
+        "phone",
+        "prefix",
+        "suffix",
+        "password",
+        "area",
+        "multi-prefix"
+      ]
+    },
+    {
+      "name": "state",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'auto'",
+        "value": "auto"
+      },
+      "required": false,
+      "allowed": [
+        "auto",
+        "default",
+        "active",
+        "error",
+        "error-active",
+        "disabled"
+      ]
+    },
+    {
+      "name": "type",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'text'",
+        "value": "text"
+      },
+      "required": false
+    },
+    {
+      "name": "placeholder",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "''",
+        "value": ""
+      },
+      "required": false
+    },
+    {
+      "name": "error",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "''",
+        "value": ""
+      },
+      "required": false
+    },
+    {
+      "name": "caption",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "''",
+        "value": ""
+      },
+      "required": false
+    },
+    {
+      "name": "prefix",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "''",
+        "value": ""
+      },
+      "required": false
+    },
+    {
+      "name": "suffix",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "''",
+        "value": ""
+      },
+      "required": false
+    },
+    {
+      "name": "prefixOptions",
+      "types": [
+        "Array"
+      ],
+      "default": {
+        "kind": "factory-literal",
+        "expression": "() => []",
+        "value": []
+      },
+      "required": false
+    },
+    {
+      "name": "countryCode",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'+62'",
+        "value": "+62"
+      },
+      "required": false
+    },
+    {
+      "name": "countryFlag",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "''",
+        "value": ""
+      },
+      "required": false
+    },
+    {
+      "name": "maxlength",
+      "types": [
+        "Number",
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "null",
+        "value": null
+      },
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "vue-implicit",
+        "value": false,
+        "note": "未传 Boolean prop 时 当前基准实现 使用 false。"
+      },
+      "required": false
+    },
+    {
+      "name": "readonly",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "vue-implicit",
+        "value": false,
+        "note": "未传 Boolean prop 时 当前基准实现 使用 false。"
+      },
+      "required": false
+    },
+    {
+      "name": "leadingIcon",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "vue-implicit",
+        "value": false,
+        "note": "未传 Boolean prop 时 当前基准实现 使用 false。"
+      },
+      "required": false
+    },
+    {
+      "name": "supportIcon",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "vue-implicit",
+        "value": false,
+        "note": "未传 Boolean prop 时 当前基准实现 使用 false。"
+      },
+      "required": false
+    },
+    {
+      "name": "showCounter",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "vue-implicit",
+        "value": false,
+        "note": "未传 Boolean prop 时 当前基准实现 使用 false。"
+      },
+      "required": false
+    },
+    {
+      "name": "clearable",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "true",
+        "value": true
+      },
+      "required": false
+    },
+    {
+      "name": "clearLabel",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Clear input'",
+        "value": "Clear input"
+      },
+      "required": false
+    },
+    {
+      "name": "supportLabel",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'More information'",
+        "value": "More information"
+      },
+      "required": false
+    },
+    {
+      "name": "countryLabel",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Select country'",
+        "value": "Select country"
+      },
+      "required": false
+    },
+    {
+      "name": "prefixLabel",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Select prefix'",
+        "value": "Select prefix"
+      },
+      "required": false
+    },
+    {
+      "name": "showPasswordLabel",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Show password'",
+        "value": "Show password"
+      },
+      "required": false
+    },
+    {
+      "name": "hidePasswordLabel",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Hide password'",
+        "value": "Hide password"
+      },
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "pd:blur",
+      "detail": "{ value, args }",
+      "description": "原生 FocusEvent。"
+    },
+    {
+      "name": "pd:change",
+      "detail": "{ value, args }",
+      "description": "String：当前原生字段值，清空时为空字符串。"
+    },
+    {
+      "name": "pd:clear",
+      "detail": "{ value, args }",
+      "description": "无载荷；字段已请求清空。"
+    },
+    {
+      "name": "pd:focus",
+      "detail": "{ value, args }",
+      "description": "原生 FocusEvent。"
+    },
+    {
+      "name": "pd:help",
+      "detail": "{ value, args }",
+      "description": "无载荷；请求显示帮助。"
+    },
+    {
+      "name": "pd:input",
+      "detail": "{ value, args }",
+      "description": "String：当前原生字段值，清空时为空字符串。"
+    },
+    {
+      "name": "pd:keydown",
+      "detail": "{ value, args }",
+      "description": "原生 KeyboardEvent。"
+    },
+    {
+      "name": "pd:select-country",
+      "detail": "{ value, args }",
+      "description": "无载荷；请求调用方打开国家选择器。"
+    },
+    {
+      "name": "pd:select-prefix",
+      "detail": "{ value, args }",
+      "description": "存在 prefixOptions 时为选中值 String；无选项时不带参数，仅发起选择请求。"
+    },
+    {
+      "name": "pd:toggle-password",
+      "detail": "{ value, args }",
+      "description": "Boolean：当前是否显示明文。"
+    },
+    {
+      "name": "pd:update:prefix",
+      "detail": "{ value, args }",
+      "description": "String：原生前缀选择器的当前值。"
+    }
+  ],
+  "contents": [
+    {
+      "name": "leading",
+      "description": "前置图标或内容。",
+      "usage": "原生 DOM 节点或接收内容上下文的函数"
+    },
+    {
+      "name": "prefix",
+      "description": "自定义前缀。",
+      "usage": "原生 DOM 节点或接收内容上下文的函数"
+    },
+    {
+      "name": "suffix",
+      "description": "自定义后缀。",
+      "usage": "原生 DOM 节点或接收内容上下文的函数"
+    }
+  ],
+  "methods": [
+    "focus"
+  ],
+  "knownDifferences": [
+    {
+      "component": "Input",
+      "nodes": [
+        "101:12828",
+        "101:12843",
+        "101:13027"
+      ],
+      "status": "unresolved",
+      "id": "Input.source-conflict",
+      "description": "Blank/Disabled 源稿样例冲突；不得通过填入示例值改变真实空值。"
+    }
+  ],
+  "designTarget": {
+    "origin": "mixed",
+    "figma": {
+      "page": "2:116",
+      "master": "101:12485",
+      "reference": "101:12486",
+      "snapshot": "tokens/sources/figma-components.json"
+    },
+    "tokenReference": "tokens/component.json#input",
+    "gaps": "3 个 Blank/Disabled Master 的 Value 示例内容与状态名冲突；本地保持空值并按 Master 显示浮动标签。更多插槽内容需按实际数据验收。 外层左右0px为用户确认的项目布局调整，Figma原始控件宽度差异单独保留。"
+  },
+  "verification": {
+    "status": "requires-current-evidence",
+    "report": "verification/report.json",
+    "scope": "当前 HTML 构建的交互、尺寸和截图对照；不扩大为完整设计认证。"
+  },
+  "examples": [
+    "input--playground",
+    "input--states",
+    "input--variants",
+    "input--helper-and-counter"
+  ]
+}

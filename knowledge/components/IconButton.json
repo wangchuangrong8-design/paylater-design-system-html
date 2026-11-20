@@ -1,0 +1,96 @@
+{
+  "name": "IconButton",
+  "origin": "figma",
+  "originLabel": "Figma 来源",
+  "purpose": "用带可访问名称的图标触发操作。",
+  "constraints": [
+    "label 应说明动作；没有交付 Dropdown 三状态，不能因能添加插槽就宣称设计覆盖。"
+  ],
+  "marker": "<div data-pd=\"IconButton\" data-options='{}'></div>",
+  "options": [
+    {
+      "name": "label",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "absent",
+        "expression": "undefined"
+      },
+      "required": true
+    },
+    {
+      "name": "disabled",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "vue-implicit",
+        "value": false,
+        "note": "未传 Boolean prop 时 当前基准实现 使用 false。"
+      },
+      "required": false
+    },
+    {
+      "name": "active",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "vue-implicit",
+        "value": false,
+        "note": "未传 Boolean prop 时 当前基准实现 使用 false。"
+      },
+      "required": false
+    },
+    {
+      "name": "nativeType",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'button'",
+        "value": "button"
+      },
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "pd:click",
+      "detail": "{ value, args }",
+      "description": "原始 MouseEvent；是否触发业务操作由调用方处理。"
+    }
+  ],
+  "contents": [
+    {
+      "name": "default",
+      "description": "默认内容；回退内容及条件按模板。",
+      "usage": "原生 DOM 节点或接收内容上下文的函数"
+    }
+  ],
+  "methods": [],
+  "knownDifferences": [],
+  "designTarget": {
+    "origin": "figma",
+    "figma": {
+      "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+      "page": "2:94",
+      "master": "39:4235",
+      "reference": "39:4236",
+      "snapshot": "tokens/sources/figma-library/IconButton.json"
+    },
+    "tokenReference": "tokens/component.json#icon-button",
+    "gaps": "Dropdown的3个状态"
+  },
+  "verification": {
+    "status": "requires-current-evidence",
+    "report": "verification/report.json",
+    "scope": "当前 HTML 构建的交互、尺寸和截图对照；不扩大为完整设计认证。"
+  },
+  "examples": [
+    "iconbutton--playground",
+    "iconbutton--examples"
+  ]
+}

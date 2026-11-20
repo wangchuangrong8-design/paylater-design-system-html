@@ -1,0 +1,192 @@
+{
+  "name": "Select",
+  "origin": "mixed",
+  "originLabel": "Figma + 自主扩展",
+  "purpose": "从选项中选择一个值，支持本地下拉交互。",
+  "constraints": [
+    "Basic 字段来自 Figma，下拉面板为自主扩展；Date/Time 字段未实现。"
+  ],
+  "marker": "<div data-pd=\"Select\" data-options='{}'></div>",
+  "options": [
+    {
+      "name": "value",
+      "types": [
+        "String",
+        "Number",
+        "Boolean"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "''",
+        "value": ""
+      },
+      "required": false
+    },
+    {
+      "name": "options",
+      "types": [
+        "Array"
+      ],
+      "default": {
+        "kind": "factory-literal",
+        "expression": "() => []",
+        "value": []
+      },
+      "required": false
+    },
+    {
+      "name": "label",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Label'",
+        "value": "Label"
+      },
+      "required": false
+    },
+    {
+      "name": "name",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "''",
+        "value": ""
+      },
+      "required": false
+    },
+    {
+      "name": "id",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "''",
+        "value": ""
+      },
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "vue-implicit",
+        "value": false,
+        "note": "未传 Boolean prop 时 当前基准实现 使用 false。"
+      },
+      "required": false
+    },
+    {
+      "name": "error",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "''",
+        "value": ""
+      },
+      "required": false
+    },
+    {
+      "name": "caption",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "''",
+        "value": ""
+      },
+      "required": false
+    },
+    {
+      "name": "searchable",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "vue-implicit",
+        "value": false,
+        "note": "未传 Boolean prop 时 当前基准实现 使用 false。"
+      },
+      "required": false
+    },
+    {
+      "name": "searchLabel",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Search options'",
+        "value": "Search options"
+      },
+      "required": false
+    },
+    {
+      "name": "emptyLabel",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'No options'",
+        "value": "No options"
+      },
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "pd:change",
+      "detail": "{ value, args }",
+      "description": "(value, option)：选中值及 normalizeOptions 后的选项对象。"
+    },
+    {
+      "name": "pd:close",
+      "detail": "{ value, args }; reason",
+      "description": "无载荷；关闭通知。"
+    },
+    {
+      "name": "pd:input",
+      "detail": "{ value, args }",
+      "description": "选中的 option.value。"
+    },
+    {
+      "name": "pd:open",
+      "detail": "{ value, args }",
+      "description": "无载荷；下拉面板打开。"
+    }
+  ],
+  "contents": [],
+  "methods": [],
+  "knownDifferences": [],
+  "designTarget": {
+    "origin": "mixed",
+    "figma": {
+      "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+      "page": "2:109",
+      "master": "182:11993",
+      "reference": "182:11994",
+      "snapshot": "tokens/sources/figma-library/Select.json"
+    },
+    "tokenReference": "tokens/component.json#select",
+    "gaps": "Date / Time字段14个主变体及对应图标"
+  },
+  "verification": {
+    "status": "requires-current-evidence",
+    "report": "verification/report.json",
+    "scope": "当前 HTML 构建的交互、尺寸和截图对照；不扩大为完整设计认证。"
+  },
+  "examples": [
+    "select--playground",
+    "select--examples"
+  ]
+}

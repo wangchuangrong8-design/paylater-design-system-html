@@ -1,0 +1,138 @@
+{
+  "name": "Toast",
+  "origin": "figma",
+  "originLabel": "Figma 来源",
+  "purpose": "显示短暂的操作反馈。",
+  "constraints": [
+    "不能作为必要金额、费用或风险说明的唯一载体；duration=0 保持，非零计时单位毫秒。"
+  ],
+  "marker": "<div data-pd=\"Toast\" data-options='{}'></div>",
+  "options": [
+    {
+      "name": "visible",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "true",
+        "value": true
+      },
+      "required": false
+    },
+    {
+      "name": "type",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'info'",
+        "value": "info"
+      },
+      "required": false,
+      "allowed": [
+        "info",
+        "error",
+        "warning",
+        "success"
+      ]
+    },
+    {
+      "name": "message",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Text'",
+        "value": "Text"
+      },
+      "required": false
+    },
+    {
+      "name": "duration",
+      "types": [
+        "Number"
+      ],
+      "default": {
+        "kind": "expression",
+        "expression": "parseFloat(componentTokens.toast.duration)"
+      },
+      "required": false
+    },
+    {
+      "name": "inline",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "vue-implicit",
+        "value": false,
+        "note": "未传 Boolean prop 时 当前基准实现 使用 false。"
+      },
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "pd:close",
+      "detail": "{ value, args }; reason",
+      "description": "timeout：计时到期请求关闭。"
+    },
+    {
+      "name": "pd:input",
+      "detail": "{ value, args }",
+      "description": "false：计时到期请求父级关闭。"
+    },
+    {
+      "name": "pd:update:visible",
+      "detail": "{ value, args }",
+      "description": "false：请求父级关闭，可配合 visible.sync。"
+    }
+  ],
+  "contents": [
+    {
+      "name": "default",
+      "description": "默认内容；回退内容及条件按模板。",
+      "usage": "原生 DOM 节点或接收内容上下文的函数"
+    }
+  ],
+  "methods": [],
+  "knownDifferences": [
+    {
+      "id": "S08",
+      "component": "Toast",
+      "description": "Stroke placement and shadow color",
+      "nodes": [
+        "403:19997",
+        "403:20000",
+        "403:20003",
+        "403:20006"
+      ],
+      "status": "resolved",
+      "verification": "docs/verification/assets-completion/design-regression.json"
+    }
+  ],
+  "designTarget": {
+    "origin": "figma",
+    "figma": {
+      "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+      "page": "2:118",
+      "master": "403:19996",
+      "reference": "403:19997",
+      "snapshot": "tokens/sources/figma-library/Toast.json"
+    },
+    "tokenReference": "tokens/component.json#toast",
+    "gaps": "4种类型已实现；插槽、长文案与场景位置仍需实际数据验收。"
+  },
+  "verification": {
+    "status": "requires-current-evidence",
+    "report": "verification/report.json",
+    "scope": "当前 HTML 构建的交互、尺寸和截图对照；不扩大为完整设计认证。"
+  },
+  "examples": [
+    "toast--playground",
+    "toast--examples"
+  ]
+}

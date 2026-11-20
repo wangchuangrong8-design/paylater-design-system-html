@@ -1,0 +1,101 @@
+{
+  "name": "ActionGroup",
+  "origin": "figma",
+  "originLabel": "Figma 来源",
+  "purpose": "组织最多三个相关操作，表达操作方向与层级。",
+  "constraints": [
+    "水平布局仅支持两个操作；操作主次由当前需求确认，不由数组默认顺序推导业务优先级。"
+  ],
+  "marker": "<div data-pd=\"ActionGroup\" data-options='{}'></div>",
+  "options": [
+    {
+      "name": "actions",
+      "types": [
+        "Array"
+      ],
+      "default": {
+        "kind": "factory-literal",
+        "expression": "() => [{ key: 'primary', label: 'Label', variant: 'primary' }]",
+        "value": [
+          {
+            "key": "primary",
+            "label": "Label",
+            "variant": "primary"
+          }
+        ]
+      },
+      "required": false
+    },
+    {
+      "name": "direction",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'vertical'",
+        "value": "vertical"
+      },
+      "required": false,
+      "allowed": [
+        "vertical",
+        "horizontal"
+      ]
+    },
+    {
+      "name": "disabled",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "vue-implicit",
+        "value": false,
+        "note": "未传 Boolean prop 时 当前基准实现 使用 false。"
+      },
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "pd:action",
+      "detail": "{ value, args }",
+      "description": "(action, index)：当前操作对象与从 0 开始的索引。"
+    }
+  ],
+  "contents": [
+    {
+      "name": "default",
+      "description": "默认内容；回退内容及条件按模板。",
+      "usage": "原生 DOM 节点或接收内容上下文的函数"
+    }
+  ],
+  "methods": [],
+  "knownDifferences": [],
+  "designTarget": {
+    "origin": "figma",
+    "figma": {
+      "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+      "page": "2:85",
+      "master": "189:17288",
+      "reference": "189:17289",
+      "snapshot": "tokens/sources/figma-library/ActionGroup.json",
+      "additionalReferences": [
+        {
+          "nodeId": "11071:79451",
+          "snapshot": "tokens/sources/figma-library/ActionGroupHorizontal.json"
+        }
+      ]
+    },
+    "tokenReference": "tokens/component.json#action-group",
+    "gaps": "Action detail、Action icons两组"
+  },
+  "verification": {
+    "status": "requires-current-evidence",
+    "report": "verification/report.json",
+    "scope": "当前 HTML 构建的交互、尺寸和截图对照；不扩大为完整设计认证。"
+  },
+  "examples": [
+    "actiongroup--playground",
+    "actiongroup--examples"
+  ]
+}

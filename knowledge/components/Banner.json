@@ -1,0 +1,175 @@
+{
+  "name": "Banner",
+  "origin": "figma",
+  "originLabel": "Figma 来源",
+  "purpose": "在当前页面展示消息、说明与相关操作。",
+  "constraints": [
+    "关闭请求由父级更新 visible；无标题操作与说明同排，自定义内容按实际数据验收。"
+  ],
+  "marker": "<div data-pd=\"Banner\" data-options='{}'></div>",
+  "options": [
+    {
+      "name": "visible",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "true",
+        "value": true
+      },
+      "required": false
+    },
+    {
+      "name": "type",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'info'",
+        "value": "info"
+      },
+      "required": false,
+      "allowed": [
+        "info",
+        "warning",
+        "error"
+      ]
+    },
+    {
+      "name": "title",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Title banner'",
+        "value": "Title banner"
+      },
+      "required": false
+    },
+    {
+      "name": "description",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'A message should be a short and complete sentence.'",
+        "value": "A message should be a short and complete sentence."
+      },
+      "required": false
+    },
+    {
+      "name": "closable",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "vue-implicit",
+        "value": false,
+        "note": "未传 Boolean prop 时 当前基准实现 使用 false。"
+      },
+      "required": false
+    },
+    {
+      "name": "closeLabel",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Dismiss banner'",
+        "value": "Dismiss banner"
+      },
+      "required": false
+    },
+    {
+      "name": "actions",
+      "types": [
+        "Array"
+      ],
+      "default": {
+        "kind": "factory-literal",
+        "expression": "() => [{ key: 'dismiss', label: 'Dismiss' }, { key: 'preferred', label: 'Preferred' }]",
+        "value": [
+          {
+            "key": "dismiss",
+            "label": "Dismiss"
+          },
+          {
+            "key": "preferred",
+            "label": "Preferred"
+          }
+        ]
+      },
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "pd:action",
+      "detail": "{ value, args }",
+      "description": "(action, index)：当前操作对象与从 0 开始的索引。"
+    },
+    {
+      "name": "pd:close",
+      "detail": "{ value, args }; reason",
+      "description": "无载荷；关闭请求。"
+    },
+    {
+      "name": "pd:input",
+      "detail": "{ value, args }",
+      "description": "false：请求父级关闭。"
+    },
+    {
+      "name": "pd:update:visible",
+      "detail": "{ value, args }",
+      "description": "false：请求父级关闭，可配合 visible.sync。"
+    }
+  ],
+  "contents": [
+    {
+      "name": "default",
+      "description": "默认内容；回退内容及条件按模板。",
+      "usage": "原生 DOM 节点或接收内容上下文的函数"
+    }
+  ],
+  "methods": [],
+  "knownDifferences": [
+    {
+      "id": "S06",
+      "component": "Banner",
+      "description": "No-title action placement",
+      "nodes": [
+        "173:10859",
+        "173:10848",
+        "983:22516"
+      ],
+      "status": "resolved",
+      "verification": "docs/verification/assets-completion/design-regression.json"
+    }
+  ],
+  "designTarget": {
+    "origin": "figma",
+    "figma": {
+      "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+      "page": "2:89",
+      "master": "171:10259",
+      "reference": "171:10260",
+      "snapshot": "tokens/sources/figma-library/Banner.json"
+    },
+    "tokenReference": "tokens/component.json#banner",
+    "gaps": "标题/正文与自定义动作仍按实际内容验收；已实现无标题同排操作。"
+  },
+  "verification": {
+    "status": "requires-current-evidence",
+    "report": "verification/report.json",
+    "scope": "当前 HTML 构建的交互、尺寸和截图对照；不扩大为完整设计认证。"
+  },
+  "examples": [
+    "banner--playground",
+    "banner--examples"
+  ]
+}

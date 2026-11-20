@@ -1,0 +1,119 @@
+{
+  "name": "ListItem",
+  "origin": "figma",
+  "originLabel": "Figma 来源",
+  "purpose": "组织一至三行信息及侧边插槽。",
+  "constraints": [
+    "clickable 只控制界面操作语义；金额、资格和跳转由调用方决定。"
+  ],
+  "marker": "<div data-pd=\"ListItem\" data-options='{}'></div>",
+  "options": [
+    {
+      "name": "label",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Body'",
+        "value": "Body"
+      },
+      "required": false
+    },
+    {
+      "name": "caption",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "''",
+        "value": ""
+      },
+      "required": false
+    },
+    {
+      "name": "lines",
+      "types": [
+        "Number"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "1",
+        "value": 1
+      },
+      "required": false
+    },
+    {
+      "name": "clickable",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "vue-implicit",
+        "value": false,
+        "note": "未传 Boolean prop 时 当前基准实现 使用 false。"
+      },
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "vue-implicit",
+        "value": false,
+        "note": "未传 Boolean prop 时 当前基准实现 使用 false。"
+      },
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "pd:click",
+      "detail": "{ value, args }",
+      "description": "原始 MouseEvent；是否触发业务操作由调用方处理。"
+    }
+  ],
+  "contents": [
+    {
+      "name": "default",
+      "description": "默认内容；回退内容及条件按模板。",
+      "usage": "原生 DOM 节点或接收内容上下文的函数"
+    },
+    {
+      "name": "leading",
+      "description": "前置图标或内容。",
+      "usage": "原生 DOM 节点或接收内容上下文的函数"
+    },
+    {
+      "name": "trailing",
+      "description": "后置图标或内容。",
+      "usage": "原生 DOM 节点或接收内容上下文的函数"
+    }
+  ],
+  "methods": [],
+  "knownDifferences": [],
+  "designTarget": {
+    "origin": "figma",
+    "figma": {
+      "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+      "page": "2:102",
+      "master": "95:6710",
+      "reference": "95:6711",
+      "snapshot": "tokens/sources/figma-library/ListItem.json"
+    },
+    "tokenReference": "tokens/component.json#list-item",
+    "gaps": "Prefix、Overline、独立Section/Select及复合内容配置"
+  },
+  "verification": {
+    "status": "requires-current-evidence",
+    "report": "verification/report.json",
+    "scope": "当前 HTML 构建的交互、尺寸和截图对照；不扩大为完整设计认证。"
+  },
+  "examples": [
+    "listitem--playground",
+    "listitem--examples"
+  ]
+}

@@ -1,0 +1,26 @@
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="20" height="20" fill="#F5F5F5"/>
+<g id="Product">
+<rect width="1840" height="12984" transform="translate(-316 -3901.99)" fill="white"/>
+<g id="Content">
+<g id="Desc">
+<g id="Block">
+<rect x="-236.5" y="-682.5" width="1681" height="1457" stroke="#8B95A5"/>
+<g id="Row">
+<g id="grid">
+<rect x="-216" y="-26" width="260" height="72" stroke="#8B95A5" stroke-dasharray="8 8"/>
+<g id="Outline=False, Duotone=False, Fill=True, Small=True">
+<g id="path">
+<path d="M18.9582 9.37499V6.50832C18.9582 3.33332 16.6665 1.04166 13.4915 1.04166H10.6248V9.37499H18.9582Z" fill="#FFBC25"/>
+<path d="M9.37484 18.9583V10.625H1.0415V13.4917C1.0415 16.6667 3.33317 18.9583 6.50817 18.9583H9.37484Z" fill="#FFBC25"/>
+<path d="M9.37484 1.04166V9.37499H1.0415V6.50832C1.0415 3.33332 3.33317 1.04166 6.50817 1.04166H9.37484Z" fill="#FFBC25"/>
+<path d="M18.9582 13.4917V10.625H10.6248V18.9583H13.4915C16.6665 18.9583 18.9582 16.6667 18.9582 13.4917Z" fill="#FFBC25"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>

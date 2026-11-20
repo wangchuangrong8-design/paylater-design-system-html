@@ -1,0 +1,742 @@
+{
+  "target": "html",
+  "components": [
+    {
+      "name": "Accordion",
+      "purpose": "折叠辅助内容，保留可识别的标题与展开状态。",
+      "marker": "<div data-pd=\"Accordion\" data-options='{}'></div>",
+      "examples": [
+        "accordion--playground",
+        "accordion--examples"
+      ],
+      "reference": "components/Accordion.json"
+    },
+    {
+      "name": "ActionGroup",
+      "purpose": "组织最多三个相关操作，表达操作方向与层级。",
+      "marker": "<div data-pd=\"ActionGroup\" data-options='{}'></div>",
+      "examples": [
+        "actiongroup--playground",
+        "actiongroup--examples"
+      ],
+      "reference": "components/ActionGroup.json"
+    },
+    {
+      "name": "Avatar",
+      "purpose": "展示调用方照片或姓名缩写及图片失败回退。",
+      "marker": "<div data-pd=\"Avatar\" data-options='{}'></div>",
+      "examples": [
+        "avatar--playground",
+        "avatar--examples"
+      ],
+      "reference": "components/Avatar.json"
+    },
+    {
+      "name": "Badge",
+      "purpose": "用短标签标记局部状态。",
+      "marker": "<div data-pd=\"Badge\" data-options='{}'></div>",
+      "examples": [
+        "badge--playground",
+        "badge--examples"
+      ],
+      "reference": "components/Badge.json"
+    },
+    {
+      "name": "Banner",
+      "purpose": "在当前页面展示消息、说明与相关操作。",
+      "marker": "<div data-pd=\"Banner\" data-options='{}'></div>",
+      "examples": [
+        "banner--playground",
+        "banner--examples"
+      ],
+      "reference": "components/Banner.json"
+    },
+    {
+      "name": "BottomSheet",
+      "purpose": "承载当前任务的补充内容或输入操作。",
+      "marker": "<div data-pd=\"BottomSheet\" data-options='{}'></div>",
+      "examples": [
+        "bottomsheet--nested-overlays",
+        "bottomsheet--playground",
+        "bottomsheet--examples"
+      ],
+      "reference": "components/BottomSheet.json"
+    },
+    {
+      "name": "Button",
+      "purpose": "触发单个明确操作，提供原生按钮语义。",
+      "marker": "<div data-pd=\"Button\" data-options='{}'></div>",
+      "examples": [
+        "button--playground",
+        "button--states",
+        "button--sizes-and-icons",
+        "button--sticky"
+      ],
+      "reference": "components/Button.json"
+    },
+    {
+      "name": "Card",
+      "purpose": "按本地 Token 分组相关内容。",
+      "marker": "<div data-pd=\"Card\" data-options='{}'></div>",
+      "examples": [
+        "card--playground",
+        "card--examples"
+      ],
+      "reference": "components/Card.json"
+    },
+    {
+      "name": "Checkbox",
+      "purpose": "表达独立布尔选择或数组多选。",
+      "marker": "<div data-pd=\"Checkbox\" data-options='{}'></div>",
+      "examples": [
+        "checkbox--selection",
+        "checkbox--playground",
+        "checkbox--examples"
+      ],
+      "reference": "components/Checkbox.json"
+    },
+    {
+      "name": "DatePicker",
+      "purpose": "通过日历网格选择并确认单个日期。",
+      "marker": "<div data-pd=\"DatePicker\" data-options='{}'></div>",
+      "examples": [
+        "datepicker--playground",
+        "datepicker--examples"
+      ],
+      "reference": "components/DatePicker.json"
+    },
+    {
+      "name": "Dialog",
+      "purpose": "中断当前任务，请用户确认或了解短消息。",
+      "marker": "<div data-pd=\"Dialog\" data-options='{}'></div>",
+      "examples": [
+        "dialog--playground",
+        "dialog--variants",
+        "dialog--action-counts",
+        "dialog--long-content"
+      ],
+      "reference": "components/Dialog.json"
+    },
+    {
+      "name": "Divider",
+      "purpose": "分隔相关内容组或标注区段。",
+      "marker": "<div data-pd=\"Divider\" data-options='{}'></div>",
+      "examples": [
+        "divider--playground",
+        "divider--examples"
+      ],
+      "reference": "components/Divider.json"
+    },
+    {
+      "name": "EmptyState",
+      "purpose": "说明当前内容为空并提供可选操作。",
+      "marker": "<div data-pd=\"EmptyState\" data-options='{}'></div>",
+      "examples": [
+        "emptystate--playground",
+        "emptystate--examples"
+      ],
+      "reference": "components/EmptyState.json"
+    },
+    {
+      "name": "Form",
+      "purpose": "汇总字段校验并发出提交或无效事件。",
+      "marker": "<div data-pd=\"Form\" data-options='{}'></div>",
+      "examples": [
+        "form--playground",
+        "form--async-validation"
+      ],
+      "reference": "components/Form.json"
+    },
+    {
+      "name": "FormItem",
+      "purpose": "关联字段标签、提示、错误与可聚焦控件。",
+      "marker": "<div data-pd=\"FormItem\" data-options='{}'></div>",
+      "examples": [
+        "formitem--playground",
+        "formitem--examples"
+      ],
+      "reference": "components/FormItem.json"
+    },
+    {
+      "name": "Icon",
+      "purpose": "按本地名称展示已有图标资源。",
+      "marker": "<div data-pd=\"Icon\" data-options='{}'></div>",
+      "examples": [
+        "icon--playground",
+        "icon--examples"
+      ],
+      "reference": "components/Icon.json"
+    },
+    {
+      "name": "IconButton",
+      "purpose": "用带可访问名称的图标触发操作。",
+      "marker": "<div data-pd=\"IconButton\" data-options='{}'></div>",
+      "examples": [
+        "iconbutton--playground",
+        "iconbutton--examples"
+      ],
+      "reference": "components/IconButton.json"
+    },
+    {
+      "name": "Input",
+      "purpose": "使用 当前基准实现 value/input 编辑字段并呈现说明与错误。",
+      "marker": "<div data-pd=\"Input\" data-options='{}'></div>",
+      "examples": [
+        "input--playground",
+        "input--states",
+        "input--variants",
+        "input--helper-and-counter"
+      ],
+      "reference": "components/Input.json"
+    },
+    {
+      "name": "ListItem",
+      "purpose": "组织一至三行信息及侧边插槽。",
+      "marker": "<div data-pd=\"ListItem\" data-options='{}'></div>",
+      "examples": [
+        "listitem--playground",
+        "listitem--examples"
+      ],
+      "reference": "components/ListItem.json"
+    },
+    {
+      "name": "PageControl",
+      "purpose": "显示分页位置并请求切换当前项。",
+      "marker": "<div data-pd=\"PageControl\" data-options='{}'></div>",
+      "examples": [
+        "pagecontrol--playground",
+        "pagecontrol--examples"
+      ],
+      "reference": "components/PageControl.json"
+    },
+    {
+      "name": "Progress",
+      "purpose": "展示调用方提供的百分比进度。",
+      "marker": "<div data-pd=\"Progress\" data-options='{}'></div>",
+      "examples": [
+        "progress--playground",
+        "progress--examples"
+      ],
+      "reference": "components/Progress.json"
+    },
+    {
+      "name": "Radio",
+      "purpose": "表达一组互斥的基础选择。",
+      "marker": "<div data-pd=\"Radio\" data-options='{}'></div>",
+      "examples": [
+        "radio--selection",
+        "radio--playground",
+        "radio--examples"
+      ],
+      "reference": "components/Radio.json"
+    },
+    {
+      "name": "Search",
+      "purpose": "编辑检索词并发出搜索请求。",
+      "marker": "<div data-pd=\"Search\" data-options='{}'></div>",
+      "examples": [
+        "search--playground",
+        "search--examples"
+      ],
+      "reference": "components/Search.json"
+    },
+    {
+      "name": "SegmentedControl",
+      "purpose": "在两个或三个同层选项之间切换。",
+      "marker": "<div data-pd=\"SegmentedControl\" data-options='{}'></div>",
+      "examples": [
+        "segmentedcontrol--playground",
+        "segmentedcontrol--examples"
+      ],
+      "reference": "components/SegmentedControl.json"
+    },
+    {
+      "name": "Select",
+      "purpose": "从选项中选择一个值，支持本地下拉交互。",
+      "marker": "<div data-pd=\"Select\" data-options='{}'></div>",
+      "examples": [
+        "select--playground",
+        "select--examples"
+      ],
+      "reference": "components/Select.json"
+    },
+    {
+      "name": "Skeleton",
+      "purpose": "内容加载期间展示自主行或头像占位。",
+      "marker": "<div data-pd=\"Skeleton\" data-options='{}'></div>",
+      "examples": [
+        "skeleton--playground",
+        "skeleton--examples"
+      ],
+      "reference": "components/Skeleton.json"
+    },
+    {
+      "name": "Slider",
+      "purpose": "在最小最大值之间编辑单个数值。",
+      "marker": "<div data-pd=\"Slider\" data-options='{}'></div>",
+      "examples": [
+        "slider--playground",
+        "slider--examples"
+      ],
+      "reference": "components/Slider.json"
+    },
+    {
+      "name": "Space",
+      "purpose": "用本地间距 Token 组织横向或纵向内容。",
+      "marker": "<div data-pd=\"Space\" data-options='{}'></div>",
+      "examples": [
+        "space--playground",
+        "space--examples"
+      ],
+      "reference": "components/Space.json"
+    },
+    {
+      "name": "Spinner",
+      "purpose": "表达正在进行的短时活动并提供名称。",
+      "marker": "<div data-pd=\"Spinner\" data-options='{}'></div>",
+      "examples": [
+        "spinner--playground",
+        "spinner--examples"
+      ],
+      "reference": "components/Spinner.json"
+    },
+    {
+      "name": "Switch",
+      "purpose": "编辑即时开关状态。",
+      "marker": "<div data-pd=\"Switch\" data-options='{}'></div>",
+      "examples": [
+        "switch--playground",
+        "switch--examples"
+      ],
+      "reference": "components/Switch.json"
+    },
+    {
+      "name": "Tabs",
+      "purpose": "切换同层内容区，并关联对应面板。",
+      "marker": "<div data-pd=\"Tabs\" data-options='{}'></div>",
+      "examples": [
+        "tabs--playground",
+        "tabs--examples"
+      ],
+      "reference": "components/Tabs.json"
+    },
+    {
+      "name": "Tag",
+      "purpose": "表达标签选择或移除。",
+      "marker": "<div data-pd=\"Tag\" data-options='{}'></div>",
+      "examples": [
+        "tag--playground",
+        "tag--examples"
+      ],
+      "reference": "components/Tag.json"
+    },
+    {
+      "name": "TimePicker",
+      "purpose": "通过时分与可选 AM/PM 编辑并确认时间。",
+      "marker": "<div data-pd=\"TimePicker\" data-options='{}'></div>",
+      "examples": [
+        "timepicker--playground",
+        "timepicker--examples"
+      ],
+      "reference": "components/TimePicker.json"
+    },
+    {
+      "name": "Toast",
+      "purpose": "显示短暂的操作反馈。",
+      "marker": "<div data-pd=\"Toast\" data-options='{}'></div>",
+      "examples": [
+        "toast--playground",
+        "toast--examples"
+      ],
+      "reference": "components/Toast.json"
+    },
+    {
+      "name": "Tooltip",
+      "purpose": "为可聚焦触发对象补充简短说明。",
+      "marker": "<div data-pd=\"Tooltip\" data-options='{}'></div>",
+      "examples": [
+        "tooltip--playground",
+        "tooltip--examples"
+      ],
+      "reference": "components/Tooltip.json"
+    },
+    {
+      "name": "Typography",
+      "purpose": "按本地文字 Token 渲染文本。",
+      "marker": "<div data-pd=\"Typography\" data-options='{}'></div>",
+      "examples": [
+        "typography--playground",
+        "typography--examples"
+      ],
+      "reference": "components/Typography.json"
+    },
+    {
+      "name": "Upload",
+      "purpose": "提供本地文件选择、拖放及数量/类型/大小校验。",
+      "marker": "<div data-pd=\"Upload\" data-options='{}'></div>",
+      "examples": [
+        "upload--playground",
+        "upload--examples"
+      ],
+      "reference": "components/Upload.json"
+    }
+  ],
+  "surfaces": [
+    {
+      "id": "generic",
+      "components": [
+        "Accordion",
+        "ActionGroup",
+        "Avatar",
+        "Badge",
+        "Button",
+        "Card",
+        "Divider",
+        "Icon",
+        "IconButton",
+        "ListItem",
+        "PageControl",
+        "Space",
+        "Tooltip",
+        "Typography"
+      ],
+      "reference": "surfaces/generic.json"
+    },
+    {
+      "id": "form",
+      "components": [
+        "ActionGroup",
+        "BottomSheet",
+        "Button",
+        "Checkbox",
+        "DatePicker",
+        "Form",
+        "FormItem",
+        "IconButton",
+        "Input",
+        "Radio",
+        "Search",
+        "Select",
+        "Slider",
+        "Switch",
+        "TimePicker",
+        "Upload"
+      ],
+      "reference": "surfaces/form.json"
+    },
+    {
+      "id": "selection",
+      "components": [
+        "BottomSheet",
+        "Button",
+        "Checkbox",
+        "DatePicker",
+        "Radio",
+        "SegmentedControl",
+        "Select",
+        "Slider",
+        "Switch",
+        "Tabs",
+        "Tag",
+        "TimePicker"
+      ],
+      "reference": "surfaces/selection.json"
+    },
+    {
+      "id": "feedback",
+      "components": [
+        "ActionGroup",
+        "Banner",
+        "Button",
+        "Dialog",
+        "EmptyState",
+        "Progress",
+        "Skeleton",
+        "Spinner",
+        "Toast",
+        "Tooltip"
+      ],
+      "reference": "surfaces/feedback.json"
+    },
+    {
+      "id": "repayment-plan",
+      "components": [
+        "BottomSheet",
+        "Dialog",
+        "Radio"
+      ],
+      "reference": "surfaces/repayment-plan.json"
+    },
+    {
+      "id": "repayment-summary",
+      "components": [
+        "Accordion",
+        "Card",
+        "Divider",
+        "ListItem",
+        "Typography"
+      ],
+      "reference": "surfaces/repayment-summary.json"
+    },
+    {
+      "id": "account-status",
+      "components": [
+        "Avatar",
+        "Badge",
+        "Banner",
+        "Card",
+        "EmptyState",
+        "ListItem",
+        "Progress",
+        "Tabs"
+      ],
+      "reference": "surfaces/account-status.json"
+    }
+  ],
+  "selectionGroups": [
+    {
+      "id": "actions",
+      "title": "操作：单个动作与操作组"
+    },
+    {
+      "id": "choice",
+      "title": "选择：互斥、多选与即时开关"
+    },
+    {
+      "id": "navigation",
+      "title": "内容导航：分类、切换与分页"
+    },
+    {
+      "id": "overlays",
+      "title": "弹层：确认、补充任务与辅助说明"
+    },
+    {
+      "id": "feedback",
+      "title": "消息反馈：短暂、持续与确认"
+    },
+    {
+      "id": "status",
+      "title": "过程与结果：等待、进度和无内容"
+    },
+    {
+      "id": "fields",
+      "title": "输入与表单：编辑、专用选择与校验"
+    },
+    {
+      "id": "content",
+      "title": "内容组织：容器、条目、标识与文字"
+    }
+  ],
+  "visualAssets": {
+    "counts": {
+      "iconGroups": 450,
+      "icons": 1808,
+      "illustrations": 163,
+      "entries": 1971,
+      "physicalFiles": 1956,
+      "sharedEntries": 15,
+      "excluded": 74,
+      "transparentSourceEntries": 1
+    },
+    "categories": [
+      {
+        "type": "icon",
+        "category": "Feature",
+        "count": 21
+      },
+      {
+        "type": "icon",
+        "category": "Feature 2d",
+        "count": 31
+      },
+      {
+        "type": "icon",
+        "category": "Feature: IBB",
+        "count": 2
+      },
+      {
+        "type": "icon",
+        "category": "QRIS",
+        "count": 4
+      },
+      {
+        "type": "icon",
+        "category": "Money",
+        "count": 196
+      },
+      {
+        "type": "icon",
+        "category": "Bill payment",
+        "count": 17
+      },
+      {
+        "type": "icon",
+        "category": "Icons",
+        "count": 637
+      },
+      {
+        "type": "icon",
+        "category": "Interface essential",
+        "count": 361
+      },
+      {
+        "type": "icon",
+        "category": "Alert",
+        "count": 50
+      },
+      {
+        "type": "icon",
+        "category": "Document",
+        "count": 88
+      },
+      {
+        "type": "icon",
+        "category": "File type",
+        "count": 15
+      },
+      {
+        "type": "icon",
+        "category": "Logo",
+        "count": 386
+      },
+      {
+        "type": "illustration",
+        "category": "3D assets",
+        "count": 100
+      },
+      {
+        "type": "illustration",
+        "category": "Islan",
+        "count": 12
+      },
+      {
+        "type": "illustration",
+        "category": "Aslan",
+        "count": 2
+      },
+      {
+        "type": "illustration",
+        "category": "Aslan & Islan",
+        "count": 1
+      },
+      {
+        "type": "illustration",
+        "category": "Fully electric",
+        "count": 1
+      },
+      {
+        "type": "illustration",
+        "category": "Categories",
+        "count": 9
+      },
+      {
+        "type": "illustration",
+        "category": "Awareness",
+        "count": 22
+      },
+      {
+        "type": "illustration",
+        "category": "Allo Gold",
+        "count": 15
+      },
+      {
+        "type": "illustration",
+        "category": "Special case",
+        "count": 1
+      }
+    ],
+    "reference": "assets.json"
+  },
+  "unavailableComponents": [
+    {
+      "name": "AppBar",
+      "designName": "AppBar",
+      "status": "unavailable",
+      "figma": {
+        "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+        "master": "90:2777"
+      },
+      "note": "没有公开 当前基准实现/API/Storybook 条目；不自动用基础组件或相似组件替代。"
+    },
+    {
+      "name": "BottomNavbar",
+      "designName": "Bottom navbar",
+      "status": "unavailable",
+      "figma": {
+        "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+        "master": "5148:11649"
+      },
+      "note": "没有公开 当前基准实现/API/Storybook 条目；不自动用基础组件或相似组件替代。"
+    },
+    {
+      "name": "CardSelect",
+      "designName": "Card select",
+      "status": "unavailable",
+      "figma": {
+        "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+        "master": "7400:14993"
+      },
+      "note": "没有公开 当前基准实现/API/Storybook 条目；不自动用基础组件或相似组件替代。"
+    },
+    {
+      "name": "Coachmark",
+      "designName": "Coachmark",
+      "status": "unavailable",
+      "figma": {
+        "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+        "master": "489:35583"
+      },
+      "note": "没有公开 当前基准实现/API/Storybook 条目；不自动用基础组件或相似组件替代。"
+    },
+    {
+      "name": "Countdown",
+      "designName": "Countdown",
+      "status": "unavailable",
+      "figma": {
+        "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+        "master": "9671:5672"
+      },
+      "note": "没有公开 当前基准实现/API/Storybook 条目；不自动用基础组件或相似组件替代。"
+    },
+    {
+      "name": "FilterCategory",
+      "designName": "Filter category",
+      "status": "unavailable",
+      "figma": {
+        "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+        "master": "7074:14723"
+      },
+      "note": "没有公开 当前基准实现/API/Storybook 条目；不自动用基础组件或相似组件替代。"
+    },
+    {
+      "name": "RadioSelect",
+      "designName": "Radio select",
+      "status": "unavailable",
+      "figma": {
+        "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+        "master": "7232:2437"
+      },
+      "note": "没有公开 当前基准实现/API/Storybook 条目；不自动用基础组件或相似组件替代。"
+    },
+    {
+      "name": "Stories",
+      "designName": "Stories",
+      "status": "unavailable",
+      "figma": {
+        "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+        "master": "619:36866"
+      },
+      "note": "没有公开 当前基准实现/API/Storybook 条目；不自动用基础组件或相似组件替代。"
+    },
+    {
+      "name": "Timeline",
+      "designName": "Timeline",
+      "status": "unavailable",
+      "figma": {
+        "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+        "master": "1493:122"
+      },
+      "note": "没有公开 当前基准实现/API/Storybook 条目；不自动用基础组件或相似组件替代。"
+    }
+  ]
+}

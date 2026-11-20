@@ -1,0 +1,103 @@
+{
+  "name": "Tabs",
+  "origin": "figma",
+  "originLabel": "Figma 来源",
+  "purpose": "切换同层内容区，并关联对应面板。",
+  "constraints": [
+    "仅支持固定纯文字款；Tabs 不等于 Bottom navbar，默认首项选择不是业务推荐。"
+  ],
+  "marker": "<div data-pd=\"Tabs\" data-options='{}'></div>",
+  "options": [
+    {
+      "name": "value",
+      "types": [
+        "String",
+        "Number"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "null",
+        "value": null
+      },
+      "required": false
+    },
+    {
+      "name": "options",
+      "types": [
+        "Array"
+      ],
+      "default": {
+        "kind": "factory-literal",
+        "expression": "() => []",
+        "value": []
+      },
+      "required": false
+    },
+    {
+      "name": "label",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Tabs'",
+        "value": "Tabs"
+      },
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "vue-implicit",
+        "value": false,
+        "note": "未传 Boolean prop 时 当前基准实现 使用 false。"
+      },
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "pd:change",
+      "detail": "{ value, args }",
+      "description": "String / Number：选中的 option.value。"
+    },
+    {
+      "name": "pd:input",
+      "detail": "{ value, args }",
+      "description": "String / Number：选中的 option.value。"
+    }
+  ],
+  "contents": [
+    {
+      "name": "default",
+      "description": "当前选项面板；作用域 value 为当前选中值。",
+      "usage": "原生 DOM 节点或接收内容上下文的函数"
+    }
+  ],
+  "methods": [],
+  "knownDifferences": [],
+  "designTarget": {
+    "origin": "figma",
+    "figma": {
+      "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+      "page": "2:113",
+      "master": "1096:6638",
+      "reference": "1096:6651",
+      "snapshot": "tokens/sources/figma-library/Tabs.json"
+    },
+    "tokenReference": "tokens/component.json#tabs",
+    "gaps": "图标款、非固定/滚动款，共3个主变体"
+  },
+  "verification": {
+    "status": "requires-current-evidence",
+    "report": "verification/report.json",
+    "scope": "当前 HTML 构建的交互、尺寸和截图对照；不扩大为完整设计认证。"
+  },
+  "examples": [
+    "tabs--playground",
+    "tabs--examples"
+  ]
+}

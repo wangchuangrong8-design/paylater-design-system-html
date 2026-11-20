@@ -1,0 +1,91 @@
+{
+  "name": "Typography",
+  "origin": "original",
+  "originLabel": "自主创建",
+  "purpose": "按本地文字 Token 渲染文本。",
+  "constraints": [
+    "视觉 variant 不决定语义标签；as 按页面结构选择，金额及日期格式由目标项目处理。"
+  ],
+  "marker": "<div data-pd=\"Typography\" data-options='{}'></div>",
+  "options": [
+    {
+      "name": "as",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'span'",
+        "value": "span"
+      },
+      "required": false
+    },
+    {
+      "name": "variant",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'body-regular'",
+        "value": "body-regular"
+      },
+      "required": false
+    },
+    {
+      "name": "color",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'primary'",
+        "value": "primary"
+      },
+      "required": false,
+      "allowed": [
+        "primary",
+        "secondary",
+        "success",
+        "warning",
+        "danger"
+      ]
+    },
+    {
+      "name": "truncate",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "vue-implicit",
+        "value": false,
+        "note": "未传 Boolean prop 时 当前基准实现 使用 false。"
+      },
+      "required": false
+    }
+  ],
+  "events": [],
+  "contents": [
+    {
+      "name": "default",
+      "description": "默认内容；回退内容及条件按模板。",
+      "usage": "原生 DOM 节点或接收内容上下文的函数"
+    }
+  ],
+  "methods": [],
+  "knownDifferences": [],
+  "designTarget": {
+    "origin": "original",
+    "tokenReference": "tokens/component.json#typography",
+    "gaps": "自主组件按本地 Token 验收，不宣称有对应 Figma 完整变体。"
+  },
+  "verification": {
+    "status": "requires-current-evidence",
+    "report": "verification/report.json",
+    "scope": "当前 HTML 构建的交互、尺寸和截图对照；不扩大为完整设计认证。"
+  },
+  "examples": [
+    "typography--playground",
+    "typography--examples"
+  ]
+}

@@ -1,0 +1,303 @@
+{
+  "name": "Dialog",
+  "origin": "figma",
+  "originLabel": "Figma 来源",
+  "purpose": "中断当前任务，请用户确认或了解短消息。",
+  "constraints": [
+    "异步确认使用 closeOnAction=false；输入任务按 Figma 使用 BottomSheet，不把任意表单塞入短消息设计。"
+  ],
+  "marker": "<div data-pd=\"Dialog\" data-options='{}'></div>",
+  "options": [
+    {
+      "name": "visible",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "vue-implicit",
+        "value": false,
+        "note": "未传 Boolean prop 时 当前基准实现 使用 false。"
+      },
+      "required": false
+    },
+    {
+      "name": "title",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Dialog title'",
+        "value": "Dialog title"
+      },
+      "required": false
+    },
+    {
+      "name": "description",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'A message should be short, complete sentence'",
+        "value": "A message should be short, complete sentence"
+      },
+      "required": false
+    },
+    {
+      "name": "header",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'text'",
+        "value": "text"
+      },
+      "required": false,
+      "allowed": [
+        "text",
+        "none",
+        "illustration"
+      ]
+    },
+    {
+      "name": "actions",
+      "types": [
+        "Array"
+      ],
+      "default": {
+        "kind": "factory-literal",
+        "expression": "() => [{ key: 'primary', label: 'Label', variant: 'primary' }, { key: 'secondary', label: 'Label', variant: 'secondary' }, { key: 'cancel', label: 'Label', variant: 'ghost' }]",
+        "value": [
+          {
+            "key": "primary",
+            "label": "Label",
+            "variant": "primary"
+          },
+          {
+            "key": "secondary",
+            "label": "Label",
+            "variant": "secondary"
+          },
+          {
+            "key": "cancel",
+            "label": "Label",
+            "variant": "ghost"
+          }
+        ]
+      },
+      "required": false
+    },
+    {
+      "name": "illustration",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "vue-implicit",
+        "value": false,
+        "note": "未传 Boolean prop 时 当前基准实现 使用 false。"
+      },
+      "required": false
+    },
+    {
+      "name": "image",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "''",
+        "value": ""
+      },
+      "required": false
+    },
+    {
+      "name": "imageAlt",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "''",
+        "value": ""
+      },
+      "required": false
+    },
+    {
+      "name": "headerImage",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "''",
+        "value": ""
+      },
+      "required": false
+    },
+    {
+      "name": "accessibleLabel",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Dialog'",
+        "value": "Dialog"
+      },
+      "required": false
+    },
+    {
+      "name": "closeOnClickOutside",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "vue-implicit",
+        "value": false,
+        "note": "未传 Boolean prop 时 当前基准实现 使用 false。"
+      },
+      "required": false
+    },
+    {
+      "name": "closeOnEscape",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "true",
+        "value": true
+      },
+      "required": false
+    },
+    {
+      "name": "closeOnAction",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "true",
+        "value": true
+      },
+      "required": false
+    },
+    {
+      "name": "dismissHint",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "''",
+        "value": ""
+      },
+      "required": false
+    },
+    {
+      "name": "appendToBody",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "true",
+        "value": true
+      },
+      "required": false
+    },
+    {
+      "name": "inline",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "vue-implicit",
+        "value": false,
+        "note": "未传 Boolean prop 时 当前基准实现 使用 false。"
+      },
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "pd:action",
+      "detail": "{ value, args }",
+      "description": "(action, index)：当前操作对象与从 0 开始的索引。"
+    },
+    {
+      "name": "pd:close",
+      "detail": "{ value, args }; reason",
+      "description": "String：outside、escape 或 action.key 等关闭原因，按源码分支。"
+    },
+    {
+      "name": "pd:closed",
+      "detail": "{ value, args }",
+      "description": "无载荷；非 inline 弹层停用后通知。"
+    },
+    {
+      "name": "pd:input",
+      "detail": "{ value, args }",
+      "description": "false：请求父级关闭。"
+    },
+    {
+      "name": "pd:opened",
+      "detail": "{ value, args }",
+      "description": "无载荷；非 inline 弹层激活后通知。"
+    },
+    {
+      "name": "pd:update:visible",
+      "detail": "{ value, args }",
+      "description": "false：请求父级关闭，可配合 visible.sync。"
+    }
+  ],
+  "contents": [
+    {
+      "name": "actions",
+      "description": "自定义操作区。",
+      "usage": "原生 DOM 节点或接收内容上下文的函数"
+    },
+    {
+      "name": "default",
+      "description": "默认内容；回退内容及条件按模板。",
+      "usage": "原生 DOM 节点或接收内容上下文的函数"
+    },
+    {
+      "name": "header-illustration",
+      "description": "标题插图。",
+      "usage": "原生 DOM 节点或接收内容上下文的函数"
+    },
+    {
+      "name": "illustration",
+      "description": "正文插图。",
+      "usage": "原生 DOM 节点或接收内容上下文的函数"
+    }
+  ],
+  "methods": [],
+  "knownDifferences": [],
+  "designTarget": {
+    "origin": "figma",
+    "figma": {
+      "page": "247:2952",
+      "master": "246:5805",
+      "reference": "246:5805",
+      "snapshot": "tokens/sources/figma-components.json"
+    },
+    "tokenReference": "tokens/component.json#dialog",
+    "gaps": "按已公开API验收；不代表所有任意内容/尺寸组合均完成像素比对"
+  },
+  "verification": {
+    "status": "requires-current-evidence",
+    "report": "verification/report.json",
+    "scope": "当前 HTML 构建的交互、尺寸和截图对照；不扩大为完整设计认证。"
+  },
+  "examples": [
+    "dialog--playground",
+    "dialog--variants",
+    "dialog--action-counts",
+    "dialog--long-content"
+  ]
+}

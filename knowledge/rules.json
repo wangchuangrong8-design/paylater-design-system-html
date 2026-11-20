@@ -1,0 +1,760 @@
+{
+  "version": "1.0.0",
+  "rules": [
+    {
+      "id": "workflow.local-assets-first",
+      "scope": [
+        "generic"
+      ],
+      "components": [
+        "*"
+      ],
+      "priority": "high",
+      "status": "approved",
+      "domain": "ui",
+      "when": "根据需求或设计简报进行方案、原型、UI 实现或评审。",
+      "decision": [
+        "先明确用途与操作范围，读取目标仓库指南（若有），再查询相关本地规则、组件 API 与差异。",
+        "本地资产可用于前期方案、原型和不同工程；生产 SDK 是消费示例。",
+        "日常开发不请求 Figma 节点；当前本地证据不足时列明缺口。"
+      ],
+      "rationale": "本地资产为方案、原型与工程提供可复查的设计依据。",
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:multi-purpose-engineering-guide-2026-11-19",
+          "note": "用户明确要求补齐工程指南，并支持原型方案等多种用途，不限定于 SDK。"
+        },
+        {
+          "type": "user",
+          "reference": "conversation:three-layer-plan",
+          "note": "用户确认的本次三层建设计划；仅确认 UI 资料治理，不批准新的金融政策。"
+        },
+        {
+          "type": "project-rule",
+          "reference": "AGENTS.md",
+          "note": "项目内真源、单位与业务边界。"
+        }
+      ],
+      "exceptions": [
+        "用户明确要求重新校准设计源时，另行开展校准。"
+      ],
+      "goodExamples": [
+        "还款方案任务只加载选择规则及 Button、Radio 的契约与缺口。"
+      ],
+      "badExamples": [
+        "每次实现都重新访问全部 Figma 节点。"
+      ]
+    },
+    {
+      "id": "workflow.preserve-task-mode",
+      "scope": [
+        "generic"
+      ],
+      "components": [
+        "*"
+      ],
+      "priority": "high",
+      "status": "approved",
+      "domain": "ui",
+      "when": "任务为检查、评审或实现。",
+      "decision": [
+        "inspect 和 review 只输出发现，不因读取 Skill 自动修改代码。",
+        "implement 的修改范围仍由当前用户任务与目标仓库规则限定。"
+      ],
+      "rationale": "资料读取不能扩大授权范围。",
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:three-layer-plan",
+          "note": "用户确认的本次三层建设计划；仅确认 UI 资料治理，不批准新的金融政策。"
+        }
+      ],
+      "exceptions": [],
+      "goodExamples": [
+        "用户要求评审时输出具体差异和依据。"
+      ],
+      "badExamples": [
+        "评审过程中自动修复组件并改变生产逻辑。"
+      ]
+    },
+    {
+      "id": "component.choose-by-contract",
+      "scope": [
+        "generic"
+      ],
+      "components": [
+        "*"
+      ],
+      "priority": "high",
+      "status": "approved",
+      "domain": "ui",
+      "when": "选择组件或准备组合组件。",
+      "decision": [
+        "先核实已实现的 API、支持范围与已知差异。",
+        "缺失组件、未实现变体、原始组件及自主扩展分别说明，不静默替换或宣称完整对齐。"
+      ],
+      "rationale": "同名概念与 API 可配置性都不能证明设计覆盖。",
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:three-layer-plan",
+          "note": "用户确认的本次三层建设计划；仅确认 UI 资料治理，不批准新的金融政策。"
+        },
+        {
+          "type": "project-rule",
+          "reference": "AGENTS.md",
+          "note": "项目内真源、单位与业务边界。"
+        }
+      ],
+      "exceptions": [],
+      "goodExamples": [
+        "需求需要 Card select 时报告缺失，再按当前任务讨论实现。"
+      ],
+      "badExamples": [
+        "用 Card + Radio 拼出页面后直接标记 Figma Card select 已完成。"
+      ]
+    },
+    {
+      "id": "design.foundation-and-master-precedence",
+      "scope": [
+        "generic"
+      ],
+      "components": [
+        "*"
+      ],
+      "priority": "high",
+      "status": "approved",
+      "domain": "ui",
+      "when": "设计资料之间出现冲突。",
+      "decision": [
+        "基础规范表与样例冲突时采用明确表格；组件复制注释与 Master 冲突时采用 Master。",
+        "记录冲突和本地证据；真实数据行为不得为模仿错误样例而伪造。"
+      ],
+      "rationale": "保留目标设计及源稿冲突的可追溯性。",
+      "sources": [
+        {
+          "type": "project-rule",
+          "reference": "AGENTS.md",
+          "note": "项目内真源、单位与业务边界。"
+        }
+      ],
+      "exceptions": [],
+      "goodExamples": [
+        "Input 的 Blank/Disabled 样例保留冲突，不给真实空值填入 Value。"
+      ],
+      "badExamples": [
+        "照抄样例 Value，导致空表单被当作已填写。"
+      ]
+    },
+    {
+      "id": "design.color-use-local-token",
+      "scope": [
+        "generic"
+      ],
+      "components": [
+        "*"
+      ],
+      "priority": "high",
+      "status": "approved",
+      "domain": "ui",
+      "when": "新增或修改颜色与描边。",
+      "decision": [
+        "使用本地 primitive、semantic 或 component Token。",
+        "组件 Master 的颜色差异在组件 Token 表达，不擅自改动已校准的基础色表。"
+      ],
+      "rationale": "基础色表与具体组件样式各有明确依据。",
+      "sources": [
+        {
+          "type": "project-rule",
+          "reference": "AGENTS.md",
+          "note": "项目内真源、单位与业务边界。"
+        },
+        {
+          "type": "figma",
+          "reference": "tokens/sources/figma-foundations.json",
+          "note": "已冻结的 Lithium Kit 明确规范表；审计见 docs/figma-foundations-audit.md。"
+        }
+      ],
+      "exceptions": [],
+      "goodExamples": [
+        "组件阴影颜色与 Master 不同，登记组件差异。"
+      ],
+      "badExamples": [
+        "新增近似黄色，或修改全局基础色来掩盖单组件差异。"
+      ]
+    },
+    {
+      "id": "design.typography-use-local-scale",
+      "scope": [
+        "generic"
+      ],
+      "components": [
+        "*"
+      ],
+      "priority": "high",
+      "status": "approved",
+      "domain": "ui",
+      "when": "设置字体、字号、行高或字重。",
+      "decision": [
+        "使用本地 Inter 字体资产与已登记文字样式。",
+        "组件 Master 已确定的文字规格优先在组件层表达；长文案仍需在实际宽度验证。"
+      ],
+      "rationale": "同字号不代表行高、字重和最终布局一致。",
+      "sources": [
+        {
+          "type": "project-rule",
+          "reference": "AGENTS.md",
+          "note": "项目内真源、单位与业务边界。"
+        },
+        {
+          "type": "figma",
+          "reference": "tokens/sources/figma-foundations.json",
+          "note": "已冻结的 Lithium Kit 明确规范表；审计见 docs/figma-foundations-audit.md。"
+        }
+      ],
+      "exceptions": [],
+      "goodExamples": [
+        "按 Master 对照字号、行高和字重，记录 Accordion 已知字重差异。"
+      ],
+      "badExamples": [
+        "只比较字号就宣布文字规范全部一致。"
+      ]
+    },
+    {
+      "id": "design.spacing-radius-shadow-use-token",
+      "scope": [
+        "generic"
+      ],
+      "components": [
+        "*"
+      ],
+      "priority": "high",
+      "status": "approved",
+      "domain": "ui",
+      "when": "修改间距、圆角或阴影。",
+      "decision": [
+        "引用本地 Token；没有准确值时先核对本地设计证据，不凭观感添加近似值。",
+        "阴影同时保留颜色、透明度、偏移、模糊、扩展及效果层含义。"
+      ],
+      "rationale": "组件效果不能靠相似的通用阴影替代。",
+      "sources": [
+        {
+          "type": "project-rule",
+          "reference": "AGENTS.md",
+          "note": "项目内真源、单位与业务边界。"
+        },
+        {
+          "type": "figma",
+          "reference": "tokens/sources/figma-foundations.json",
+          "note": "已冻结的 Lithium Kit 明确规范表；审计见 docs/figma-foundations-audit.md。"
+        }
+      ],
+      "exceptions": [],
+      "goodExamples": [
+        "Toast 对照 S08 的描边和阴影证据，不用基础校验通过代替组件验收。"
+      ],
+      "badExamples": [
+        "所有浮层统一套 shadow.m，并标记全部 Figma 对齐。"
+      ]
+    },
+    {
+      "id": "design.units-follow-target-repository",
+      "scope": [
+        "generic"
+      ],
+      "components": [
+        "*"
+      ],
+      "priority": "high",
+      "status": "approved",
+      "domain": "ui",
+      "when": "将组件库设计资料或源码用于其他消费载体。",
+      "decision": [
+        "组件库使用 Figma 1x CSS px。",
+        "按目标项目实际单位与构建处理接入；SDK 的 750px 转换是具体示例，不适用于所有原型或工程。",
+        "不通过修改共享 Token 适配单一宿主；按工程指南验证转换边界后再导入 CSS 或替换组件。"
+      ],
+      "rationale": "设计资产可跨用途消费，工程接入要验证具体目标的单位与构建行为。",
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:multi-purpose-engineering-guide-2026-11-19",
+          "note": "用户明确要求项目用途不限于 SDK，包括前期原型方案设计。"
+        },
+        {
+          "type": "project-rule",
+          "reference": "AGENTS.md",
+          "note": "项目内真源、单位与业务边界。"
+        },
+        {
+          "type": "user",
+          "reference": "conversation:three-layer-plan",
+          "note": "用户确认的本次三层建设计划；仅确认 UI 资料治理，不批准新的金融政策。"
+        }
+      ],
+      "exceptions": [],
+      "goodExamples": [
+        "先在目标仓库核对转换配置和实际渲染尺寸。"
+      ],
+      "badExamples": [
+        "把 1x 组件样式直接送入 750px 转换，导致显示缩小。"
+      ]
+    },
+    {
+      "id": "component.provenance-remains-explicit",
+      "scope": [
+        "generic"
+      ],
+      "components": [
+        "*"
+      ],
+      "priority": "high",
+      "status": "approved",
+      "domain": "ui",
+      "when": "新增能力、更新说明或报告验证结果。",
+      "decision": [
+        "保留 figma、original、mixed 来源及自主范围。",
+        "验证结论只覆盖实际检查过的属性、状态和内容，不将构建通过写成视觉全部通过。"
+      ],
+      "rationale": "来源与验收结果需要独立表达。",
+      "sources": [
+        {
+          "type": "project-rule",
+          "reference": "AGENTS.md",
+          "note": "项目内真源、单位与业务边界。"
+        },
+        {
+          "type": "user",
+          "reference": "conversation:three-layer-plan",
+          "note": "用户确认的本次三层建设计划；仅确认 UI 资料治理，不批准新的金融政策。"
+        }
+      ],
+      "exceptions": [],
+      "goodExamples": [
+        "Select 字段与自主下拉面板分别说明来源。"
+      ],
+      "badExamples": [
+        "Figma 来源组件只通过尺寸检查就被标记全部一致。"
+      ]
+    },
+    {
+      "id": "form.controlled-events-remain-ui",
+      "scope": [
+        "form",
+        "selection"
+      ],
+      "components": [
+        "Input",
+        "Select",
+        "Radio",
+        "Checkbox",
+        "Switch",
+        "DatePicker",
+        "TimePicker",
+        "Slider",
+        "Form",
+        "FormItem"
+      ],
+      "priority": "high",
+      "status": "approved",
+      "domain": "ui",
+      "when": "组合字段或处理确认事件。",
+      "decision": [
+        "按实际 prop/event 契约更新受控值；区分编辑、选择、确认与业务提交。",
+        "组件事件不负责金额计算、资格判定、支付或接口请求。"
+      ],
+      "rationale": "可复用组件只提供 UI 与交互能力。",
+      "sources": [
+        {
+          "type": "project-rule",
+          "reference": "AGENTS.md",
+          "note": "项目内真源、单位与业务边界。"
+        }
+      ],
+      "exceptions": [],
+      "goodExamples": [
+        "DatePicker select 更新待选反馈，confirm 后由页面按需求处理。"
+      ],
+      "badExamples": [
+        "把 input 事件自动解释为发起还款请求。"
+      ]
+    },
+    {
+      "id": "feedback.dialog-vs-input-task",
+      "scope": [
+        "form",
+        "feedback"
+      ],
+      "components": [
+        "Dialog",
+        "BottomSheet"
+      ],
+      "priority": "high",
+      "status": "approved",
+      "domain": "ui",
+      "when": "选择任务承载容器。",
+      "decision": [
+        "Dialog 用于短消息与确认；需要输入的任务按已记录的 Figma 说明使用 BottomSheet。",
+        "异步确认按现有 closeOnAction 契约保留父级控制。"
+      ],
+      "rationale": "沿用当前组件设计用途与受控交互。",
+      "sources": [
+        {
+          "type": "figma",
+          "reference": "docs/components/dialog.md",
+          "note": "本地 Dialog Master 用途说明；源快照 tokens/sources/figma-components.json。"
+        }
+      ],
+      "exceptions": [],
+      "goodExamples": [
+        "关闭由业务成功结果控制，而非点击即关闭。"
+      ],
+      "badExamples": [
+        "把复杂输入任务放入短消息对话框并默认立即关闭。"
+      ]
+    },
+    {
+      "id": "copy.use-confirmed-content",
+      "scope": [
+        "generic"
+      ],
+      "components": [
+        "*"
+      ],
+      "priority": "high",
+      "status": "approved",
+      "domain": "ui",
+      "when": "填充标题、操作、金额、日期或状态文案。",
+      "decision": [
+        "采用当前 PRD 与目标项目已确认文案及格式化工具。",
+        "缺失的业务数值、承诺、资格或优惠排序标为待确认；示例与占位数据不充当真实业务依据。"
+      ],
+      "rationale": "本地样例帮助展示组件，不提供产品政策。",
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:three-layer-plan",
+          "note": "用户确认的本次三层建设计划；仅确认 UI 资料治理，不批准新的金融政策。"
+        },
+        {
+          "type": "project-rule",
+          "reference": "AGENTS.md",
+          "note": "项目内真源、单位与业务边界。"
+        }
+      ],
+      "exceptions": [],
+      "goodExamples": [
+        "使用目标项目金额格式化工具，未给定费率时列为待确认。"
+      ],
+      "badExamples": [
+        "从故事示例中的金额和优惠推导上线文案。"
+      ]
+    },
+    {
+      "id": "paylater.claim-association-follows-existing-rules",
+      "scope": [
+        "repayment-plan",
+        "repayment-summary",
+        "account-status"
+      ],
+      "components": [
+        "*"
+      ],
+      "priority": "high",
+      "status": "approved",
+      "domain": "ui",
+      "when": "调整已存在的产品声明与操作布局。",
+      "decision": [
+        "沿用目标项目已确认的声明适用对象，保证说明与对应操作可识别地关联。",
+        "不把当前生产指南或业务草稿扩展为新的资格、费率与风险政策。"
+      ],
+      "rationale": "本次只治理既有 UI 关联与来源，不制定金融政策。",
+      "sources": [
+        {
+          "type": "project-rule",
+          "reference": "docs/references/sdk-claim-governance.md",
+          "note": "Product Claims & Disclosures 中已记录声明与操作的对应关系；仅引用项目规则，不作新的法律结论。"
+        },
+        {
+          "type": "user",
+          "reference": "conversation:three-layer-plan",
+          "note": "用户确认的本次三层建设计划；仅确认 UI 资料治理，不批准新的金融政策。"
+        }
+      ],
+      "exceptions": [],
+      "goodExamples": [
+        "移动一个现有 CTA 时复查其声明仍指向该 CTA。"
+      ],
+      "badExamples": [
+        "把仅适用于一个操作的优惠说明放成全页通用声明。"
+      ]
+    },
+    {
+      "id": "layout.responsive-readable",
+      "scope": [
+        "generic"
+      ],
+      "components": [
+        "*"
+      ],
+      "priority": "high",
+      "status": "approved",
+      "domain": "ui",
+      "when": "组织桌面端或移动端页面。",
+      "decision": [
+        "沿用目标项目视觉语言；按实际文案检查溢出、遮挡和重叠。",
+        "布局调整围绕当前任务信息，保留可用的操作和明确状态。"
+      ],
+      "rationale": "当前用户提供的前端要求强调可用性、信息清晰与多视口验证。",
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:AGENTS-instructions",
+          "note": "用户提供的前端要求。"
+        }
+      ],
+      "exceptions": [],
+      "goodExamples": [
+        "在 360/375 宽度检查长标题、金额和按钮。"
+      ],
+      "badExamples": [
+        "用固定高度裁掉长金额或错误说明。"
+      ]
+    },
+    {
+      "id": "component.state.must-be-explicit",
+      "scope": [
+        "generic"
+      ],
+      "components": [
+        "*"
+      ],
+      "priority": "high",
+      "status": "draft",
+      "domain": "ui",
+      "when": "组件存在 selected、disabled、loading 或 error 状态",
+      "decision": [
+        "每个状态必须在 stories 中单独展示",
+        "不只依靠颜色区分状态"
+      ],
+      "rationale": "Agent 和设计师需要能直接看到状态差异，生产页面也需要支持可访问的状态表达。",
+      "sources": [
+        {
+          "type": "observation",
+          "reference": "agent/design-intent.v0.yaml",
+          "note": "原始 v0 草稿保留了 prod-sdk-internal/src/components/custom-radio-button/CustomRadioButton.source 来源登记；仍为待确认草稿，不视为跨项目实现事实。"
+        }
+      ],
+      "exceptions": [
+        "仍为原始草稿；相似的有效规则不会自动批准本条全部主张。"
+      ],
+      "goodExamples": [
+        "明确草稿来源和需要确认的决策。"
+      ],
+      "badExamples": [
+        "将草稿作为当前任务已批准的强制规则。"
+      ]
+    },
+    {
+      "id": "component.radio.selection-is-neutral",
+      "scope": [
+        "selection",
+        "repayment-plan"
+      ],
+      "components": [
+        "Radio"
+      ],
+      "priority": "high",
+      "status": "draft",
+      "domain": "ui",
+      "when": "用户在多个还款方案之间做选择",
+      "decision": [
+        "未经业务确认，不通过尺寸、位置或视觉重量暗示某个方案更优",
+        "先完成选择，再由页面主按钮确认"
+      ],
+      "rationale": "方案选择是用户决策，不应把技术默认值误导成业务推荐。",
+      "sources": [
+        {
+          "type": "observation",
+          "reference": "docs/observations/production-ui.json",
+          "note": "已有工作区静态观察保留 NewLoan.source 的路径、片段和指纹；不代表线上行为或新旧组件映射。"
+        }
+      ],
+      "exceptions": [
+        "仍为原始草稿；相似的有效规则不会自动批准本条全部主张。"
+      ],
+      "goodExamples": [
+        "先记录方案主次待业务确认。"
+      ],
+      "badExamples": [
+        "因现有源码如此就禁止所有方案推荐。"
+      ]
+    },
+    {
+      "id": "color.brand-and-stroke-follow-token",
+      "scope": [
+        "generic"
+      ],
+      "components": [
+        "*"
+      ],
+      "priority": "medium",
+      "status": "draft",
+      "domain": "ui",
+      "when": "组件使用品牌强调色或默认描边",
+      "decision": [
+        "品牌强调色优先对照 Figma $yellow-400",
+        "默认描边优先对照 Figma $gray-100",
+        "不在新组件中新增未登记的近似颜色"
+      ],
+      "rationale": "当前生产 CustomRadioButton 的",
+      "sources": [
+        {
+          "type": "figma",
+          "reference": "tokens/sources/figma-foundations.json",
+          "note": "Figma Lithium Kit 1.0 node 2:75"
+        }
+      ],
+      "exceptions": [
+        "仍为原始草稿；相似的有效规则不会自动批准本条全部主张。"
+      ],
+      "goodExamples": [
+        "明确草稿来源和需要确认的决策。"
+      ],
+      "badExamples": [
+        "将草稿作为当前任务已批准的强制规则。"
+      ]
+    },
+    {
+      "id": "paylater.risk-information-keeps-priority",
+      "scope": [
+        "repayment-summary"
+      ],
+      "components": [
+        "*"
+      ],
+      "priority": "high",
+      "status": "draft",
+      "domain": "financial-policy",
+      "when": "页面同时展示优惠、逾期风险和还款操作",
+      "decision": [
+        "逾期金额、剩余本金、费用和次日风险必须可被独立识别",
+        "优惠信息不能遮蔽必要的费用和风险披露"
+      ],
+      "rationale": "还款页面的主要任务是让用户理解应付金额和后果，而不是只突出优惠。",
+      "sources": [
+        {
+          "type": "business-draft",
+          "reference": "discussion:unconfirmed-risk-priority",
+          "note": "internal product discussion; needs business review"
+        }
+      ],
+      "exceptions": [
+        "仍为原始草稿；相似的有效规则不会自动批准本条全部主张。"
+      ],
+      "goodExamples": [
+        "明确草稿来源和需要确认的决策。"
+      ],
+      "badExamples": [
+        "将草稿作为当前任务已批准的强制规则。"
+      ]
+    },
+    {
+      "id": "layout.hierarchy-candidate",
+      "scope": [
+        "generic"
+      ],
+      "components": [
+        "*"
+      ],
+      "priority": "high",
+      "status": "draft",
+      "domain": "ui",
+      "when": "新增或重排页面主要信息。",
+      "decision": [
+        "候选建议：按当前任务组织标题、关键摘要、必要说明和操作；同页存在多个主要任务时先确认优先级。"
+      ],
+      "rationale": "通用组织建议尚无覆盖所有页面的已确认项目规范。",
+      "sources": [
+        {
+          "type": "inference",
+          "reference": "agent/design-intent.yaml",
+          "note": "基于当前资产组织方式提出的候选建议，不代表已批准布局模板。"
+        }
+      ],
+      "exceptions": [],
+      "goodExamples": [
+        "先在方案中解释任务优先级，再请需求方确认。"
+      ],
+      "badExamples": [
+        "把一个固定区块顺序强加到所有页面。"
+      ]
+    },
+    {
+      "id": "paylater.repayment-organization-candidate",
+      "scope": [
+        "repayment-plan",
+        "repayment-summary"
+      ],
+      "components": [
+        "*"
+      ],
+      "priority": "high",
+      "status": "draft",
+      "domain": "ui",
+      "when": "组织还款方案选择或摘要页面。",
+      "decision": [
+        "候选建议：分清账户摘要、待选方案、方案明细、确认操作和请求结果。",
+        "费用、日期、风险说明及推荐顺序以当前已确认 PRD 为准。"
+      ],
+      "rationale": "现有还款源码可提供界面参照，但不能证明产品规则已确认。",
+      "sources": [
+        {
+          "type": "observation",
+          "reference": "docs/observations/production-ui.json",
+          "note": "只观察页面组织，不继承费率、资格、默认推荐或业务时序。"
+        }
+      ],
+      "exceptions": [],
+      "goodExamples": [
+        "查询相关组件，同时把方案优先级列为待确认。"
+      ],
+      "badExamples": [
+        "根据旧页面默认选项决定新 PRD 的推荐方案。"
+      ]
+    },
+    {
+      "id": "paylater.account-state-candidate",
+      "scope": [
+        "account-status"
+      ],
+      "components": [
+        "*"
+      ],
+      "priority": "high",
+      "status": "draft",
+      "domain": "ui",
+      "when": "账户状态会影响页面内容或操作。",
+      "decision": [
+        "候选建议：显式区分加载、失败、无数据和已返回账户状态。",
+        "状态含义、资格门槛、可用操作及跳转由当前 PRD 与目标项目确认。"
+      ],
+      "rationale": "UI 状态与金融资格需要分开记录。",
+      "sources": [
+        {
+          "type": "inference",
+          "reference": "agent/design-intent.yaml",
+          "note": "账户展示候选建议，无新资格政策。"
+        }
+      ],
+      "exceptions": [],
+      "goodExamples": [
+        "缺少资格说明时保留开放问题。"
+      ],
+      "badExamples": [
+        "用加载失败状态代替不符合资格。"
+      ]
+    }
+  ]
+}

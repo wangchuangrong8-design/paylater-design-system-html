@@ -1,0 +1,74 @@
+{
+  "name": "Badge",
+  "origin": "figma",
+  "originLabel": "Figma 来源",
+  "purpose": "用短标签标记局部状态。",
+  "constraints": [
+    "状态含义需配合文字；不将标签颜色作为资格或风险判断结果。"
+  ],
+  "marker": "<div data-pd=\"Badge\" data-options='{}'></div>",
+  "options": [
+    {
+      "name": "type",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'info'",
+        "value": "info"
+      },
+      "required": false,
+      "allowed": [
+        "info",
+        "neutral",
+        "warning",
+        "success",
+        "danger"
+      ]
+    },
+    {
+      "name": "small",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "vue-implicit",
+        "value": false,
+        "note": "未传 Boolean prop 时 当前基准实现 使用 false。"
+      },
+      "required": false
+    }
+  ],
+  "events": [],
+  "contents": [
+    {
+      "name": "default",
+      "description": "默认内容；回退内容及条件按模板。",
+      "usage": "原生 DOM 节点或接收内容上下文的函数"
+    }
+  ],
+  "methods": [],
+  "knownDifferences": [],
+  "designTarget": {
+    "origin": "figma",
+    "figma": {
+      "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+      "page": "2:88",
+      "master": "153:5828",
+      "reference": "153:5829",
+      "snapshot": "tokens/sources/figma-library/Badge.json"
+    },
+    "tokenReference": "tokens/component.json#badge",
+    "gaps": "Corner / Status / Small Status，共14个主变体"
+  },
+  "verification": {
+    "status": "requires-current-evidence",
+    "report": "verification/report.json",
+    "scope": "当前 HTML 构建的交互、尺寸和截图对照；不扩大为完整设计认证。"
+  },
+  "examples": [
+    "badge--playground",
+    "badge--examples"
+  ]
+}

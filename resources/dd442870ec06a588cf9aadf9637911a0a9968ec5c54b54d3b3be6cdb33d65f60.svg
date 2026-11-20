@@ -1,0 +1,9 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="86" height="16" viewBox="0 0 86 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="dots">
+<circle id="dot" cx="15" cy="8" r="3" fill="#FFB60A"/>
+<circle id="dot_2" cx="29" cy="8" r="3" fill="#D0D6DD"/>
+<circle id="dot_3" cx="43" cy="8" r="3" fill="#D0D6DD"/>
+<circle id="dot_4" cx="57" cy="8" r="3" fill="#D0D6DD"/>
+<circle id="dot_5" cx="71" cy="8" r="3" fill="#D0D6DD"/>
+</g>
+</svg>

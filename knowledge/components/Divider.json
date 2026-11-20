@@ -1,0 +1,52 @@
+{
+  "name": "Divider",
+  "origin": "original",
+  "originLabel": "自主创建",
+  "purpose": "分隔相关内容组或标注区段。",
+  "constraints": [
+    "分隔线不能单独承担标题、错误或状态语义。"
+  ],
+  "marker": "<div data-pd=\"Divider\" data-options='{}'></div>",
+  "options": [
+    {
+      "name": "orientation",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'horizontal'",
+        "value": "horizontal"
+      },
+      "required": false,
+      "allowed": [
+        "horizontal",
+        "vertical"
+      ]
+    }
+  ],
+  "events": [],
+  "contents": [
+    {
+      "name": "default",
+      "description": "默认内容；回退内容及条件按模板。",
+      "usage": "原生 DOM 节点或接收内容上下文的函数"
+    }
+  ],
+  "methods": [],
+  "knownDifferences": [],
+  "designTarget": {
+    "origin": "original",
+    "tokenReference": "tokens/component.json#divider",
+    "gaps": "自主组件按本地 Token 验收，不宣称有对应 Figma 完整变体。"
+  },
+  "verification": {
+    "status": "requires-current-evidence",
+    "report": "verification/report.json",
+    "scope": "当前 HTML 构建的交互、尺寸和截图对照；不扩大为完整设计认证。"
+  },
+  "examples": [
+    "divider--playground",
+    "divider--examples"
+  ]
+}

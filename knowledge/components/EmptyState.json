@@ -1,0 +1,126 @@
+{
+  "name": "EmptyState",
+  "origin": "figma",
+  "originLabel": "Figma 来源",
+  "purpose": "说明当前内容为空并提供可选操作。",
+  "constraints": [
+    "Illustration=false 仅隐藏图片，不会生成 Figma Icon 款；空态原因与操作由页面提供。"
+  ],
+  "marker": "<div data-pd=\"EmptyState\" data-options='{}'></div>",
+  "options": [
+    {
+      "name": "title",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'No data yet'",
+        "value": "No data yet"
+      },
+      "required": false
+    },
+    {
+      "name": "description",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Your data will display here'",
+        "value": "Your data will display here"
+      },
+      "required": false
+    },
+    {
+      "name": "illustration",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "true",
+        "value": true
+      },
+      "required": false
+    },
+    {
+      "name": "image",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "''",
+        "value": ""
+      },
+      "required": false
+    },
+    {
+      "name": "imageAlt",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "''",
+        "value": ""
+      },
+      "required": false
+    },
+    {
+      "name": "actionLabel",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "''",
+        "value": ""
+      },
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "pd:action",
+      "detail": "{ value, args }",
+      "description": "无载荷；默认操作按钮被点击。"
+    }
+  ],
+  "contents": [
+    {
+      "name": "action",
+      "description": "自定义空态操作。",
+      "usage": "原生 DOM 节点或接收内容上下文的函数"
+    },
+    {
+      "name": "default",
+      "description": "默认内容；回退内容及条件按模板。",
+      "usage": "原生 DOM 节点或接收内容上下文的函数"
+    }
+  ],
+  "methods": [],
+  "knownDifferences": [],
+  "designTarget": {
+    "origin": "figma",
+    "figma": {
+      "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+      "page": "2:87",
+      "master": "666:37836",
+      "reference": "666:37837",
+      "snapshot": "tokens/sources/figma-library/EmptyState.json"
+    },
+    "tokenReference": "tokens/component.json#empty-state",
+    "gaps": "Icon款；关闭illustration只隐藏图片，不会生成该款图标结构"
+  },
+  "verification": {
+    "status": "requires-current-evidence",
+    "report": "verification/report.json",
+    "scope": "当前 HTML 构建的交互、尺寸和截图对照；不扩大为完整设计认证。"
+  },
+  "examples": [
+    "emptystate--playground",
+    "emptystate--examples"
+  ]
+}

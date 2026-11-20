@@ -1,0 +1,96 @@
+{
+  "name": "Skeleton",
+  "origin": "original",
+  "originLabel": "自主创建",
+  "purpose": "内容加载期间展示自主行或头像占位。",
+  "constraints": [
+    "本地方案未采用已知 Figma Master 14712:31478；不能标为已对齐。"
+  ],
+  "marker": "<div data-pd=\"Skeleton\" data-options='{}'></div>",
+  "options": [
+    {
+      "name": "loading",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "true",
+        "value": true
+      },
+      "required": false
+    },
+    {
+      "name": "rows",
+      "types": [
+        "Number"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "3",
+        "value": 3
+      },
+      "required": false
+    },
+    {
+      "name": "avatar",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "vue-implicit",
+        "value": false,
+        "note": "未传 Boolean prop 时 当前基准实现 使用 false。"
+      },
+      "required": false
+    },
+    {
+      "name": "animated",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "vue-implicit",
+        "value": false,
+        "note": "未传 Boolean prop 时 当前基准实现 使用 false。"
+      },
+      "required": false
+    },
+    {
+      "name": "label",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Loading content'",
+        "value": "Loading content"
+      },
+      "required": false
+    }
+  ],
+  "events": [],
+  "contents": [
+    {
+      "name": "default",
+      "description": "loading=false 时显示的实际内容。",
+      "usage": "原生 DOM 节点或接收内容上下文的函数"
+    }
+  ],
+  "methods": [],
+  "knownDifferences": [],
+  "designTarget": {
+    "origin": "original",
+    "tokenReference": "tokens/component.json#skeleton",
+    "gaps": "已定位 Master 14712:31478；当前行/头像与透明度动画为自主方案，尚未采用该设计。"
+  },
+  "verification": {
+    "status": "requires-current-evidence",
+    "report": "verification/report.json",
+    "scope": "当前 HTML 构建的交互、尺寸和截图对照；不扩大为完整设计认证。"
+  },
+  "examples": [
+    "skeleton--playground",
+    "skeleton--examples"
+  ]
+}

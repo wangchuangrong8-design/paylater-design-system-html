@@ -1,0 +1,108 @@
+{
+  "name": "SegmentedControl",
+  "origin": "figma",
+  "originLabel": "Figma 来源",
+  "purpose": "在两个或三个同层选项之间切换。",
+  "constraints": [
+    "选项值及业务意义由调用方提供；不能从默认选中值推导业务推荐。"
+  ],
+  "marker": "<div data-pd=\"SegmentedControl\" data-options='{}'></div>",
+  "options": [
+    {
+      "name": "value",
+      "types": [
+        "String",
+        "Number"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "null",
+        "value": null
+      },
+      "required": false
+    },
+    {
+      "name": "options",
+      "types": [
+        "Array"
+      ],
+      "default": {
+        "kind": "factory-literal",
+        "expression": "() => []",
+        "value": []
+      },
+      "required": false
+    },
+    {
+      "name": "label",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Choose an option'",
+        "value": "Choose an option"
+      },
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "vue-implicit",
+        "value": false,
+        "note": "未传 Boolean prop 时 当前基准实现 使用 false。"
+      },
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "pd:change",
+      "detail": "{ value, args }",
+      "description": "String / Number：选中的 option.value。"
+    },
+    {
+      "name": "pd:input",
+      "detail": "{ value, args }",
+      "description": "String / Number：选中的 option.value。"
+    }
+  ],
+  "contents": [],
+  "methods": [],
+  "knownDifferences": [
+    {
+      "id": "S11",
+      "component": "SegmentedControl",
+      "description": "Selected shadow blur/spread 3/0 instead of 6/-2",
+      "nodes": [
+        "1323:3271"
+      ],
+      "status": "resolved",
+      "verification": "docs/verification/assets-completion/design-regression.json"
+    }
+  ],
+  "designTarget": {
+    "origin": "figma",
+    "figma": {
+      "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+      "page": "2:108",
+      "master": "1323:3268",
+      "reference": "1323:3269",
+      "snapshot": "tokens/sources/figma-library/SegmentedControl.json"
+    },
+    "tokenReference": "tokens/component.json#segmented-control",
+    "gaps": "自定义内容及非已校准组合仍需按实际数据验收。"
+  },
+  "verification": {
+    "status": "requires-current-evidence",
+    "report": "verification/report.json",
+    "scope": "当前 HTML 构建的交互、尺寸和截图对照；不扩大为完整设计认证。"
+  },
+  "examples": [
+    "segmentedcontrol--playground",
+    "segmentedcontrol--examples"
+  ]
+}

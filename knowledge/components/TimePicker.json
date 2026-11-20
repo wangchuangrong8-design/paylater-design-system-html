@@ -1,0 +1,194 @@
+{
+  "name": "TimePicker",
+  "origin": "figma",
+  "originLabel": "Figma 来源",
+  "purpose": "通过时分与可选 AM/PM 编辑并确认时间。",
+  "constraints": [
+    "input/change 在确认时发出；不支持 Duration，选中文字仍有 S09 差异。"
+  ],
+  "marker": "<div data-pd=\"TimePicker\" data-options='{}'></div>",
+  "options": [
+    {
+      "name": "value",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "''",
+        "value": ""
+      },
+      "required": false
+    },
+    {
+      "name": "format12",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "true",
+        "value": true
+      },
+      "required": false
+    },
+    {
+      "name": "minuteStep",
+      "types": [
+        "Number"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "1",
+        "value": 1
+      },
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "vue-implicit",
+        "value": false,
+        "note": "未传 Boolean prop 时 当前基准实现 使用 false。"
+      },
+      "required": false
+    },
+    {
+      "name": "title",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Select time'",
+        "value": "Select time"
+      },
+      "required": false
+    },
+    {
+      "name": "confirmLabel",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Submit'",
+        "value": "Submit"
+      },
+      "required": false
+    },
+    {
+      "name": "cancelLabel",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Cancel time selection'",
+        "value": "Cancel time selection"
+      },
+      "required": false
+    },
+    {
+      "name": "hourLabel",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Hour'",
+        "value": "Hour"
+      },
+      "required": false
+    },
+    {
+      "name": "minuteLabel",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Minute'",
+        "value": "Minute"
+      },
+      "required": false
+    },
+    {
+      "name": "periodLabel",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'AM or PM'",
+        "value": "AM or PM"
+      },
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "pd:cancel",
+      "detail": "{ value, args }",
+      "description": "无载荷；取消当前编辑。"
+    },
+    {
+      "name": "pd:change",
+      "detail": "{ value, args }",
+      "description": "String：HH:mm（24 小时存储），确认时发出。"
+    },
+    {
+      "name": "pd:confirm",
+      "detail": "{ value, args }",
+      "description": "String：HH:mm（24 小时存储），确认时发出。"
+    },
+    {
+      "name": "pd:input",
+      "detail": "{ value, args }",
+      "description": "String：HH:mm（24 小时存储），确认时发出。"
+    },
+    {
+      "name": "pd:select",
+      "detail": "{ value, args }",
+      "description": "String：当前待确认时间 HH:mm。"
+    }
+  ],
+  "contents": [],
+  "methods": [],
+  "knownDifferences": [
+    {
+      "id": "S09",
+      "component": "TimePicker",
+      "description": "Selected text color",
+      "nodes": [
+        "4991:10548"
+      ],
+      "status": "resolved",
+      "verification": "docs/verification/assets-completion/design-regression.json"
+    }
+  ],
+  "designTarget": {
+    "origin": "figma",
+    "figma": {
+      "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+      "page": "2:117",
+      "master": "4991:10547",
+      "reference": "4991:10548",
+      "snapshot": "tokens/sources/figma-library/TimePicker.json"
+    },
+    "tokenReference": "tokens/component.json#time-picker",
+    "gaps": "Duration及另一组Picker呈现未实现。"
+  },
+  "verification": {
+    "status": "requires-current-evidence",
+    "report": "verification/report.json",
+    "scope": "当前 HTML 构建的交互、尺寸和截图对照；不扩大为完整设计认证。"
+  },
+  "examples": [
+    "timepicker--playground",
+    "timepicker--examples"
+  ]
+}

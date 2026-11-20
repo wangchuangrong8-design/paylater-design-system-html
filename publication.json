@@ -1,0 +1,13 @@
+{
+  "version": "0.1.0-html",
+  "target": "html",
+  "maintenanceProject": "paylater-design-system",
+  "sourceFingerprintDigest": "994ef3e29538640c13dbc5b385f792d6b2d368f0e331ce015df5fdbe11d4706e",
+  "verifiedPackageSha256": "d8b4d74f9bd940bd57631a627a9a95cb105988c56740280167b0a77fabdaba52",
+  "verifiedPackageBytes": 30190288,
+  "components": 37,
+  "componentEntries": 83,
+  "trialPages": 0,
+  "vueRuntimeIncluded": false,
+  "platformRuntimeVerified": false
+}

@@ -1,0 +1,191 @@
+{
+  "name": "Slider",
+  "origin": "figma",
+  "originLabel": "Figma 来源",
+  "purpose": "在最小最大值之间编辑单个数值。",
+  "constraints": [
+    "仅支持单值；金额边界、步长及计算结果由调用方确认，不提供 Range 或 Slide to action。"
+  ],
+  "marker": "<div data-pd=\"Slider\" data-options='{}'></div>",
+  "options": [
+    {
+      "name": "value",
+      "types": [
+        "Number"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "20",
+        "value": 20
+      },
+      "required": false
+    },
+    {
+      "name": "min",
+      "types": [
+        "Number"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "0",
+        "value": 0
+      },
+      "required": false
+    },
+    {
+      "name": "max",
+      "types": [
+        "Number"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "100",
+        "value": 100
+      },
+      "required": false
+    },
+    {
+      "name": "step",
+      "types": [
+        "Number"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "1",
+        "value": 1
+      },
+      "required": false
+    },
+    {
+      "name": "label",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Slider title'",
+        "value": "Slider title"
+      },
+      "required": false
+    },
+    {
+      "name": "valueText",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "''",
+        "value": ""
+      },
+      "required": false
+    },
+    {
+      "name": "minLabel",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "''",
+        "value": ""
+      },
+      "required": false
+    },
+    {
+      "name": "maxLabel",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "''",
+        "value": ""
+      },
+      "required": false
+    },
+    {
+      "name": "error",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "''",
+        "value": ""
+      },
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "vue-implicit",
+        "value": false,
+        "note": "未传 Boolean prop 时 当前基准实现 使用 false。"
+      },
+      "required": false
+    },
+    {
+      "name": "id",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "''",
+        "value": ""
+      },
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "pd:change",
+      "detail": "{ value, args }",
+      "description": "Number：原生 range 的当前值。"
+    },
+    {
+      "name": "pd:input",
+      "detail": "{ value, args }",
+      "description": "Number：原生 range 的当前值。"
+    }
+  ],
+  "contents": [],
+  "methods": [],
+  "knownDifferences": [
+    {
+      "id": "S10",
+      "component": "Slider",
+      "description": "Thumb shadow uses #232933 instead of #000000",
+      "nodes": [
+        "381:2930"
+      ],
+      "status": "resolved",
+      "verification": "docs/verification/assets-completion/design-regression.json"
+    }
+  ],
+  "designTarget": {
+    "origin": "figma",
+    "figma": {
+      "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+      "page": "2:110",
+      "master": "381:2919",
+      "reference": "381:2920",
+      "snapshot": "tokens/sources/figma-library/Slider.json"
+    },
+    "tokenReference": "tokens/component.json#slider",
+    "gaps": "Range 4状态、Slider with input 8状态、Slide to action 3状态未实现。"
+  },
+  "verification": {
+    "status": "requires-current-evidence",
+    "report": "verification/report.json",
+    "scope": "当前 HTML 构建的交互、尺寸和截图对照；不扩大为完整设计认证。"
+  },
+  "examples": [
+    "slider--playground",
+    "slider--examples"
+  ]
+}

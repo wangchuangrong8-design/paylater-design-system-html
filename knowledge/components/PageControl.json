@@ -1,0 +1,108 @@
+{
+  "name": "PageControl",
+  "origin": "mixed",
+  "originLabel": "Figma + 自主扩展",
+  "purpose": "显示分页位置并请求切换当前项。",
+  "constraints": [
+    "动态数量及当前页属于自主扩展；不能视为已实现 White、More、Slider 设计。"
+  ],
+  "marker": "<div data-pd=\"PageControl\" data-options='{}'></div>",
+  "options": [
+    {
+      "name": "value",
+      "types": [
+        "Number"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "0",
+        "value": 0
+      },
+      "required": false
+    },
+    {
+      "name": "count",
+      "types": [
+        "Number"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "5",
+        "value": 5
+      },
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "vue-implicit",
+        "value": false,
+        "note": "未传 Boolean prop 时 当前基准实现 使用 false。"
+      },
+      "required": false
+    },
+    {
+      "name": "label",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Page controls'",
+        "value": "Page controls"
+      },
+      "required": false
+    },
+    {
+      "name": "pageLabel",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Go to page'",
+        "value": "Go to page"
+      },
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "pd:change",
+      "detail": "{ value, args }",
+      "description": "Number：从 0 开始的当前页索引。"
+    },
+    {
+      "name": "pd:input",
+      "detail": "{ value, args }",
+      "description": "Number：从 0 开始的当前页索引。"
+    }
+  ],
+  "contents": [],
+  "methods": [],
+  "knownDifferences": [],
+  "designTarget": {
+    "origin": "mixed",
+    "figma": {
+      "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+      "page": "2:104",
+      "master": "1289:5676",
+      "reference": "1289:5677",
+      "snapshot": "tokens/sources/figma-library/PageControl.json"
+    },
+    "tokenReference": "tokens/component.json#page-control",
+    "gaps": "White、More、Slider等5个主变体及位置子状态"
+  },
+  "verification": {
+    "status": "requires-current-evidence",
+    "report": "verification/report.json",
+    "scope": "当前 HTML 构建的交互、尺寸和截图对照；不扩大为完整设计认证。"
+  },
+  "examples": [
+    "pagecontrol--playground",
+    "pagecontrol--examples"
+  ]
+}

@@ -1,0 +1,239 @@
+{
+  "name": "Button",
+  "origin": "figma",
+  "originLabel": "Figma 来源",
+  "purpose": "触发单个明确操作，提供原生按钮语义。",
+  "constraints": [
+    "禁用业务判断由调用方提供；danger + xs 不属于 Figma 支持组合，异步任务是否关闭或重复提交由业务层处理。"
+  ],
+  "marker": "<div data-pd=\"Button\" data-options='{}'></div>",
+  "options": [
+    {
+      "name": "variant",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'primary'",
+        "value": "primary"
+      },
+      "required": false,
+      "allowed": [
+        "primary",
+        "secondary",
+        "ghost",
+        "danger"
+      ]
+    },
+    {
+      "name": "size",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'regular'",
+        "value": "regular"
+      },
+      "required": false,
+      "allowed": [
+        "regular",
+        "small",
+        "xs"
+      ]
+    },
+    {
+      "name": "state",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'auto'",
+        "value": "auto"
+      },
+      "required": false,
+      "allowed": [
+        "auto",
+        "default",
+        "tap",
+        "disabled"
+      ]
+    },
+    {
+      "name": "icon",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "''",
+        "value": ""
+      },
+      "required": false,
+      "allowed": [
+        "",
+        "left",
+        "right"
+      ]
+    },
+    {
+      "name": "nativeType",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'button'",
+        "value": "button"
+      },
+      "required": false,
+      "allowed": [
+        "button",
+        "submit",
+        "reset"
+      ]
+    },
+    {
+      "name": "disabled",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "vue-implicit",
+        "value": false,
+        "note": "未传 Boolean prop 时 当前基准实现 使用 false。"
+      },
+      "required": false
+    },
+    {
+      "name": "block",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "true",
+        "value": true
+      },
+      "required": false
+    },
+    {
+      "name": "sticky",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "vue-implicit",
+        "value": false,
+        "note": "未传 Boolean prop 时 当前基准实现 使用 false。"
+      },
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "pd:click",
+      "detail": "{ value, args }",
+      "description": "原始 MouseEvent；是否触发业务操作由调用方处理。"
+    }
+  ],
+  "contents": [
+    {
+      "name": "default",
+      "description": "默认内容；回退内容及条件按模板。",
+      "usage": "原生 DOM 节点或接收内容上下文的函数"
+    },
+    {
+      "name": "leading",
+      "description": "前置图标或内容。",
+      "usage": "原生 DOM 节点或接收内容上下文的函数"
+    },
+    {
+      "name": "trailing",
+      "description": "后置图标或内容。",
+      "usage": "原生 DOM 节点或接收内容上下文的函数"
+    }
+  ],
+  "methods": [],
+  "knownDifferences": [
+    {
+      "id": "S02",
+      "component": "Button",
+      "description": "Secondary stroke placement",
+      "nodes": [
+        "39:2910",
+        "39:2913",
+        "39:2916",
+        "39:3042",
+        "39:3045",
+        "39:3048"
+      ],
+      "status": "resolved",
+      "verification": "docs/verification/assets-completion/design-regression.json"
+    },
+    {
+      "id": "S03",
+      "component": "Button",
+      "description": "Small secondary Tap foreground",
+      "nodes": [
+        "39:3048",
+        "39:3050",
+        "39:3053"
+      ],
+      "status": "resolved",
+      "verification": "docs/verification/assets-completion/design-regression.json"
+    },
+    {
+      "id": "S04",
+      "component": "Button",
+      "description": "Small Sticky label metrics",
+      "nodes": [
+        "39:3112",
+        "39:3115",
+        "39:3118",
+        "39:3121",
+        "39:3124",
+        "39:3127",
+        "39:3133",
+        "39:3136"
+      ],
+      "status": "resolved",
+      "verification": "docs/verification/assets-completion/design-regression.json"
+    },
+    {
+      "id": "S05",
+      "component": "Button",
+      "description": "Sticky background shadow",
+      "nodes": [
+        "39:2980",
+        "39:3112"
+      ],
+      "status": "resolved",
+      "verification": "docs/verification/assets-completion/design-regression.json"
+    }
+  ],
+  "designTarget": {
+    "origin": "figma",
+    "figma": {
+      "page": "2:93",
+      "master": "39:2883",
+      "reference": "39:2884",
+      "snapshot": "tokens/sources/figma-components.json"
+    },
+    "tokenReference": "tokens/component.json#button",
+    "gaps": "Payment Button另有3个变体，无独立实现；未校准的额外API组合不能宣称Figma支持。"
+  },
+  "verification": {
+    "status": "requires-current-evidence",
+    "report": "verification/report.json",
+    "scope": "当前 HTML 构建的交互、尺寸和截图对照；不扩大为完整设计认证。"
+  },
+  "examples": [
+    "button--playground",
+    "button--states",
+    "button--sizes-and-icons",
+    "button--sticky"
+  ]
+}

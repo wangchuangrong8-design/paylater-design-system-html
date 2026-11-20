@@ -1,0 +1,99 @@
+{
+  "name": "Avatar",
+  "origin": "figma",
+  "originLabel": "Figma 来源",
+  "purpose": "展示调用方照片或姓名缩写及图片失败回退。",
+  "constraints": [
+    "照片由调用方提供；不将缩写款视为已实现 Icon、Thumbnail 或完整人物资产库。"
+  ],
+  "marker": "<div data-pd=\"Avatar\" data-options='{}'></div>",
+  "options": [
+    {
+      "name": "src",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "''",
+        "value": ""
+      },
+      "required": false
+    },
+    {
+      "name": "label",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Avatar'",
+        "value": "Avatar"
+      },
+      "required": false
+    },
+    {
+      "name": "initials",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'AD'",
+        "value": "AD"
+      },
+      "required": false
+    },
+    {
+      "name": "size",
+      "types": [
+        "Number",
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "40",
+        "value": 40
+      },
+      "required": false,
+      "allowed": [
+        20,
+        24,
+        40,
+        48,
+        80
+      ]
+    }
+  ],
+  "events": [
+    {
+      "name": "pd:error",
+      "detail": "{ value, args }",
+      "description": "图片加载失败的原生 Event。"
+    }
+  ],
+  "contents": [],
+  "methods": [],
+  "knownDifferences": [],
+  "designTarget": {
+    "origin": "figma",
+    "figma": {
+      "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+      "page": "2:80",
+      "master": "151:5390",
+      "reference": "151:5414",
+      "snapshot": "tokens/sources/figma-library/Avatar.json"
+    },
+    "tokenReference": "tokens/component.json#avatar",
+    "gaps": "Icon、Thumbnail、状态标记及完整People/Team资产；照片内容由调用方提供"
+  },
+  "verification": {
+    "status": "requires-current-evidence",
+    "report": "verification/report.json",
+    "scope": "当前 HTML 构建的交互、尺寸和截图对照；不扩大为完整设计认证。"
+  },
+  "examples": [
+    "avatar--playground",
+    "avatar--examples"
+  ]
+}

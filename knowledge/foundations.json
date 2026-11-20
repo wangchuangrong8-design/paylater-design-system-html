@@ -1,0 +1,1549 @@
+{
+  "source": {
+    "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+    "fileName": "Lithium Kit 1.0",
+    "reviewedAt": "2026-11-13",
+    "policy": "Explicit specification table values take precedence over inconsistent demonstration layers. No runtime Figma access is needed.",
+    "nodes": {
+      "color": "2:929",
+      "typography": "2:186",
+      "spacing": "2:553",
+      "radius": "2:3497",
+      "shadow": "2:741"
+    },
+    "units": "Figma logical px (1x). SDK source uses a separate 750-wide coordinate system."
+  },
+  "colors": [
+    {
+      "name": "raisin",
+      "value": "#333333",
+      "description": "Default or primary text color",
+      "nodeId": "2:946",
+      "usage": "ui",
+      "group": "Gray"
+    },
+    {
+      "name": "gray-600",
+      "value": "#626B79",
+      "description": "Description text color and default color for outline icon",
+      "nodeId": "2:959",
+      "usage": "ui",
+      "group": "Gray"
+    },
+    {
+      "name": "gray-400",
+      "value": "#8B95A5",
+      "description": "Disabled and placeholder text color, icon or in components such as hover state Input, Select and stroke in Popover",
+      "nodeId": "2:972",
+      "usage": "ui",
+      "group": "Gray"
+    },
+    {
+      "name": "gray-100",
+      "value": "#D0D6DD",
+      "description": "Default stroke color or divider",
+      "nodeId": "2:985",
+      "usage": "ui",
+      "group": "Gray"
+    },
+    {
+      "name": "gray-50",
+      "value": "#EDF0F2",
+      "description": "Disabled background color in components such as Input and Select backgrounds",
+      "nodeId": "2:998",
+      "usage": "ui",
+      "group": "Gray"
+    },
+    {
+      "name": "gray-25",
+      "value": "#F8F9FB",
+      "description": "Background color in accordion component",
+      "nodeId": "2:1011",
+      "usage": "ui",
+      "group": "Gray"
+    },
+    {
+      "name": "white",
+      "value": "#FFFFFF",
+      "description": "Background color in components such as Card, Modal, and Popover",
+      "nodeId": "2:1024",
+      "usage": "ui",
+      "group": "Gray"
+    },
+    {
+      "name": "allo",
+      "value": "#FFAF03",
+      "description": "Allo Bank",
+      "nodeId": "2:1051",
+      "usage": "prohibited",
+      "group": "Brand"
+    },
+    {
+      "name": "yellow-700",
+      "value": "#F5AB00",
+      "description": "For use as a stroke in icon variant duotone, background on pressed primary Button",
+      "nodeId": "2:1199",
+      "usage": "ui",
+      "group": "yellow"
+    },
+    {
+      "name": "yellow-500",
+      "value": "#FFB60A",
+      "description": "Background in hover primary Button, stroke in active Input or Select",
+      "nodeId": "2:1212",
+      "usage": "ui",
+      "group": "yellow"
+    },
+    {
+      "name": "yellow-400",
+      "value": "#FFBC25",
+      "description": "Background in primary Button",
+      "nodeId": "2:1225",
+      "usage": "ui",
+      "group": "yellow"
+    },
+    {
+      "name": "yellow-100",
+      "value": "#FFE7AD",
+      "description": "-",
+      "nodeId": "2:1238",
+      "usage": "ui",
+      "group": "yellow"
+    },
+    {
+      "name": "yellow-50",
+      "value": "#FFF3D6",
+      "description": "Background in icon variant duotone, banner info",
+      "nodeId": "2:1251",
+      "usage": "ui",
+      "group": "yellow"
+    },
+    {
+      "name": "orange-700",
+      "value": "#F38000",
+      "description": "For use as a stroke in warning Badge with bold variant",
+      "nodeId": "2:1277",
+      "usage": "ui",
+      "group": "orange"
+    },
+    {
+      "name": "orange-500",
+      "value": "#FF961F",
+      "description": "For use as a textlink",
+      "nodeId": "2:1290",
+      "usage": "ui",
+      "group": "orange"
+    },
+    {
+      "name": "orange-400",
+      "value": "#FFBC70",
+      "description": "-",
+      "nodeId": "2:1303",
+      "usage": "ui",
+      "group": "orange"
+    },
+    {
+      "name": "orange-50",
+      "value": "#FBF3DD",
+      "description": "For use as a background in badge/banner warning with subtle variant",
+      "nodeId": "2:1316",
+      "usage": "ui",
+      "group": "orange"
+    },
+    {
+      "name": "red-700",
+      "value": "#AB3129",
+      "description": "Background on pressed danger Button, error badge with bold variant",
+      "nodeId": "2:1407",
+      "usage": "ui",
+      "group": "red"
+    },
+    {
+      "name": "red-500",
+      "value": "#C83E39",
+      "description": "Background in hover state danger Button, stroke in error state Input or Select",
+      "nodeId": "2:1420",
+      "usage": "ui",
+      "group": "red"
+    },
+    {
+      "name": "red-400",
+      "value": "#DA473F",
+      "description": "Background in danger Button",
+      "nodeId": "2:1433",
+      "usage": "ui",
+      "group": "red"
+    },
+    {
+      "name": "red-50",
+      "value": "#FDECEE",
+      "description": "Background in badge/banner error with subtle variant",
+      "nodeId": "2:1446",
+      "usage": "ui",
+      "group": "red"
+    },
+    {
+      "name": "green-700",
+      "value": "#17A16E",
+      "description": "For use as a stroke in success Badge with bold variant",
+      "nodeId": "2:1472",
+      "usage": "ui",
+      "group": "green"
+    },
+    {
+      "name": "green-500",
+      "value": "#1CC487",
+      "description": "-",
+      "nodeId": "2:1485",
+      "usage": "ui",
+      "group": "green"
+    },
+    {
+      "name": "green-400",
+      "value": "#33E2A2",
+      "description": "-",
+      "nodeId": "2:1498",
+      "usage": "ui",
+      "group": "green"
+    },
+    {
+      "name": "green-50",
+      "value": "#ECFFF8",
+      "description": "For use as a background in badge/banner success with subtle variant",
+      "nodeId": "2:1511",
+      "usage": "ui",
+      "group": "green"
+    },
+    {
+      "name": "blue-700",
+      "value": "#042FB2",
+      "description": "-",
+      "nodeId": "164:9679",
+      "usage": "ui",
+      "group": "blue"
+    },
+    {
+      "name": "blue-500",
+      "value": "#1141D0",
+      "description": "-",
+      "nodeId": "164:9692",
+      "usage": "ui",
+      "group": "blue"
+    },
+    {
+      "name": "blue-400",
+      "value": "#2759EE",
+      "description": "-",
+      "nodeId": "164:9705",
+      "usage": "ui",
+      "group": "blue"
+    },
+    {
+      "name": "blue-50",
+      "value": "#E9EEFF",
+      "description": "-",
+      "nodeId": "164:9718",
+      "usage": "ui",
+      "group": "blue"
+    },
+    {
+      "name": "prime",
+      "value": "#333333",
+      "description": "Prime member",
+      "nodeId": "16:199",
+      "usage": "card-only",
+      "group": "Card"
+    },
+    {
+      "name": "payplus",
+      "value": "#3B7182",
+      "description": "Pay+ member",
+      "nodeId": "16:212",
+      "usage": "card-only",
+      "group": "Card"
+    },
+    {
+      "name": "pay",
+      "value": "#CADFD8",
+      "description": "Pay member",
+      "nodeId": "16:225",
+      "usage": "card-only",
+      "group": "Card"
+    },
+    {
+      "name": "overlay",
+      "value": "#232933, 80",
+      "description": "For use as overlay",
+      "nodeId": "2:1577",
+      "usage": "ui",
+      "group": "Extra"
+    },
+    {
+      "name": "page-background",
+      "value": "#E5E5E5",
+      "description": "For use as page background",
+      "nodeId": "519:35937",
+      "usage": "ui",
+      "group": "Extra"
+    },
+    {
+      "name": "section-background",
+      "value": "#D0D6DD",
+      "description": "For use as section background",
+      "nodeId": "519:35950",
+      "usage": "ui",
+      "group": "Extra"
+    },
+    {
+      "name": "background",
+      "value": "#F0F3F8",
+      "description": "For use as background page/ screen",
+      "nodeId": "2:1590",
+      "usage": "ui",
+      "group": "Extra"
+    },
+    {
+      "name": "background-dark",
+      "value": "#212324",
+      "description": "For use as background page",
+      "nodeId": "90:5189",
+      "usage": "ui",
+      "group": "Extra"
+    },
+    {
+      "name": "shimmer-prime",
+      "value": "#C3BEBE (100%,25%,100%)",
+      "description": "For use as shimmer/skeleton screens",
+      "nodeId": "2:1603",
+      "usage": "ui",
+      "group": "Extra"
+    },
+    {
+      "name": "shimmer-payplus",
+      "value": "#3B7182 (100%,25%,100%)",
+      "description": "For use as shimmer/skeleton screens",
+      "nodeId": "23:306",
+      "usage": "ui",
+      "group": "Extra"
+    },
+    {
+      "name": "shimmer-pay",
+      "value": "#B4E2CE (100%,25%,100%)",
+      "description": "For use as shimmer/skeleton screens",
+      "nodeId": "23:319",
+      "usage": "ui",
+      "group": "Extra"
+    },
+    {
+      "name": "magenta-400",
+      "value": "#FF129E",
+      "description": "-",
+      "nodeId": "2:1890",
+      "usage": "data-visualization-only",
+      "group": "Data visualization"
+    },
+    {
+      "name": "magenta-100",
+      "value": "#FF74C5",
+      "description": "-",
+      "nodeId": "2:1903",
+      "usage": "data-visualization-only",
+      "group": "Data visualization"
+    },
+    {
+      "name": "teal-400",
+      "value": "#008FA1",
+      "description": "-",
+      "nodeId": "2:1656",
+      "usage": "data-visualization-only",
+      "group": "Data visualization"
+    },
+    {
+      "name": "teal-100",
+      "value": "#60C3CF",
+      "description": "-",
+      "nodeId": "2:1669",
+      "usage": "data-visualization-only",
+      "group": "Data visualization"
+    },
+    {
+      "name": "lilac-400",
+      "value": "#A5AAFF",
+      "description": "-",
+      "nodeId": "2:1682",
+      "usage": "data-visualization-only",
+      "group": "Data visualization"
+    },
+    {
+      "name": "lilac-100",
+      "value": "#C9CDFF",
+      "description": "-",
+      "nodeId": "2:1695",
+      "usage": "data-visualization-only",
+      "group": "Data visualization"
+    },
+    {
+      "name": "cyan-400",
+      "value": "#8DF1C5",
+      "description": "-",
+      "nodeId": "14:82",
+      "usage": "data-visualization-only",
+      "group": "Data visualization"
+    },
+    {
+      "name": "cyan-100",
+      "value": "#C9FAE3",
+      "description": "-",
+      "nodeId": "14:95",
+      "usage": "data-visualization-only",
+      "group": "Data visualization"
+    },
+    {
+      "name": "stone-400",
+      "value": "#71717A",
+      "description": "-",
+      "nodeId": "2:1734",
+      "usage": "data-visualization-only",
+      "group": "Data visualization"
+    },
+    {
+      "name": "stone-100",
+      "value": "#A1A1AA",
+      "description": "-",
+      "nodeId": "2:1747",
+      "usage": "data-visualization-only",
+      "group": "Data visualization"
+    },
+    {
+      "name": "lime-400",
+      "value": "#84CC16",
+      "description": "-",
+      "nodeId": "2:1760",
+      "usage": "data-visualization-only",
+      "group": "Data visualization"
+    },
+    {
+      "name": "lime-100",
+      "value": "#A3E635",
+      "description": "-",
+      "nodeId": "2:1773",
+      "usage": "data-visualization-only",
+      "group": "Data visualization"
+    },
+    {
+      "name": "leaf-400",
+      "value": "#22C55E",
+      "description": "-",
+      "nodeId": "2:1864",
+      "usage": "data-visualization-only",
+      "group": "Data visualization"
+    },
+    {
+      "name": "leaf-100",
+      "value": "#4ADE80",
+      "description": "-",
+      "nodeId": "2:1877",
+      "usage": "data-visualization-only",
+      "group": "Data visualization"
+    },
+    {
+      "name": "sky-400",
+      "value": "#3B82F6",
+      "description": "-",
+      "nodeId": "2:1630",
+      "usage": "data-visualization-only",
+      "group": "Data visualization"
+    },
+    {
+      "name": "sky-100",
+      "value": "#60A5FA",
+      "description": "-",
+      "nodeId": "2:1643",
+      "usage": "data-visualization-only",
+      "group": "Data visualization"
+    }
+  ],
+  "colorNotes": [
+    {
+      "id": "2:934",
+      "text": "Gray palette"
+    },
+    {
+      "id": "2:935",
+      "text": "Our gray palette features AAA compliant contrast ratios and should be used for text across product. We can use for decorative elements."
+    },
+    {
+      "id": "2:1039",
+      "text": "Brand palette"
+    },
+    {
+      "id": "2:1040",
+      "text": "Do not use this colors in your designs."
+    },
+    {
+      "id": "2:1184",
+      "text": "UI palette"
+    },
+    {
+      "id": "2:1185",
+      "text": "Our color usage is comprised of yellow, orange, blue, red, green respectively. Please reserve 2, 3, variants for states on primary buttons (e.g. $yellow-500: hover, $yellow-700: pressed). All colors comply with AA standard contrast ratios."
+    },
+    {
+      "id": "2:1188",
+      "text": "Yellow"
+    },
+    {
+      "id": "2:1266",
+      "text": "Orange"
+    },
+    {
+      "id": "2:1396",
+      "text": "Red"
+    },
+    {
+      "id": "2:1461",
+      "text": "Green"
+    },
+    {
+      "id": "164:9668",
+      "text": "Blue"
+    },
+    {
+      "id": "16:148",
+      "text": "Card palette"
+    },
+    {
+      "id": "16:149",
+      "text": "This color palette for special case for Allo Bank card design."
+    },
+    {
+      "id": "2:1526",
+      "text": "Extra palette"
+    },
+    {
+      "id": "2:1527",
+      "text": "This color palette for special case like background or overlay."
+    },
+    {
+      "id": "2:1618",
+      "text": "Social media palette"
+    },
+    {
+      "id": "2:1619",
+      "text": "Our data visualization colors are provide visual variation to the data they are representing. Please do not pull from these colors in your designs."
+    }
+  ],
+  "typography": [
+    {
+      "name": "Large title",
+      "key": "large-title",
+      "token": "xl",
+      "fontFamily": "Inter",
+      "fontSize": 20,
+      "lineHeight": 28,
+      "fontWeight": 600,
+      "letterSpacing": "-0.02em",
+      "textDecoration": "none",
+      "nodeId": "2023:370",
+      "sampleNodeId": "2023:381",
+      "sample": {
+        "fontSize": 20,
+        "lineHeight": 28
+      }
+    },
+    {
+      "name": "Header title",
+      "key": "header-title",
+      "token": "l",
+      "fontFamily": "Inter",
+      "fontSize": 18,
+      "lineHeight": 26,
+      "fontWeight": 600,
+      "letterSpacing": "0",
+      "textDecoration": "none",
+      "nodeId": "2:221",
+      "sampleNodeId": "2:232",
+      "sample": {
+        "fontSize": 18,
+        "lineHeight": 26
+      }
+    },
+    {
+      "name": "Section title",
+      "key": "section-title",
+      "token": "m",
+      "fontFamily": "Inter",
+      "fontSize": 16,
+      "lineHeight": 24,
+      "fontWeight": 600,
+      "letterSpacing": "0",
+      "textDecoration": "none",
+      "nodeId": "110:1126",
+      "sampleNodeId": "110:1137",
+      "sample": {
+        "fontSize": 18,
+        "lineHeight": 26
+      }
+    },
+    {
+      "name": "Label / Bold",
+      "key": "label-bold",
+      "token": "md",
+      "fontFamily": "Inter",
+      "fontSize": 16,
+      "lineHeight": 24,
+      "fontWeight": 700,
+      "letterSpacing": "0",
+      "textDecoration": "none",
+      "nodeId": "2:234",
+      "sampleNodeId": "2:245",
+      "sample": {
+        "fontSize": 16,
+        "lineHeight": 24
+      }
+    },
+    {
+      "name": "Label / Semibold",
+      "key": "label-semibold",
+      "token": "md",
+      "fontFamily": "Inter",
+      "fontSize": 16,
+      "lineHeight": 24,
+      "fontWeight": 600,
+      "letterSpacing": "0",
+      "textDecoration": "none",
+      "nodeId": "246:2727",
+      "sampleNodeId": "246:2738",
+      "sample": {
+        "fontSize": 16,
+        "lineHeight": 24
+      }
+    },
+    {
+      "name": "Label / Medium",
+      "key": "label-medium",
+      "token": "md",
+      "fontFamily": "Inter",
+      "fontSize": 16,
+      "lineHeight": 24,
+      "fontWeight": 500,
+      "letterSpacing": "0",
+      "textDecoration": "none",
+      "nodeId": "2:247",
+      "sampleNodeId": "2:258",
+      "sample": {
+        "fontSize": 16,
+        "lineHeight": 24
+      }
+    },
+    {
+      "name": "Label / Regular",
+      "key": "label-regular",
+      "token": "md",
+      "fontFamily": "Inter",
+      "fontSize": 16,
+      "lineHeight": 24,
+      "fontWeight": 400,
+      "letterSpacing": "0",
+      "textDecoration": "none",
+      "nodeId": "246:2740",
+      "sampleNodeId": "246:2751",
+      "sample": {
+        "fontSize": 16,
+        "lineHeight": 24
+      }
+    },
+    {
+      "name": "Label / Textlink",
+      "key": "label-textlink",
+      "token": "md",
+      "fontFamily": "Inter",
+      "fontSize": 16,
+      "lineHeight": 24,
+      "fontWeight": 400,
+      "letterSpacing": "0",
+      "textDecoration": "underline",
+      "nodeId": "2:260",
+      "sampleNodeId": "2:271",
+      "sample": {
+        "fontSize": 16,
+        "lineHeight": 24
+      }
+    },
+    {
+      "name": "Label / Strike",
+      "key": "label-strike",
+      "token": "md",
+      "fontFamily": "Inter",
+      "fontSize": 16,
+      "lineHeight": 24,
+      "fontWeight": 400,
+      "letterSpacing": "0",
+      "textDecoration": "line-through",
+      "nodeId": "2:273",
+      "sampleNodeId": "2:284",
+      "sample": {
+        "fontSize": 16,
+        "lineHeight": 24
+      }
+    },
+    {
+      "name": "Body / Bold",
+      "key": "body-bold",
+      "token": "sm",
+      "fontFamily": "Inter",
+      "fontSize": 14,
+      "lineHeight": 20,
+      "fontWeight": 700,
+      "letterSpacing": "0",
+      "textDecoration": "none",
+      "nodeId": "2:286",
+      "sampleNodeId": "2:297",
+      "sample": {
+        "fontSize": 14,
+        "lineHeight": 20
+      }
+    },
+    {
+      "name": "Body / Semibold",
+      "key": "body-semibold",
+      "token": "sm",
+      "fontFamily": "Inter",
+      "fontSize": 14,
+      "lineHeight": 20,
+      "fontWeight": 600,
+      "letterSpacing": "0",
+      "textDecoration": "none",
+      "nodeId": "246:2507",
+      "sampleNodeId": "246:2518",
+      "sample": {
+        "fontSize": 14,
+        "lineHeight": 20
+      }
+    },
+    {
+      "name": "Body / Medium",
+      "key": "body-medium",
+      "token": "sm",
+      "fontFamily": "Inter",
+      "fontSize": 14,
+      "lineHeight": 20,
+      "fontWeight": 500,
+      "letterSpacing": "0",
+      "textDecoration": "none",
+      "nodeId": "2:299",
+      "sampleNodeId": "2:310",
+      "sample": {
+        "fontSize": 14,
+        "lineHeight": 20
+      }
+    },
+    {
+      "name": "Body / Regular",
+      "key": "body-regular",
+      "token": "sm",
+      "fontFamily": "Inter",
+      "fontSize": 14,
+      "lineHeight": 20,
+      "fontWeight": 400,
+      "letterSpacing": "0",
+      "textDecoration": "none",
+      "nodeId": "246:2494",
+      "sampleNodeId": "246:2505",
+      "sample": {
+        "fontSize": 14,
+        "lineHeight": 20
+      }
+    },
+    {
+      "name": "Body / Textlink",
+      "key": "body-textlink",
+      "token": "sm",
+      "fontFamily": "Inter",
+      "fontSize": 14,
+      "lineHeight": 20,
+      "fontWeight": 400,
+      "letterSpacing": "0",
+      "textDecoration": "underline",
+      "nodeId": "2:312",
+      "sampleNodeId": "2:323",
+      "sample": {
+        "fontSize": 14,
+        "lineHeight": 20
+      }
+    },
+    {
+      "name": "Body / Strike",
+      "key": "body-strike",
+      "token": "sm",
+      "fontFamily": "Inter",
+      "fontSize": 14,
+      "lineHeight": 20,
+      "fontWeight": 400,
+      "letterSpacing": "0",
+      "textDecoration": "line-through",
+      "nodeId": "2:325",
+      "sampleNodeId": "2:336",
+      "sample": {
+        "fontSize": 14,
+        "lineHeight": 20
+      }
+    },
+    {
+      "name": "Caption / Bold",
+      "key": "caption-bold",
+      "token": "xs",
+      "fontFamily": "Inter",
+      "fontSize": 12,
+      "lineHeight": 16,
+      "fontWeight": 700,
+      "letterSpacing": "0",
+      "textDecoration": "none",
+      "nodeId": "2:338",
+      "sampleNodeId": "2:349",
+      "sample": {
+        "fontSize": 12,
+        "lineHeight": 16
+      }
+    },
+    {
+      "name": "Caption / Semibold",
+      "key": "caption-semibold",
+      "token": "xs",
+      "fontFamily": "Inter",
+      "fontSize": 12,
+      "lineHeight": 16,
+      "fontWeight": 600,
+      "letterSpacing": "0",
+      "textDecoration": "none",
+      "nodeId": "246:3120",
+      "sampleNodeId": "246:3131",
+      "sample": {
+        "fontSize": 12,
+        "lineHeight": 16
+      }
+    },
+    {
+      "name": "Caption / Medium",
+      "key": "caption-medium",
+      "token": "xs",
+      "fontFamily": "Inter",
+      "fontSize": 12,
+      "lineHeight": 16,
+      "fontWeight": 500,
+      "letterSpacing": "0",
+      "textDecoration": "none",
+      "nodeId": "2:351",
+      "sampleNodeId": "2:362",
+      "sample": {
+        "fontSize": 12,
+        "lineHeight": 16
+      }
+    },
+    {
+      "name": "Caption / Regular",
+      "key": "caption-regular",
+      "token": "xs",
+      "fontFamily": "Inter",
+      "fontSize": 12,
+      "lineHeight": 16,
+      "fontWeight": 400,
+      "letterSpacing": "0",
+      "textDecoration": "none",
+      "nodeId": "246:3133",
+      "sampleNodeId": "246:3144",
+      "sample": {
+        "fontSize": 12,
+        "lineHeight": 16
+      }
+    },
+    {
+      "name": "Caption / Textlink",
+      "key": "caption-textlink",
+      "token": "xs",
+      "fontFamily": "Inter",
+      "fontSize": 12,
+      "lineHeight": 16,
+      "fontWeight": 400,
+      "letterSpacing": "0",
+      "textDecoration": "underline",
+      "nodeId": "2:364",
+      "sampleNodeId": "2:375",
+      "sample": {
+        "fontSize": 12,
+        "lineHeight": 16
+      }
+    },
+    {
+      "name": "Caption / Strike",
+      "key": "caption-strike",
+      "token": "xs",
+      "fontFamily": "Inter",
+      "fontSize": 12,
+      "lineHeight": 16,
+      "fontWeight": 400,
+      "letterSpacing": "0",
+      "textDecoration": "line-through",
+      "nodeId": "2:377",
+      "sampleNodeId": "2:388",
+      "sample": {
+        "fontSize": 12,
+        "lineHeight": 16
+      }
+    },
+    {
+      "name": "Overline / Semibold",
+      "key": "overline-semibold",
+      "token": "xxs",
+      "fontFamily": "Inter",
+      "fontSize": 10,
+      "lineHeight": 12,
+      "fontWeight": 600,
+      "letterSpacing": "0",
+      "textDecoration": "none",
+      "nodeId": "2:390",
+      "sampleNodeId": "2:401",
+      "sample": {
+        "fontSize": 10,
+        "lineHeight": 12
+      }
+    },
+    {
+      "name": "Overline / Medium",
+      "key": "overline-medium",
+      "token": "xxs",
+      "fontFamily": "Inter",
+      "fontSize": 10,
+      "lineHeight": 12,
+      "fontWeight": 500,
+      "letterSpacing": "0",
+      "textDecoration": "none",
+      "nodeId": "789:25014",
+      "sampleNodeId": "789:25025",
+      "sample": {
+        "fontSize": 10,
+        "lineHeight": 12
+      }
+    },
+    {
+      "name": "Overline / Regular",
+      "key": "overline-regular",
+      "token": "xxs",
+      "fontFamily": "Inter",
+      "fontSize": 10,
+      "lineHeight": 12,
+      "fontWeight": 400,
+      "letterSpacing": "0",
+      "textDecoration": "none",
+      "nodeId": "2:403",
+      "sampleNodeId": "2:414",
+      "sample": {
+        "fontSize": 10,
+        "lineHeight": 12
+      }
+    },
+    {
+      "name": "Overline / Textlink",
+      "key": "overline-textlink",
+      "token": "xxs",
+      "fontFamily": "Inter",
+      "fontSize": 10,
+      "lineHeight": 12,
+      "fontWeight": 400,
+      "letterSpacing": "0",
+      "textDecoration": "underline",
+      "nodeId": "2:416",
+      "sampleNodeId": "2:427",
+      "sample": {
+        "fontSize": 10,
+        "lineHeight": 12
+      }
+    },
+    {
+      "name": "Overline / Strike",
+      "key": "overline-strike",
+      "token": "xxs",
+      "fontFamily": "Inter",
+      "fontSize": 10,
+      "lineHeight": 12,
+      "fontWeight": 400,
+      "letterSpacing": "0",
+      "textDecoration": "line-through",
+      "nodeId": "2:429",
+      "sampleNodeId": "2:440",
+      "sample": {
+        "fontSize": 10,
+        "lineHeight": 12
+      }
+    }
+  ],
+  "spacing": [
+    {
+      "name": "none",
+      "value": 0,
+      "nodeId": "2:568"
+    },
+    {
+      "name": "xxxs",
+      "value": 4,
+      "nodeId": "2:575"
+    },
+    {
+      "name": "xxs",
+      "value": 8,
+      "nodeId": "2:582"
+    },
+    {
+      "name": "xs",
+      "value": 12,
+      "nodeId": "2:589"
+    },
+    {
+      "name": "s",
+      "value": 16,
+      "nodeId": "2:596"
+    },
+    {
+      "name": "m",
+      "value": 20,
+      "nodeId": "2:603"
+    },
+    {
+      "name": "l",
+      "value": 24,
+      "nodeId": "2:610"
+    },
+    {
+      "name": "xl",
+      "value": 32,
+      "nodeId": "2:617"
+    },
+    {
+      "name": "xxl",
+      "value": 40,
+      "nodeId": "2:624"
+    },
+    {
+      "name": "xxxl",
+      "value": 80,
+      "nodeId": "2:631"
+    }
+  ],
+  "radius": [
+    {
+      "name": "none",
+      "value": 0,
+      "nodeId": "2:3512"
+    },
+    {
+      "name": "xs",
+      "value": 4,
+      "nodeId": "2:3519"
+    },
+    {
+      "name": "s",
+      "value": 6,
+      "nodeId": "2:3526"
+    },
+    {
+      "name": "m",
+      "value": 8,
+      "nodeId": "2:3533"
+    },
+    {
+      "name": "l",
+      "value": 16,
+      "nodeId": "2:3540"
+    },
+    {
+      "name": "xl",
+      "value": 24,
+      "nodeId": "2:3547"
+    },
+    {
+      "name": "full",
+      "value": 999,
+      "nodeId": "2:3554"
+    }
+  ],
+  "shadows": [
+    {
+      "name": "xs",
+      "value": "0px 2px 4px rgba(0, 0, 0, 0.14), 0px 0px 2px rgba(0, 0, 0, 0.12)",
+      "nodeId": "2:775",
+      "usage": "Card"
+    },
+    {
+      "name": "s",
+      "value": "0px 2px 4px rgba(35, 41, 51, 0.14), 0px 0px 2px rgba(35, 41, 51, 0.12)",
+      "nodeId": "2:780",
+      "usage": "Dropdown and hover"
+    },
+    {
+      "name": "m",
+      "value": "0px 10px 15px -3px rgba(35, 41, 51, 0.1), 0px 4px 6px -2px rgba(35, 41, 51, 0.05)",
+      "nodeId": "2:785",
+      "usage": "Popover"
+    },
+    {
+      "name": "l",
+      "value": "0px 9px 28px 8px rgba(35, 41, 51, 0.05), 0px 6px 16px rgba(35, 41, 51, 0.08), 0px 3px 6px -4px rgba(35, 41, 51, 0.12)",
+      "nodeId": "2:790",
+      "usage": "Modal"
+    }
+  ],
+  "sampleEffects": [
+    {
+      "id": "2:749",
+      "name": "XS",
+      "parent": "2:748",
+      "width": 200,
+      "height": 200,
+      "radius": 8,
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "visible": true,
+          "radius": 2,
+          "boundVariables": {},
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 0.11999999731779099
+          },
+          "offset": {
+            "x": 0,
+            "y": 0
+          },
+          "spread": 0,
+          "blendMode": "NORMAL",
+          "showShadowBehindNode": true
+        },
+        {
+          "type": "DROP_SHADOW",
+          "visible": true,
+          "radius": 4,
+          "boundVariables": {},
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 0.14000000059604645
+          },
+          "offset": {
+            "x": 0,
+            "y": 2
+          },
+          "spread": 0,
+          "blendMode": "NORMAL",
+          "showShadowBehindNode": true
+        }
+      ],
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          },
+          "boundVariables": {}
+        }
+      ],
+      "style": "S:fd46df84d1951d20d5e67b50e393d5a0274e9493,"
+    },
+    {
+      "id": "2:753",
+      "name": "S",
+      "parent": "2:752",
+      "width": 200,
+      "height": 200,
+      "radius": 8,
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "visible": true,
+          "radius": 6,
+          "boundVariables": {},
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 0.05000000074505806
+          },
+          "offset": {
+            "x": 0,
+            "y": 4
+          },
+          "spread": -2,
+          "blendMode": "NORMAL",
+          "showShadowBehindNode": true
+        },
+        {
+          "type": "DROP_SHADOW",
+          "visible": true,
+          "radius": 15,
+          "boundVariables": {},
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 0.10000000149011612
+          },
+          "offset": {
+            "x": 0,
+            "y": 10
+          },
+          "spread": -3,
+          "blendMode": "NORMAL",
+          "showShadowBehindNode": true
+        }
+      ],
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          },
+          "boundVariables": {}
+        }
+      ],
+      "style": "S:ff138097f7dedbb11f90fd5de546d35400221784,"
+    },
+    {
+      "id": "2:757",
+      "name": "M",
+      "parent": "2:756",
+      "width": 200,
+      "height": 200,
+      "radius": 8,
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "visible": true,
+          "radius": 25,
+          "boundVariables": {},
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 0.10000000149011612
+          },
+          "offset": {
+            "x": 0,
+            "y": 20
+          },
+          "spread": -5,
+          "blendMode": "NORMAL",
+          "showShadowBehindNode": true
+        },
+        {
+          "type": "DROP_SHADOW",
+          "visible": true,
+          "radius": 4,
+          "boundVariables": {},
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 0.25
+          },
+          "offset": {
+            "x": 0,
+            "y": 4
+          },
+          "spread": 0,
+          "blendMode": "NORMAL",
+          "showShadowBehindNode": false
+        }
+      ],
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          },
+          "boundVariables": {}
+        }
+      ],
+      "style": "S:e2200fb49020de67c0e3fc66f2fcefa083351b0d,"
+    },
+    {
+      "id": "2:761",
+      "name": "L",
+      "parent": "2:760",
+      "width": 200,
+      "height": 200,
+      "radius": 8,
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "visible": true,
+          "radius": 16,
+          "boundVariables": {},
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 0.07999999821186066
+          },
+          "offset": {
+            "x": 0,
+            "y": 6
+          },
+          "spread": 0,
+          "blendMode": "NORMAL",
+          "showShadowBehindNode": true
+        },
+        {
+          "type": "DROP_SHADOW",
+          "visible": true,
+          "radius": 28,
+          "boundVariables": {},
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 0.05000000074505806
+          },
+          "offset": {
+            "x": 0,
+            "y": 9
+          },
+          "spread": 8,
+          "blendMode": "NORMAL",
+          "showShadowBehindNode": true
+        }
+      ],
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          },
+          "boundVariables": {}
+        }
+      ],
+      "style": "S:8328e604b47720723742b5ed620b945b28084039,"
+    }
+  ],
+  "extraPaints": [
+    {
+      "nodeId": "2:1577",
+      "sample": {
+        "id": "2:1579",
+        "fills": [
+          {
+            "type": "SOLID",
+            "visible": true,
+            "opacity": 0.800000011920929,
+            "blendMode": "NORMAL",
+            "color": {
+              "r": 0.13725490868091583,
+              "g": 0.16078431904315948,
+              "b": 0.20000000298023224
+            },
+            "boundVariables": {}
+          }
+        ]
+      }
+    },
+    {
+      "nodeId": "2:1603",
+      "sample": {
+        "id": "2:1605",
+        "fills": [
+          {
+            "type": "GRADIENT_LINEAR",
+            "visible": true,
+            "opacity": 1,
+            "blendMode": "NORMAL",
+            "gradientStops": [
+              {
+                "color": {
+                  "r": 0.9803921580314636,
+                  "g": 0.9803921580314636,
+                  "b": 0.9803921580314636,
+                  "a": 1
+                },
+                "position": 0,
+                "boundVariables": {}
+              },
+              {
+                "color": {
+                  "r": 0.7647058963775635,
+                  "g": 0.7450980544090271,
+                  "b": 0.7450980544090271,
+                  "a": 1
+                },
+                "position": 1,
+                "boundVariables": {}
+              }
+            ],
+            "gradientTransform": [
+              [
+                0.7137255072593689,
+                -3.994191644096645e-9,
+                0.1725490242242813
+              ],
+              [
+                0.005619371775537729,
+                0.23094993829727173,
+                0.40317392349243164
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "nodeId": "23:306",
+      "sample": {
+        "id": "23:308",
+        "fills": [
+          {
+            "type": "GRADIENT_LINEAR",
+            "visible": true,
+            "opacity": 1,
+            "blendMode": "NORMAL",
+            "gradientStops": [
+              {
+                "color": {
+                  "r": 0.9803921580314636,
+                  "g": 0.9803921580314636,
+                  "b": 0.9803921580314636,
+                  "a": 1
+                },
+                "position": 0,
+                "boundVariables": {}
+              },
+              {
+                "color": {
+                  "r": 0.23137255012989044,
+                  "g": 0.4431372582912445,
+                  "b": 0.5098039507865906,
+                  "a": 1
+                },
+                "position": 1,
+                "boundVariables": {}
+              }
+            ],
+            "gradientTransform": [
+              [
+                0.7137255072593689,
+                -3.994191644096645e-9,
+                0.1725490242242813
+              ],
+              [
+                0.005619371775537729,
+                0.23094993829727173,
+                0.40317392349243164
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "nodeId": "23:319",
+      "sample": {
+        "id": "23:321",
+        "fills": [
+          {
+            "type": "GRADIENT_LINEAR",
+            "visible": true,
+            "opacity": 1,
+            "blendMode": "NORMAL",
+            "gradientStops": [
+              {
+                "color": {
+                  "r": 0.9803921580314636,
+                  "g": 0.9803921580314636,
+                  "b": 0.9803921580314636,
+                  "a": 1
+                },
+                "position": 0,
+                "boundVariables": {}
+              },
+              {
+                "color": {
+                  "r": 0.7058823704719543,
+                  "g": 0.886274516582489,
+                  "b": 0.8078431487083435,
+                  "a": 1
+                },
+                "position": 1,
+                "boundVariables": {}
+              }
+            ],
+            "gradientTransform": [
+              [
+                0.7137255072593689,
+                -3.994191644096645e-9,
+                0.1725490242242813
+              ],
+              [
+                0.005619371775537729,
+                0.23094993829727173,
+                0.40317392349243164
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "sourceConflicts": [
+    {
+      "id": "typography.section-title",
+      "specification": "16px / 24px",
+      "sample": "18px / 26px",
+      "specificationNode": "110:1131",
+      "sampleNode": "110:1137",
+      "adopted": "specification-table"
+    },
+    {
+      "id": "shadow.s",
+      "specificationNode": "2:783",
+      "sampleNode": "2:753",
+      "adopted": "specification-table"
+    },
+    {
+      "id": "shadow.m",
+      "specificationNode": "2:788",
+      "sampleNode": "2:757",
+      "adopted": "specification-table"
+    },
+    {
+      "id": "shadow.l",
+      "specificationNode": "2:793",
+      "sampleNode": "2:761",
+      "adopted": "specification-table"
+    },
+    {
+      "id": "shimmer.gradient",
+      "specification": "100%, 25%, 100% opacity notation",
+      "sample": "Two opaque gradient stops from #FAFAFA to the token color",
+      "adopted": "base-color-only; gradient not standardized"
+    }
+  ]
+}

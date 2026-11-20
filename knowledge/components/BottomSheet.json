@@ -1,0 +1,212 @@
+{
+  "name": "BottomSheet",
+  "origin": "figma",
+  "originLabel": "Figma 来源",
+  "purpose": "承载当前任务的补充内容或输入操作。",
+  "constraints": [
+    "正文与 actions 由调用方提供；现有通用外壳不等于已交付全部 Figma 预置组合。"
+  ],
+  "marker": "<div data-pd=\"BottomSheet\" data-options='{}'></div>",
+  "options": [
+    {
+      "name": "visible",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "vue-implicit",
+        "value": false,
+        "note": "未传 Boolean prop 时 当前基准实现 使用 false。"
+      },
+      "required": false
+    },
+    {
+      "name": "title",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Header title'",
+        "value": "Header title"
+      },
+      "required": false
+    },
+    {
+      "name": "accessibleLabel",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Bottom sheet'",
+        "value": "Bottom sheet"
+      },
+      "required": false
+    },
+    {
+      "name": "actions",
+      "types": [
+        "Array"
+      ],
+      "default": {
+        "kind": "factory-literal",
+        "expression": "() => [{ key: 'primary', label: 'Label' }]",
+        "value": [
+          {
+            "key": "primary",
+            "label": "Label"
+          }
+        ]
+      },
+      "required": false
+    },
+    {
+      "name": "closeLabel",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Close bottom sheet'",
+        "value": "Close bottom sheet"
+      },
+      "required": false
+    },
+    {
+      "name": "closeOnClickOutside",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "true",
+        "value": true
+      },
+      "required": false
+    },
+    {
+      "name": "closeOnEscape",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "true",
+        "value": true
+      },
+      "required": false
+    },
+    {
+      "name": "closeOnAction",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "true",
+        "value": true
+      },
+      "required": false
+    },
+    {
+      "name": "dismissHint",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Tap anywhere to dismiss'",
+        "value": "Tap anywhere to dismiss"
+      },
+      "required": false
+    },
+    {
+      "name": "appendToBody",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "true",
+        "value": true
+      },
+      "required": false
+    },
+    {
+      "name": "inline",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "vue-implicit",
+        "value": false,
+        "note": "未传 Boolean prop 时 当前基准实现 使用 false。"
+      },
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "pd:action",
+      "detail": "{ value, args }",
+      "description": "(action, index)：当前操作对象与从 0 开始的索引。"
+    },
+    {
+      "name": "pd:close",
+      "detail": "{ value, args }; reason",
+      "description": "String：outside、escape、关闭按钮或 action.key 等关闭原因，按源码分支。"
+    },
+    {
+      "name": "pd:closed",
+      "detail": "{ value, args }",
+      "description": "无载荷；非 inline 弹层停用后通知。"
+    },
+    {
+      "name": "pd:input",
+      "detail": "{ value, args }",
+      "description": "false：请求父级关闭。"
+    },
+    {
+      "name": "pd:opened",
+      "detail": "{ value, args }",
+      "description": "无载荷；非 inline 弹层激活后通知。"
+    },
+    {
+      "name": "pd:update:visible",
+      "detail": "{ value, args }",
+      "description": "false：请求父级关闭，可配合 visible.sync。"
+    }
+  ],
+  "contents": [
+    {
+      "name": "default",
+      "description": "默认内容；回退内容及条件按模板。",
+      "usage": "原生 DOM 节点或接收内容上下文的函数"
+    }
+  ],
+  "methods": [],
+  "knownDifferences": [],
+  "designTarget": {
+    "origin": "figma",
+    "figma": {
+      "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+      "page": "2:91",
+      "master": "188:14993",
+      "reference": "188:14994",
+      "snapshot": "tokens/sources/figma-library/BottomSheet.json"
+    },
+    "tokenReference": "tokens/component.json#bottom-sheet",
+    "gaps": "Radio / Checkbox / Toggle / Feedback没有已交付预置组合；多种Header及Search/Grid子结构未开放"
+  },
+  "verification": {
+    "status": "requires-current-evidence",
+    "report": "verification/report.json",
+    "scope": "当前 HTML 构建的交互、尺寸和截图对照；不扩大为完整设计认证。"
+  },
+  "examples": [
+    "bottomsheet--nested-overlays",
+    "bottomsheet--playground",
+    "bottomsheet--examples"
+  ]
+}

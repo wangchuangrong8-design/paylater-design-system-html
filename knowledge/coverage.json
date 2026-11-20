@@ -1,0 +1,5502 @@
+{
+  "version": 1,
+  "componentCount": 37,
+  "componentStoryCount": 83,
+  "trialPages": [],
+  "standaloneExamples": [
+    "input--playground",
+    "bottomsheet--playground"
+  ],
+  "stories": [
+    {
+      "id": "accordion--playground",
+      "title": "Components/Accordion/Playground",
+      "component": "Accordion",
+      "name": "Playground",
+      "args": {
+        "value": false,
+        "title": "Label",
+        "disabled": false
+      },
+      "controls": {
+        "value": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "title": {
+          "control": "text",
+          "type": "string"
+        },
+        "disabled": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [
+        "value",
+        "title",
+        "disabled"
+      ],
+      "cases": [
+        "component-event",
+        "component-value"
+      ],
+      "caseMatrix": {},
+      "sourceHash": "57c152bc0a0d564846115df7217bb1f9d8c7ce608147b62305f1a665e8a1a368",
+      "origin": "figma"
+    },
+    {
+      "id": "accordion--examples",
+      "title": "Components/Accordion/Examples",
+      "component": "Accordion",
+      "name": "Examples",
+      "args": {
+        "value": false,
+        "title": "Label",
+        "disabled": false
+      },
+      "controls": {
+        "value": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "title": {
+          "control": "text",
+          "type": "string"
+        },
+        "disabled": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [],
+      "cases": [
+        "entry.key || index"
+      ],
+      "caseMatrix": {
+        "entries": [
+          {
+            "title": "Collapsed",
+            "args": {
+              "value": false
+            }
+          },
+          {
+            "title": "Expanded",
+            "args": {
+              "value": true
+            }
+          },
+          {
+            "title": "Disabled",
+            "args": {
+              "disabled": true
+            }
+          }
+        ]
+      },
+      "sourceHash": "57c152bc0a0d564846115df7217bb1f9d8c7ce608147b62305f1a665e8a1a368",
+      "origin": "figma"
+    },
+    {
+      "id": "actiongroup--playground",
+      "title": "Components/ActionGroup/Playground",
+      "component": "ActionGroup",
+      "name": "Playground",
+      "args": {
+        "actions": [
+          {
+            "key": "primary",
+            "label": "Label",
+            "variant": "primary"
+          }
+        ],
+        "direction": "vertical",
+        "disabled": false
+      },
+      "controls": {
+        "direction": {
+          "control": "select",
+          "options": [
+            "vertical",
+            "horizontal"
+          ]
+        },
+        "disabled": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [
+        "actions",
+        "direction",
+        "disabled"
+      ],
+      "cases": [
+        "component-event",
+        "component-value"
+      ],
+      "caseMatrix": {},
+      "sourceHash": "214cd1b2ad80cef85ed6a8f1783d2decd00d2c88c6dc38c31ab774f053bbc414",
+      "origin": "figma"
+    },
+    {
+      "id": "actiongroup--examples",
+      "title": "Components/ActionGroup/Examples",
+      "component": "ActionGroup",
+      "name": "Examples",
+      "args": {
+        "actions": [
+          {
+            "key": "primary",
+            "label": "Label",
+            "variant": "primary"
+          }
+        ],
+        "direction": "vertical",
+        "disabled": false
+      },
+      "controls": {
+        "direction": {
+          "control": "select",
+          "options": [
+            "vertical",
+            "horizontal"
+          ]
+        },
+        "disabled": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [],
+      "cases": [
+        "entry.key || index"
+      ],
+      "caseMatrix": {
+        "entries": [
+          {
+            "title": "Single",
+            "args": {
+              "actions": [
+                {
+                  "key": "a",
+                  "label": "Label"
+                }
+              ]
+            }
+          },
+          {
+            "title": "Double",
+            "args": {
+              "actions": [
+                {
+                  "key": "a",
+                  "label": "Label"
+                },
+                {
+                  "key": "b",
+                  "label": "Label"
+                }
+              ]
+            }
+          },
+          {
+            "title": "Triple",
+            "args": {
+              "actions": [
+                {
+                  "key": "a",
+                  "label": "Label"
+                },
+                {
+                  "key": "b",
+                  "label": "Label"
+                },
+                {
+                  "key": "c",
+                  "label": "Label"
+                }
+              ]
+            }
+          },
+          {
+            "title": "Side by side",
+            "args": {
+              "direction": "horizontal",
+              "actions": [
+                {
+                  "key": "a",
+                  "label": "Label",
+                  "variant": "ghost"
+                },
+                {
+                  "key": "b",
+                  "label": "Label",
+                  "variant": "primary"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "sourceHash": "214cd1b2ad80cef85ed6a8f1783d2decd00d2c88c6dc38c31ab774f053bbc414",
+      "origin": "figma"
+    },
+    {
+      "id": "avatar--playground",
+      "title": "Components/Avatar/Playground",
+      "component": "Avatar",
+      "name": "Playground",
+      "args": {
+        "initials": "AD",
+        "size": 40,
+        "label": "Avatar",
+        "src": ""
+      },
+      "controls": {
+        "src": {
+          "control": "text",
+          "type": "string"
+        },
+        "label": {
+          "control": "text",
+          "type": "string"
+        },
+        "initials": {
+          "control": "text",
+          "type": "string"
+        },
+        "size": {
+          "control": "select",
+          "options": [
+            20,
+            24,
+            40,
+            48,
+            80
+          ]
+        }
+      },
+      "configurable": [
+        "src",
+        "label",
+        "initials",
+        "size"
+      ],
+      "cases": [
+        "component-event",
+        "component-value"
+      ],
+      "caseMatrix": {},
+      "sourceHash": "426013fb7817cae8b4aca881043cd399079770402339c5a7653b2c118207b2fb",
+      "origin": "figma"
+    },
+    {
+      "id": "avatar--examples",
+      "title": "Components/Avatar/Examples",
+      "component": "Avatar",
+      "name": "Examples",
+      "args": {
+        "initials": "AD",
+        "size": 40,
+        "label": "Avatar",
+        "src": ""
+      },
+      "controls": {
+        "src": {
+          "control": "text",
+          "type": "string"
+        },
+        "label": {
+          "control": "text",
+          "type": "string"
+        },
+        "initials": {
+          "control": "text",
+          "type": "string"
+        },
+        "size": {
+          "control": "select",
+          "options": [
+            20,
+            24,
+            40,
+            48,
+            80
+          ]
+        }
+      },
+      "configurable": [],
+      "cases": [
+        "entry.key || index"
+      ],
+      "caseMatrix": {
+        "entries": [
+          {
+            "title": "20",
+            "args": {
+              "size": 20,
+              "initials": "AD"
+            }
+          },
+          {
+            "title": "24",
+            "args": {
+              "size": 24,
+              "initials": "AD"
+            }
+          },
+          {
+            "title": "40",
+            "args": {
+              "size": 40,
+              "initials": "AD"
+            }
+          },
+          {
+            "title": "48",
+            "args": {
+              "size": 48,
+              "initials": "AD"
+            }
+          },
+          {
+            "title": "80",
+            "args": {
+              "size": 80,
+              "initials": "AD"
+            }
+          }
+        ]
+      },
+      "sourceHash": "426013fb7817cae8b4aca881043cd399079770402339c5a7653b2c118207b2fb",
+      "origin": "figma"
+    },
+    {
+      "id": "badge--playground",
+      "title": "Components/Badge/Playground",
+      "component": "Badge",
+      "name": "Playground",
+      "args": {
+        "type": "info",
+        "small": false
+      },
+      "controls": {
+        "type": {
+          "control": "select",
+          "options": [
+            "info",
+            "neutral",
+            "warning",
+            "success",
+            "danger"
+          ]
+        },
+        "small": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [
+        "type",
+        "small"
+      ],
+      "cases": [
+        "component-event",
+        "component-value"
+      ],
+      "caseMatrix": {},
+      "sourceHash": "21f5838b862a6bce49c72c2942a9b8ee80491308962fa9e3c95e5b63197bc8cc",
+      "origin": "figma"
+    },
+    {
+      "id": "badge--examples",
+      "title": "Components/Badge/Examples",
+      "component": "Badge",
+      "name": "Examples",
+      "args": {
+        "type": "info",
+        "small": false
+      },
+      "controls": {
+        "type": {
+          "control": "select",
+          "options": [
+            "info",
+            "neutral",
+            "warning",
+            "success",
+            "danger"
+          ]
+        },
+        "small": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [],
+      "cases": [
+        "entry.key || index"
+      ],
+      "caseMatrix": {
+        "entries": [
+          {
+            "title": "info",
+            "args": {
+              "type": "info"
+            }
+          },
+          {
+            "title": "neutral",
+            "args": {
+              "type": "neutral"
+            }
+          },
+          {
+            "title": "warning",
+            "args": {
+              "type": "warning"
+            }
+          },
+          {
+            "title": "success",
+            "args": {
+              "type": "success"
+            }
+          },
+          {
+            "title": "danger",
+            "args": {
+              "type": "danger"
+            }
+          },
+          {
+            "title": "Small",
+            "args": {
+              "type": "info",
+              "small": true
+            }
+          }
+        ]
+      },
+      "sourceHash": "21f5838b862a6bce49c72c2942a9b8ee80491308962fa9e3c95e5b63197bc8cc",
+      "origin": "figma"
+    },
+    {
+      "id": "banner--playground",
+      "title": "Components/Banner/Playground",
+      "component": "Banner",
+      "name": "Playground",
+      "args": {
+        "visible": true,
+        "type": "info",
+        "title": "Title banner",
+        "description": "A message should be a short and complete sentence.",
+        "closable": false
+      },
+      "controls": {
+        "visible": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "type": {
+          "control": "select",
+          "options": [
+            "info",
+            "warning",
+            "error"
+          ]
+        },
+        "title": {
+          "control": "text",
+          "type": "string"
+        },
+        "description": {
+          "control": "text",
+          "type": "string"
+        },
+        "closable": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [
+        "visible",
+        "type",
+        "title",
+        "description",
+        "closable",
+        "closeLabel",
+        "actions"
+      ],
+      "cases": [
+        "show-component",
+        "component-event",
+        "component-value"
+      ],
+      "caseMatrix": {},
+      "sourceHash": "e8554910adb4c9acb600c2a5fcbd4c07ed8cf6551c260277d244cdad11f70ca3",
+      "origin": "figma"
+    },
+    {
+      "id": "banner--examples",
+      "title": "Components/Banner/Examples",
+      "component": "Banner",
+      "name": "Examples",
+      "args": {
+        "visible": true,
+        "type": "info",
+        "title": "Title banner",
+        "description": "A message should be a short and complete sentence.",
+        "closable": false
+      },
+      "controls": {
+        "visible": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "type": {
+          "control": "select",
+          "options": [
+            "info",
+            "warning",
+            "error"
+          ]
+        },
+        "title": {
+          "control": "text",
+          "type": "string"
+        },
+        "description": {
+          "control": "text",
+          "type": "string"
+        },
+        "closable": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [],
+      "cases": [
+        "entry.key || index"
+      ],
+      "caseMatrix": {
+        "entries": [
+          {
+            "title": "info",
+            "args": {
+              "visible": true,
+              "type": "info",
+              "closable": true
+            }
+          },
+          {
+            "title": "warning",
+            "args": {
+              "visible": true,
+              "type": "warning",
+              "closable": true
+            }
+          },
+          {
+            "title": "error",
+            "args": {
+              "visible": true,
+              "type": "error",
+              "closable": true
+            }
+          },
+          {
+            "title": "Without title",
+            "args": {
+              "visible": true,
+              "title": "",
+              "description": "A short, complete message.",
+              "actions": []
+            }
+          }
+        ]
+      },
+      "sourceHash": "e8554910adb4c9acb600c2a5fcbd4c07ed8cf6551c260277d244cdad11f70ca3",
+      "origin": "figma"
+    },
+    {
+      "id": "bottomsheet--nested-overlays",
+      "title": "Components/BottomSheet/NestedOverlays",
+      "component": "BottomSheet",
+      "name": "NestedOverlays",
+      "args": {
+        "visible": false,
+        "title": "Header title",
+        "inline": false,
+        "closeOnClickOutside": true,
+        "closeOnEscape": true,
+        "closeOnAction": true
+      },
+      "controls": {
+        "visible": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "title": {
+          "control": "text",
+          "type": "string"
+        },
+        "closeOnClickOutside": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "closeOnEscape": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "closeOnAction": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "inline": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [],
+      "cases": [
+        "open-sheet",
+        "open-nested-dialog"
+      ],
+      "caseMatrix": {},
+      "sourceHash": "6bc9daa8b9f5484c0313a80d9f8c1dcb3b06a1a757858b7ebf65bc6515db531a",
+      "origin": "figma"
+    },
+    {
+      "id": "bottomsheet--playground",
+      "title": "Components/BottomSheet/Playground",
+      "component": "BottomSheet",
+      "name": "Playground",
+      "args": {
+        "visible": false,
+        "title": "Header title",
+        "inline": false,
+        "closeOnClickOutside": true,
+        "closeOnEscape": true,
+        "closeOnAction": true
+      },
+      "controls": {
+        "visible": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "title": {
+          "control": "text",
+          "type": "string"
+        },
+        "closeOnClickOutside": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "closeOnEscape": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "closeOnAction": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "inline": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [
+        "visible",
+        "title",
+        "accessibleLabel",
+        "actions",
+        "closeLabel",
+        "closeOnClickOutside",
+        "closeOnEscape",
+        "closeOnAction",
+        "dismissHint",
+        "appendToBody",
+        "inline"
+      ],
+      "cases": [
+        "show-component",
+        "component-event",
+        "component-value"
+      ],
+      "caseMatrix": {},
+      "sourceHash": "6bc9daa8b9f5484c0313a80d9f8c1dcb3b06a1a757858b7ebf65bc6515db531a",
+      "origin": "figma"
+    },
+    {
+      "id": "bottomsheet--examples",
+      "title": "Components/BottomSheet/Examples",
+      "component": "BottomSheet",
+      "name": "Examples",
+      "args": {
+        "visible": false,
+        "title": "Header title",
+        "inline": false,
+        "closeOnClickOutside": true,
+        "closeOnEscape": true,
+        "closeOnAction": true
+      },
+      "controls": {
+        "visible": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "title": {
+          "control": "text",
+          "type": "string"
+        },
+        "closeOnClickOutside": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "closeOnEscape": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "closeOnAction": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "inline": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [],
+      "cases": [
+        "entry.key || index"
+      ],
+      "caseMatrix": {
+        "entries": [
+          {
+            "title": "List container",
+            "args": {
+              "visible": true,
+              "inline": true,
+              "title": "Header title"
+            }
+          },
+          {
+            "title": "Custom actions",
+            "args": {
+              "visible": true,
+              "inline": true,
+              "title": "Choose an option",
+              "actions": [
+                {
+                  "key": "continue",
+                  "label": "Continue"
+                },
+                {
+                  "key": "cancel",
+                  "label": "Cancel",
+                  "variant": "ghost"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "sourceHash": "6bc9daa8b9f5484c0313a80d9f8c1dcb3b06a1a757858b7ebf65bc6515db531a",
+      "origin": "figma"
+    },
+    {
+      "id": "button--playground",
+      "title": "Components/Button/Playground",
+      "component": "Button",
+      "name": "Playground",
+      "args": {
+        "label": "Label",
+        "variant": "primary",
+        "size": "regular",
+        "state": "auto",
+        "icon": "",
+        "disabled": false,
+        "block": true,
+        "sticky": false
+      },
+      "controls": {
+        "label": {
+          "control": "text"
+        },
+        "variant": {
+          "control": "select",
+          "options": [
+            "primary",
+            "secondary",
+            "ghost",
+            "danger"
+          ]
+        },
+        "size": {
+          "control": "select",
+          "options": [
+            "regular",
+            "small",
+            "xs"
+          ]
+        },
+        "state": {
+          "control": "select",
+          "options": [
+            "auto",
+            "default",
+            "tap",
+            "disabled"
+          ]
+        },
+        "icon": {
+          "control": "select",
+          "options": [
+            "",
+            "left",
+            "right"
+          ]
+        },
+        "disabled": {
+          "control": "boolean"
+        },
+        "block": {
+          "control": "boolean"
+        },
+        "sticky": {
+          "control": "boolean"
+        },
+        "onClick": {
+          "action": "click"
+        }
+      },
+      "configurable": [
+        "label",
+        "variant",
+        "size",
+        "state",
+        "icon",
+        "disabled",
+        "block",
+        "sticky",
+        "onClick"
+      ],
+      "cases": [
+        "button-clicks"
+      ],
+      "caseMatrix": {},
+      "sourceHash": "dcea38bb8274f27e5d29606d0d9d073baec566121732151be915fdbc0f8e2c0d",
+      "origin": "figma"
+    },
+    {
+      "id": "button--states",
+      "title": "Components/Button/States",
+      "component": "Button",
+      "name": "States",
+      "args": {},
+      "controls": {
+        "label": {
+          "control": "text"
+        },
+        "variant": {
+          "control": "select",
+          "options": [
+            "primary",
+            "secondary",
+            "ghost",
+            "danger"
+          ]
+        },
+        "size": {
+          "control": "select",
+          "options": [
+            "regular",
+            "small",
+            "xs"
+          ]
+        },
+        "state": {
+          "control": "select",
+          "options": [
+            "auto",
+            "default",
+            "tap",
+            "disabled"
+          ]
+        },
+        "icon": {
+          "control": "select",
+          "options": [
+            "",
+            "left",
+            "right"
+          ]
+        },
+        "disabled": {
+          "control": "boolean"
+        },
+        "block": {
+          "control": "boolean"
+        },
+        "sticky": {
+          "control": "boolean"
+        },
+        "onClick": {
+          "action": "click"
+        }
+      },
+      "configurable": [],
+      "cases": [
+        "variant + '-' + state"
+      ],
+      "caseMatrix": {
+        "variants": [
+          "primary",
+          "secondary",
+          "ghost",
+          "danger"
+        ],
+        "states": [
+          "default",
+          "tap",
+          "disabled"
+        ]
+      },
+      "sourceHash": "dcea38bb8274f27e5d29606d0d9d073baec566121732151be915fdbc0f8e2c0d",
+      "origin": "figma"
+    },
+    {
+      "id": "button--sizes-and-icons",
+      "title": "Components/Button/SizesAndIcons",
+      "component": "Button",
+      "name": "SizesAndIcons",
+      "args": {},
+      "controls": {
+        "label": {
+          "control": "text"
+        },
+        "variant": {
+          "control": "select",
+          "options": [
+            "primary",
+            "secondary",
+            "ghost",
+            "danger"
+          ]
+        },
+        "size": {
+          "control": "select",
+          "options": [
+            "regular",
+            "small",
+            "xs"
+          ]
+        },
+        "state": {
+          "control": "select",
+          "options": [
+            "auto",
+            "default",
+            "tap",
+            "disabled"
+          ]
+        },
+        "icon": {
+          "control": "select",
+          "options": [
+            "",
+            "left",
+            "right"
+          ]
+        },
+        "disabled": {
+          "control": "boolean"
+        },
+        "block": {
+          "control": "boolean"
+        },
+        "sticky": {
+          "control": "boolean"
+        },
+        "onClick": {
+          "action": "click"
+        }
+      },
+      "configurable": [],
+      "cases": [
+        "size + '-' + (icon || 'basic')"
+      ],
+      "caseMatrix": {
+        "sizes": [
+          "regular",
+          "small",
+          "xs"
+        ]
+      },
+      "sourceHash": "dcea38bb8274f27e5d29606d0d9d073baec566121732151be915fdbc0f8e2c0d",
+      "origin": "figma"
+    },
+    {
+      "id": "button--sticky",
+      "title": "Components/Button/Sticky",
+      "component": "Button",
+      "name": "Sticky",
+      "args": {},
+      "controls": {
+        "label": {
+          "control": "text"
+        },
+        "variant": {
+          "control": "select",
+          "options": [
+            "primary",
+            "secondary",
+            "ghost",
+            "danger"
+          ]
+        },
+        "size": {
+          "control": "select",
+          "options": [
+            "regular",
+            "small",
+            "xs"
+          ]
+        },
+        "state": {
+          "control": "select",
+          "options": [
+            "auto",
+            "default",
+            "tap",
+            "disabled"
+          ]
+        },
+        "icon": {
+          "control": "select",
+          "options": [
+            "",
+            "left",
+            "right"
+          ]
+        },
+        "disabled": {
+          "control": "boolean"
+        },
+        "block": {
+          "control": "boolean"
+        },
+        "sticky": {
+          "control": "boolean"
+        },
+        "onClick": {
+          "action": "click"
+        }
+      },
+      "configurable": [],
+      "cases": [
+        "sticky-clicks"
+      ],
+      "caseMatrix": {},
+      "sourceHash": "dcea38bb8274f27e5d29606d0d9d073baec566121732151be915fdbc0f8e2c0d",
+      "origin": "figma"
+    },
+    {
+      "id": "card--playground",
+      "title": "Components/Card/Playground",
+      "component": "Card",
+      "name": "Playground",
+      "args": {
+        "title": "Card title",
+        "elevated": false
+      },
+      "controls": {
+        "title": {
+          "control": "text",
+          "type": "string"
+        },
+        "elevated": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [
+        "title",
+        "elevated"
+      ],
+      "cases": [
+        "component-event",
+        "component-value"
+      ],
+      "caseMatrix": {},
+      "sourceHash": "a36f345c9c74084d08a981d63c869162011fc1b86e0654cb7389f790bab2b529",
+      "origin": "original"
+    },
+    {
+      "id": "card--examples",
+      "title": "Components/Card/Examples",
+      "component": "Card",
+      "name": "Examples",
+      "args": {
+        "title": "Card title",
+        "elevated": false
+      },
+      "controls": {
+        "title": {
+          "control": "text",
+          "type": "string"
+        },
+        "elevated": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [],
+      "cases": [
+        "entry.key || index"
+      ],
+      "caseMatrix": {
+        "entries": [
+          {
+            "title": "Flat",
+            "args": {
+              "title": "Card title",
+              "elevated": false
+            }
+          },
+          {
+            "title": "Elevated",
+            "args": {
+              "title": "Card title",
+              "elevated": true
+            }
+          }
+        ]
+      },
+      "sourceHash": "a36f345c9c74084d08a981d63c869162011fc1b86e0654cb7389f790bab2b529",
+      "origin": "original"
+    },
+    {
+      "id": "checkbox--selection",
+      "title": "Components/Checkbox/Selection",
+      "component": "Checkbox",
+      "name": "Selection",
+      "args": {
+        "value": true,
+        "label": "",
+        "disabled": false,
+        "block": false,
+        "optionValue": "a"
+      },
+      "controls": {
+        "value": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "optionValue": {
+          "control": "text",
+          "type": "string"
+        },
+        "label": {
+          "control": "text",
+          "type": "string"
+        },
+        "disabled": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "block": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [],
+      "cases": [
+        "selection-value"
+      ],
+      "caseMatrix": {},
+      "sourceHash": "9dd2ef6b3ab782bf2404025042aca292b634041619fafe3bcc6c5b85c9392b86",
+      "origin": "figma"
+    },
+    {
+      "id": "checkbox--playground",
+      "title": "Components/Checkbox/Playground",
+      "component": "Checkbox",
+      "name": "Playground",
+      "args": {
+        "value": true,
+        "label": "",
+        "disabled": false,
+        "block": false,
+        "optionValue": "a"
+      },
+      "controls": {
+        "value": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "optionValue": {
+          "control": "text",
+          "type": "string"
+        },
+        "label": {
+          "control": "text",
+          "type": "string"
+        },
+        "disabled": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "block": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [
+        "value",
+        "optionValue",
+        "label",
+        "disabled",
+        "block"
+      ],
+      "cases": [
+        "component-event",
+        "component-value"
+      ],
+      "caseMatrix": {},
+      "sourceHash": "9dd2ef6b3ab782bf2404025042aca292b634041619fafe3bcc6c5b85c9392b86",
+      "origin": "figma"
+    },
+    {
+      "id": "checkbox--examples",
+      "title": "Components/Checkbox/Examples",
+      "component": "Checkbox",
+      "name": "Examples",
+      "args": {
+        "value": true,
+        "label": "",
+        "disabled": false,
+        "block": false,
+        "optionValue": "a"
+      },
+      "controls": {
+        "value": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "optionValue": {
+          "control": "text",
+          "type": "string"
+        },
+        "label": {
+          "control": "text",
+          "type": "string"
+        },
+        "disabled": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "block": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [],
+      "cases": [
+        "entry.key || index"
+      ],
+      "caseMatrix": {
+        "entries": [
+          {
+            "title": "Unchecked",
+            "args": {
+              "value": false
+            }
+          },
+          {
+            "title": "Checked",
+            "args": {
+              "value": true
+            }
+          },
+          {
+            "title": "Disabled",
+            "args": {
+              "value": false,
+              "disabled": true
+            }
+          },
+          {
+            "title": "Checked disabled",
+            "args": {
+              "value": true,
+              "disabled": true
+            }
+          },
+          {
+            "title": "Labelled row",
+            "args": {
+              "value": false,
+              "label": "Label",
+              "block": true
+            }
+          }
+        ]
+      },
+      "sourceHash": "9dd2ef6b3ab782bf2404025042aca292b634041619fafe3bcc6c5b85c9392b86",
+      "origin": "figma"
+    },
+    {
+      "id": "datepicker--playground",
+      "title": "Components/DatePicker/Playground",
+      "component": "DatePicker",
+      "name": "Playground",
+      "args": {
+        "value": "2024-02-20",
+        "min": "",
+        "max": "",
+        "disabled": false,
+        "locale": "en-US",
+        "title": "Select date"
+      },
+      "controls": {
+        "value": {
+          "control": "text",
+          "type": "string"
+        },
+        "min": {
+          "control": "text",
+          "type": "string"
+        },
+        "max": {
+          "control": "text",
+          "type": "string"
+        },
+        "disabled": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "locale": {
+          "control": "text",
+          "type": "string"
+        },
+        "title": {
+          "control": "text",
+          "type": "string"
+        }
+      },
+      "configurable": [
+        "value",
+        "min",
+        "max",
+        "disabled",
+        "locale",
+        "title",
+        "confirmLabel",
+        "cancelLabel",
+        "previousLabel",
+        "nextLabel",
+        "monthChangeLabel"
+      ],
+      "cases": [
+        "component-event",
+        "component-value"
+      ],
+      "caseMatrix": {},
+      "sourceHash": "98694a653a41660ff33d4f953346a83ab95ae913f61a6bba46c07de15c1ae2ce",
+      "origin": "figma"
+    },
+    {
+      "id": "datepicker--examples",
+      "title": "Components/DatePicker/Examples",
+      "component": "DatePicker",
+      "name": "Examples",
+      "args": {
+        "value": "2024-02-20",
+        "min": "",
+        "max": "",
+        "disabled": false,
+        "locale": "en-US",
+        "title": "Select date"
+      },
+      "controls": {
+        "value": {
+          "control": "text",
+          "type": "string"
+        },
+        "min": {
+          "control": "text",
+          "type": "string"
+        },
+        "max": {
+          "control": "text",
+          "type": "string"
+        },
+        "disabled": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "locale": {
+          "control": "text",
+          "type": "string"
+        },
+        "title": {
+          "control": "text",
+          "type": "string"
+        }
+      },
+      "configurable": [],
+      "cases": [
+        "entry.key || index"
+      ],
+      "caseMatrix": {
+        "entries": [
+          {
+            "title": "Calendar grid",
+            "args": {
+              "value": "2024-02-20"
+            }
+          },
+          {
+            "title": "Date limits",
+            "args": {
+              "value": "2024-02-20",
+              "min": "2024-02-10",
+              "max": "2024-02-24"
+            }
+          },
+          {
+            "title": "Disabled selection",
+            "args": {
+              "value": "2024-02-20",
+              "disabled": true
+            }
+          }
+        ]
+      },
+      "sourceHash": "98694a653a41660ff33d4f953346a83ab95ae913f61a6bba46c07de15c1ae2ce",
+      "origin": "figma"
+    },
+    {
+      "id": "dialog--playground",
+      "title": "Components/Dialog/Playground",
+      "component": "Dialog",
+      "name": "Playground",
+      "args": {
+        "visible": false,
+        "title": "Dialog title",
+        "description": "A message should be short, complete sentence",
+        "header": "text",
+        "illustration": false,
+        "closeOnClickOutside": false,
+        "closeOnEscape": true,
+        "closeOnAction": true,
+        "dismissHint": "",
+        "actions": [
+          {
+            "key": "primary",
+            "label": "Label",
+            "variant": "primary"
+          },
+          {
+            "key": "secondary",
+            "label": "Label",
+            "variant": "secondary"
+          },
+          {
+            "key": "cancel",
+            "label": "Label",
+            "variant": "ghost"
+          }
+        ]
+      },
+      "controls": {
+        "visible": {
+          "control": "boolean"
+        },
+        "title": {
+          "control": "text"
+        },
+        "description": {
+          "control": "text"
+        },
+        "header": {
+          "control": "select",
+          "options": [
+            "text",
+            "none",
+            "illustration"
+          ]
+        },
+        "actions": {
+          "control": "object"
+        },
+        "illustration": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "closeOnClickOutside": {
+          "control": "boolean"
+        },
+        "closeOnEscape": {
+          "control": "boolean"
+        },
+        "closeOnAction": {
+          "control": "boolean"
+        },
+        "dismissHint": {
+          "control": "text"
+        },
+        "onAction": {
+          "action": "action"
+        },
+        "onClose": {
+          "action": "close"
+        }
+      },
+      "configurable": [
+        "visible",
+        "title",
+        "description",
+        "header",
+        "actions",
+        "illustration",
+        "closeOnClickOutside",
+        "closeOnEscape",
+        "closeOnAction",
+        "dismissHint",
+        "onAction",
+        "onClose"
+      ],
+      "cases": [
+        "open-dialog",
+        "dialog-event"
+      ],
+      "caseMatrix": {},
+      "sourceHash": "31016730ece4d3c6a82f4c8db146ce1b01d25563397d67f9780446960c2dcf7a",
+      "origin": "figma"
+    },
+    {
+      "id": "dialog--variants",
+      "title": "Components/Dialog/Variants",
+      "component": "Dialog",
+      "name": "Variants",
+      "args": {},
+      "controls": {
+        "visible": {
+          "control": "boolean"
+        },
+        "title": {
+          "control": "text"
+        },
+        "description": {
+          "control": "text"
+        },
+        "header": {
+          "control": "select",
+          "options": [
+            "text",
+            "none",
+            "illustration"
+          ]
+        },
+        "actions": {
+          "control": "object"
+        },
+        "illustration": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "closeOnClickOutside": {
+          "control": "boolean"
+        },
+        "closeOnEscape": {
+          "control": "boolean"
+        },
+        "closeOnAction": {
+          "control": "boolean"
+        },
+        "dismissHint": {
+          "control": "text"
+        },
+        "onAction": {
+          "action": "action"
+        },
+        "onClose": {
+          "action": "close"
+        }
+      },
+      "configurable": [],
+      "cases": [
+        "basic",
+        "no-header",
+        "illustration",
+        "header-illustration"
+      ],
+      "caseMatrix": {},
+      "sourceHash": "31016730ece4d3c6a82f4c8db146ce1b01d25563397d67f9780446960c2dcf7a",
+      "origin": "figma"
+    },
+    {
+      "id": "dialog--action-counts",
+      "title": "Components/Dialog/ActionCounts",
+      "component": "Dialog",
+      "name": "ActionCounts",
+      "args": {},
+      "controls": {
+        "visible": {
+          "control": "boolean"
+        },
+        "title": {
+          "control": "text"
+        },
+        "description": {
+          "control": "text"
+        },
+        "header": {
+          "control": "select",
+          "options": [
+            "text",
+            "none",
+            "illustration"
+          ]
+        },
+        "actions": {
+          "control": "object"
+        },
+        "illustration": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "closeOnClickOutside": {
+          "control": "boolean"
+        },
+        "closeOnEscape": {
+          "control": "boolean"
+        },
+        "closeOnAction": {
+          "control": "boolean"
+        },
+        "dismissHint": {
+          "control": "text"
+        },
+        "onAction": {
+          "action": "action"
+        },
+        "onClose": {
+          "action": "close"
+        }
+      },
+      "configurable": [],
+      "cases": [],
+      "caseMatrix": {
+        "counts": [
+          1,
+          2,
+          3
+        ]
+      },
+      "sourceHash": "31016730ece4d3c6a82f4c8db146ce1b01d25563397d67f9780446960c2dcf7a",
+      "origin": "figma"
+    },
+    {
+      "id": "dialog--long-content",
+      "title": "Components/Dialog/LongContent",
+      "component": "Dialog",
+      "name": "LongContent",
+      "args": {},
+      "controls": {
+        "visible": {
+          "control": "boolean"
+        },
+        "title": {
+          "control": "text"
+        },
+        "description": {
+          "control": "text"
+        },
+        "header": {
+          "control": "select",
+          "options": [
+            "text",
+            "none",
+            "illustration"
+          ]
+        },
+        "actions": {
+          "control": "object"
+        },
+        "illustration": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "closeOnClickOutside": {
+          "control": "boolean"
+        },
+        "closeOnEscape": {
+          "control": "boolean"
+        },
+        "closeOnAction": {
+          "control": "boolean"
+        },
+        "dismissHint": {
+          "control": "text"
+        },
+        "onAction": {
+          "action": "action"
+        },
+        "onClose": {
+          "action": "close"
+        }
+      },
+      "configurable": [],
+      "cases": [
+        "open-dialog"
+      ],
+      "caseMatrix": {},
+      "sourceHash": "31016730ece4d3c6a82f4c8db146ce1b01d25563397d67f9780446960c2dcf7a",
+      "origin": "figma"
+    },
+    {
+      "id": "divider--playground",
+      "title": "Components/Divider/Playground",
+      "component": "Divider",
+      "name": "Playground",
+      "args": {
+        "orientation": "horizontal"
+      },
+      "controls": {
+        "orientation": {
+          "control": "select",
+          "options": [
+            "horizontal",
+            "vertical"
+          ]
+        }
+      },
+      "configurable": [
+        "orientation"
+      ],
+      "cases": [
+        "component-event",
+        "component-value"
+      ],
+      "caseMatrix": {},
+      "sourceHash": "f546efb2d626b72d224e526be2f8226b284304fccaff7a417311c83066fc73d9",
+      "origin": "original"
+    },
+    {
+      "id": "divider--examples",
+      "title": "Components/Divider/Examples",
+      "component": "Divider",
+      "name": "Examples",
+      "args": {
+        "orientation": "horizontal"
+      },
+      "controls": {
+        "orientation": {
+          "control": "select",
+          "options": [
+            "horizontal",
+            "vertical"
+          ]
+        }
+      },
+      "configurable": [],
+      "cases": [
+        "entry.key || index"
+      ],
+      "caseMatrix": {
+        "entries": [
+          {
+            "title": "Horizontal",
+            "args": {
+              "orientation": "horizontal"
+            }
+          },
+          {
+            "title": "Vertical",
+            "args": {
+              "orientation": "vertical"
+            }
+          }
+        ]
+      },
+      "sourceHash": "f546efb2d626b72d224e526be2f8226b284304fccaff7a417311c83066fc73d9",
+      "origin": "original"
+    },
+    {
+      "id": "emptystate--playground",
+      "title": "Components/EmptyState/Playground",
+      "component": "EmptyState",
+      "name": "Playground",
+      "args": {
+        "title": "No data yet",
+        "description": "Your data will display here",
+        "illustration": true,
+        "actionLabel": ""
+      },
+      "controls": {
+        "title": {
+          "control": "text",
+          "type": "string"
+        },
+        "description": {
+          "control": "text",
+          "type": "string"
+        },
+        "illustration": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "actionLabel": {
+          "control": "text",
+          "type": "string"
+        }
+      },
+      "configurable": [
+        "title",
+        "description",
+        "illustration",
+        "image",
+        "imageAlt",
+        "actionLabel"
+      ],
+      "cases": [
+        "component-event",
+        "component-value"
+      ],
+      "caseMatrix": {},
+      "sourceHash": "a984c562342644d37b4cd2469cc72d8299a10bae5d91c5a60349b08059e4e3dc",
+      "origin": "figma"
+    },
+    {
+      "id": "emptystate--examples",
+      "title": "Components/EmptyState/Examples",
+      "component": "EmptyState",
+      "name": "Examples",
+      "args": {
+        "title": "No data yet",
+        "description": "Your data will display here",
+        "illustration": true,
+        "actionLabel": ""
+      },
+      "controls": {
+        "title": {
+          "control": "text",
+          "type": "string"
+        },
+        "description": {
+          "control": "text",
+          "type": "string"
+        },
+        "illustration": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "actionLabel": {
+          "control": "text",
+          "type": "string"
+        }
+      },
+      "configurable": [],
+      "cases": [
+        "entry.key || index"
+      ],
+      "caseMatrix": {
+        "entries": [
+          {
+            "title": "Default",
+            "args": {}
+          },
+          {
+            "title": "With action",
+            "args": {
+              "actionLabel": "Try again"
+            }
+          }
+        ]
+      },
+      "sourceHash": "a984c562342644d37b4cd2469cc72d8299a10bae5d91c5a60349b08059e4e3dc",
+      "origin": "figma"
+    },
+    {
+      "id": "form--playground",
+      "title": "Components/Form/Playground",
+      "component": "Form",
+      "name": "Playground",
+      "args": {
+        "disabled": false
+      },
+      "controls": {
+        "disabled": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [
+        "disabled"
+      ],
+      "cases": [
+        "form-result"
+      ],
+      "caseMatrix": {},
+      "sourceHash": "dea321ea2d49b22c0392a1892e8a525b6e81cf86a1bb559cfaa3aca0c570a769",
+      "origin": "original"
+    },
+    {
+      "id": "form--async-validation",
+      "title": "Components/Form/AsyncValidation",
+      "component": "Form",
+      "name": "AsyncValidation",
+      "args": {
+        "disabled": false
+      },
+      "controls": {
+        "disabled": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [],
+      "cases": [
+        "form-result"
+      ],
+      "caseMatrix": {},
+      "sourceHash": "dea321ea2d49b22c0392a1892e8a525b6e81cf86a1bb559cfaa3aca0c570a769",
+      "origin": "original"
+    },
+    {
+      "id": "formitem--playground",
+      "title": "Components/FormItem/Playground",
+      "component": "FormItem",
+      "name": "Playground",
+      "args": {
+        "label": "",
+        "hint": "辅助说明",
+        "error": "",
+        "showMessage": false
+      },
+      "controls": {
+        "label": {
+          "control": "text",
+          "type": "string"
+        },
+        "hint": {
+          "control": "text",
+          "type": "string"
+        },
+        "error": {
+          "control": "text",
+          "type": "string"
+        },
+        "showMessage": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [
+        "label",
+        "hint",
+        "error",
+        "showMessage"
+      ],
+      "cases": [
+        "component-value"
+      ],
+      "caseMatrix": {},
+      "sourceHash": "1d551650aa504c34ed84750d3d2e5557731d96616ed104bcbf3d88162b13591f",
+      "origin": "original"
+    },
+    {
+      "id": "formitem--examples",
+      "title": "Components/FormItem/Examples",
+      "component": "FormItem",
+      "name": "Examples",
+      "args": {
+        "label": "",
+        "hint": "辅助说明",
+        "error": "",
+        "showMessage": false
+      },
+      "controls": {
+        "label": {
+          "control": "text",
+          "type": "string"
+        },
+        "hint": {
+          "control": "text",
+          "type": "string"
+        },
+        "error": {
+          "control": "text",
+          "type": "string"
+        },
+        "showMessage": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [],
+      "cases": [],
+      "caseMatrix": {},
+      "sourceHash": "1d551650aa504c34ed84750d3d2e5557731d96616ed104bcbf3d88162b13591f",
+      "origin": "original"
+    },
+    {
+      "id": "icon--playground",
+      "title": "Components/Icon/Playground",
+      "component": "Icon",
+      "name": "Playground",
+      "args": {
+        "name": "add",
+        "label": "Add"
+      },
+      "controls": {
+        "name": {
+          "control": "select",
+          "options": [
+            "add",
+            "chevron-right",
+            "clear",
+            "help",
+            "eye",
+            "caret",
+            "close",
+            "search",
+            "info",
+            "warning",
+            "error",
+            "success",
+            "empty"
+          ]
+        },
+        "label": {
+          "control": "text",
+          "type": "string"
+        }
+      },
+      "configurable": [
+        "name",
+        "label"
+      ],
+      "cases": [
+        "component-event",
+        "component-value"
+      ],
+      "caseMatrix": {},
+      "sourceHash": "d4842a6942873973796c4dbd5dd1cb611ddf3a0e3761dc9b0924993b245766cf",
+      "origin": "figma"
+    },
+    {
+      "id": "icon--examples",
+      "title": "Components/Icon/Examples",
+      "component": "Icon",
+      "name": "Examples",
+      "args": {
+        "name": "add",
+        "label": "Add"
+      },
+      "controls": {
+        "name": {
+          "control": "select",
+          "options": [
+            "add",
+            "chevron-right",
+            "clear",
+            "help",
+            "eye",
+            "caret",
+            "close",
+            "search",
+            "info",
+            "warning",
+            "error",
+            "success",
+            "empty"
+          ]
+        },
+        "label": {
+          "control": "text",
+          "type": "string"
+        }
+      },
+      "configurable": [],
+      "cases": [
+        "entry.key || index"
+      ],
+      "caseMatrix": {
+        "entries": [
+          {
+            "title": "add",
+            "args": {
+              "name": "add",
+              "label": "add"
+            }
+          },
+          {
+            "title": "chevron-right",
+            "args": {
+              "name": "chevron-right",
+              "label": "chevron-right"
+            }
+          },
+          {
+            "title": "clear",
+            "args": {
+              "name": "clear",
+              "label": "clear"
+            }
+          },
+          {
+            "title": "help",
+            "args": {
+              "name": "help",
+              "label": "help"
+            }
+          },
+          {
+            "title": "eye",
+            "args": {
+              "name": "eye",
+              "label": "eye"
+            }
+          },
+          {
+            "title": "caret",
+            "args": {
+              "name": "caret",
+              "label": "caret"
+            }
+          },
+          {
+            "title": "close",
+            "args": {
+              "name": "close",
+              "label": "close"
+            }
+          },
+          {
+            "title": "search",
+            "args": {
+              "name": "search",
+              "label": "search"
+            }
+          },
+          {
+            "title": "info",
+            "args": {
+              "name": "info",
+              "label": "info"
+            }
+          },
+          {
+            "title": "warning",
+            "args": {
+              "name": "warning",
+              "label": "warning"
+            }
+          },
+          {
+            "title": "error",
+            "args": {
+              "name": "error",
+              "label": "error"
+            }
+          },
+          {
+            "title": "success",
+            "args": {
+              "name": "success",
+              "label": "success"
+            }
+          }
+        ]
+      },
+      "sourceHash": "d4842a6942873973796c4dbd5dd1cb611ddf3a0e3761dc9b0924993b245766cf",
+      "origin": "figma"
+    },
+    {
+      "id": "iconbutton--playground",
+      "title": "Components/IconButton/Playground",
+      "component": "IconButton",
+      "name": "Playground",
+      "args": {
+        "label": "More options",
+        "active": false,
+        "disabled": false
+      },
+      "controls": {
+        "label": {
+          "control": "text",
+          "type": "string"
+        },
+        "disabled": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "active": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [
+        "label",
+        "disabled",
+        "active",
+        "nativeType"
+      ],
+      "cases": [
+        "component-event",
+        "component-value"
+      ],
+      "caseMatrix": {},
+      "sourceHash": "cfcc14bc26ff8e792085335d43b120781d1922507946e859de85846fbf8d4131",
+      "origin": "figma"
+    },
+    {
+      "id": "iconbutton--examples",
+      "title": "Components/IconButton/Examples",
+      "component": "IconButton",
+      "name": "Examples",
+      "args": {
+        "label": "More options",
+        "active": false,
+        "disabled": false
+      },
+      "controls": {
+        "label": {
+          "control": "text",
+          "type": "string"
+        },
+        "disabled": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "active": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [],
+      "cases": [
+        "entry.key || index"
+      ],
+      "caseMatrix": {
+        "entries": [
+          {
+            "title": "Default",
+            "args": {
+              "label": "More options"
+            }
+          },
+          {
+            "title": "Active",
+            "args": {
+              "label": "More options",
+              "active": true
+            }
+          },
+          {
+            "title": "Disabled",
+            "args": {
+              "label": "More options",
+              "disabled": true
+            }
+          }
+        ]
+      },
+      "sourceHash": "cfcc14bc26ff8e792085335d43b120781d1922507946e859de85846fbf8d4131",
+      "origin": "figma"
+    },
+    {
+      "id": "input--playground",
+      "title": "Components/Input/Playground",
+      "component": "Input",
+      "name": "Playground",
+      "args": {
+        "value": "",
+        "label": "Label",
+        "variant": "basic",
+        "state": "auto",
+        "error": "",
+        "caption": "",
+        "prefix": "(Prefix)",
+        "suffix": "(Suffix)",
+        "disabled": false,
+        "readonly": false,
+        "clearable": true,
+        "leadingIcon": false,
+        "supportIcon": false,
+        "showCounter": false,
+        "maxlength": 144
+      },
+      "controls": {
+        "value": {
+          "control": "text",
+          "type": "string"
+        },
+        "label": {
+          "control": "text"
+        },
+        "variant": {
+          "control": "select",
+          "options": [
+            "basic",
+            "phone",
+            "prefix",
+            "suffix",
+            "password",
+            "area",
+            "multi-prefix"
+          ]
+        },
+        "state": {
+          "control": "select",
+          "options": [
+            "auto",
+            "default",
+            "active",
+            "error",
+            "error-active",
+            "disabled"
+          ]
+        },
+        "error": {
+          "control": "text"
+        },
+        "caption": {
+          "control": "text"
+        },
+        "prefix": {
+          "control": "text",
+          "type": "string"
+        },
+        "suffix": {
+          "control": "text",
+          "type": "string"
+        },
+        "disabled": {
+          "control": "boolean"
+        },
+        "readonly": {
+          "control": "boolean"
+        },
+        "clearable": {
+          "control": "boolean"
+        },
+        "leadingIcon": {
+          "control": "boolean"
+        },
+        "supportIcon": {
+          "control": "boolean"
+        },
+        "showCounter": {
+          "control": "boolean"
+        },
+        "maxlength": {
+          "control": "number",
+          "type": "number"
+        },
+        "onInput": {
+          "action": "input"
+        },
+        "onClear": {
+          "action": "clear"
+        },
+        "onHelp": {
+          "action": "help"
+        }
+      },
+      "configurable": [
+        "value",
+        "label",
+        "variant",
+        "state",
+        "error",
+        "caption",
+        "prefix",
+        "suffix",
+        "disabled",
+        "readonly",
+        "clearable",
+        "leadingIcon",
+        "supportIcon",
+        "showCounter",
+        "maxlength",
+        "onInput",
+        "onClear",
+        "onHelp"
+      ],
+      "cases": [
+        "input-event"
+      ],
+      "caseMatrix": {},
+      "sourceHash": "171fe0af16550d2d50400babbb90328ccbcea15a62d5055001fbf054ac6d0beb",
+      "origin": "mixed"
+    },
+    {
+      "id": "input--states",
+      "title": "Components/Input/States",
+      "component": "Input",
+      "name": "States",
+      "args": {},
+      "controls": {
+        "value": {
+          "control": "text",
+          "type": "string"
+        },
+        "label": {
+          "control": "text"
+        },
+        "variant": {
+          "control": "select",
+          "options": [
+            "basic",
+            "phone",
+            "prefix",
+            "suffix",
+            "password",
+            "area",
+            "multi-prefix"
+          ]
+        },
+        "state": {
+          "control": "select",
+          "options": [
+            "auto",
+            "default",
+            "active",
+            "error",
+            "error-active",
+            "disabled"
+          ]
+        },
+        "error": {
+          "control": "text"
+        },
+        "caption": {
+          "control": "text"
+        },
+        "prefix": {
+          "control": "text",
+          "type": "string"
+        },
+        "suffix": {
+          "control": "text",
+          "type": "string"
+        },
+        "disabled": {
+          "control": "boolean"
+        },
+        "readonly": {
+          "control": "boolean"
+        },
+        "clearable": {
+          "control": "boolean"
+        },
+        "leadingIcon": {
+          "control": "boolean"
+        },
+        "supportIcon": {
+          "control": "boolean"
+        },
+        "showCounter": {
+          "control": "boolean"
+        },
+        "maxlength": {
+          "control": "number",
+          "type": "number"
+        },
+        "onInput": {
+          "action": "input"
+        },
+        "onClear": {
+          "action": "clear"
+        },
+        "onHelp": {
+          "action": "help"
+        }
+      },
+      "configurable": [],
+      "cases": [
+        "entry.key"
+      ],
+      "caseMatrix": {
+        "entries": [
+          {
+            "key": "blank-default",
+            "state": "default",
+            "value": ""
+          },
+          {
+            "key": "blank-active",
+            "state": "active",
+            "value": ""
+          },
+          {
+            "key": "blank-error",
+            "state": "error",
+            "value": "",
+            "error": "Error message"
+          },
+          {
+            "key": "blank-disabled",
+            "state": "disabled",
+            "value": ""
+          },
+          {
+            "key": "filled-default",
+            "state": "default",
+            "value": "Value"
+          },
+          {
+            "key": "filled-active",
+            "state": "active",
+            "value": "Value"
+          },
+          {
+            "key": "filled-error",
+            "state": "error",
+            "value": "Value",
+            "error": "Error message"
+          },
+          {
+            "key": "filled-error-active",
+            "state": "error-active",
+            "value": "Value",
+            "error": "Error message"
+          },
+          {
+            "key": "filled-disabled",
+            "state": "disabled",
+            "value": "Value"
+          }
+        ]
+      },
+      "sourceHash": "171fe0af16550d2d50400babbb90328ccbcea15a62d5055001fbf054ac6d0beb",
+      "origin": "mixed"
+    },
+    {
+      "id": "input--variants",
+      "title": "Components/Input/Variants",
+      "component": "Input",
+      "name": "Variants",
+      "args": {},
+      "controls": {
+        "value": {
+          "control": "text",
+          "type": "string"
+        },
+        "label": {
+          "control": "text"
+        },
+        "variant": {
+          "control": "select",
+          "options": [
+            "basic",
+            "phone",
+            "prefix",
+            "suffix",
+            "password",
+            "area",
+            "multi-prefix"
+          ]
+        },
+        "state": {
+          "control": "select",
+          "options": [
+            "auto",
+            "default",
+            "active",
+            "error",
+            "error-active",
+            "disabled"
+          ]
+        },
+        "error": {
+          "control": "text"
+        },
+        "caption": {
+          "control": "text"
+        },
+        "prefix": {
+          "control": "text",
+          "type": "string"
+        },
+        "suffix": {
+          "control": "text",
+          "type": "string"
+        },
+        "disabled": {
+          "control": "boolean"
+        },
+        "readonly": {
+          "control": "boolean"
+        },
+        "clearable": {
+          "control": "boolean"
+        },
+        "leadingIcon": {
+          "control": "boolean"
+        },
+        "supportIcon": {
+          "control": "boolean"
+        },
+        "showCounter": {
+          "control": "boolean"
+        },
+        "maxlength": {
+          "control": "number",
+          "type": "number"
+        },
+        "onInput": {
+          "action": "input"
+        },
+        "onClear": {
+          "action": "clear"
+        },
+        "onHelp": {
+          "action": "help"
+        }
+      },
+      "configurable": [],
+      "cases": [
+        "variant",
+        "country-event"
+      ],
+      "caseMatrix": {
+        "variants": [
+          "basic",
+          "phone",
+          "prefix",
+          "suffix",
+          "password",
+          "area",
+          "multi-prefix"
+        ]
+      },
+      "sourceHash": "171fe0af16550d2d50400babbb90328ccbcea15a62d5055001fbf054ac6d0beb",
+      "origin": "mixed"
+    },
+    {
+      "id": "input--helper-and-counter",
+      "title": "Components/Input/HelperAndCounter",
+      "component": "Input",
+      "name": "HelperAndCounter",
+      "args": {},
+      "controls": {
+        "value": {
+          "control": "text",
+          "type": "string"
+        },
+        "label": {
+          "control": "text"
+        },
+        "variant": {
+          "control": "select",
+          "options": [
+            "basic",
+            "phone",
+            "prefix",
+            "suffix",
+            "password",
+            "area",
+            "multi-prefix"
+          ]
+        },
+        "state": {
+          "control": "select",
+          "options": [
+            "auto",
+            "default",
+            "active",
+            "error",
+            "error-active",
+            "disabled"
+          ]
+        },
+        "error": {
+          "control": "text"
+        },
+        "caption": {
+          "control": "text"
+        },
+        "prefix": {
+          "control": "text",
+          "type": "string"
+        },
+        "suffix": {
+          "control": "text",
+          "type": "string"
+        },
+        "disabled": {
+          "control": "boolean"
+        },
+        "readonly": {
+          "control": "boolean"
+        },
+        "clearable": {
+          "control": "boolean"
+        },
+        "leadingIcon": {
+          "control": "boolean"
+        },
+        "supportIcon": {
+          "control": "boolean"
+        },
+        "showCounter": {
+          "control": "boolean"
+        },
+        "maxlength": {
+          "control": "number",
+          "type": "number"
+        },
+        "onInput": {
+          "action": "input"
+        },
+        "onClear": {
+          "action": "clear"
+        },
+        "onHelp": {
+          "action": "help"
+        }
+      },
+      "configurable": [],
+      "cases": [
+        "help-event"
+      ],
+      "caseMatrix": {},
+      "sourceHash": "171fe0af16550d2d50400babbb90328ccbcea15a62d5055001fbf054ac6d0beb",
+      "origin": "mixed"
+    },
+    {
+      "id": "listitem--playground",
+      "title": "Components/ListItem/Playground",
+      "component": "ListItem",
+      "name": "Playground",
+      "args": {
+        "label": "Body",
+        "caption": "",
+        "lines": 1,
+        "clickable": true,
+        "disabled": false
+      },
+      "controls": {
+        "label": {
+          "control": "text",
+          "type": "string"
+        },
+        "caption": {
+          "control": "text",
+          "type": "string"
+        },
+        "lines": {
+          "control": "number",
+          "type": "number"
+        },
+        "clickable": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "disabled": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [
+        "label",
+        "caption",
+        "lines",
+        "clickable",
+        "disabled"
+      ],
+      "cases": [
+        "component-event",
+        "component-value"
+      ],
+      "caseMatrix": {},
+      "sourceHash": "579c8aafbac8b124c7966d35e7b6a574702f34318c957b533dbf6a505469f27e",
+      "origin": "figma"
+    },
+    {
+      "id": "listitem--examples",
+      "title": "Components/ListItem/Examples",
+      "component": "ListItem",
+      "name": "Examples",
+      "args": {
+        "label": "Body",
+        "caption": "",
+        "lines": 1,
+        "clickable": true,
+        "disabled": false
+      },
+      "controls": {
+        "label": {
+          "control": "text",
+          "type": "string"
+        },
+        "caption": {
+          "control": "text",
+          "type": "string"
+        },
+        "lines": {
+          "control": "number",
+          "type": "number"
+        },
+        "clickable": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "disabled": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [],
+      "cases": [
+        "entry.key || index"
+      ],
+      "caseMatrix": {
+        "entries": [
+          {
+            "title": "One line",
+            "args": {
+              "label": "Body",
+              "clickable": false
+            }
+          },
+          {
+            "title": "Two lines",
+            "args": {
+              "label": "Body",
+              "caption": "Caption",
+              "lines": 2
+            }
+          },
+          {
+            "title": "Three lines",
+            "args": {
+              "label": "Body",
+              "caption": "Caption can use two lines when the content is longer.",
+              "lines": 3
+            }
+          },
+          {
+            "title": "Action",
+            "args": {
+              "label": "Open details",
+              "clickable": true
+            }
+          },
+          {
+            "title": "Disabled action",
+            "args": {
+              "label": "Open details",
+              "clickable": true,
+              "disabled": true
+            }
+          }
+        ]
+      },
+      "sourceHash": "579c8aafbac8b124c7966d35e7b6a574702f34318c957b533dbf6a505469f27e",
+      "origin": "figma"
+    },
+    {
+      "id": "pagecontrol--playground",
+      "title": "Components/PageControl/Playground",
+      "component": "PageControl",
+      "name": "Playground",
+      "args": {
+        "value": 0,
+        "count": 5,
+        "disabled": false
+      },
+      "controls": {
+        "value": {
+          "control": "number",
+          "type": "number"
+        },
+        "count": {
+          "control": "number",
+          "type": "number"
+        },
+        "disabled": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [
+        "value",
+        "count",
+        "disabled",
+        "label",
+        "pageLabel"
+      ],
+      "cases": [
+        "component-event",
+        "component-value"
+      ],
+      "caseMatrix": {},
+      "sourceHash": "ee773290c6b1dff43df8736e9e9c7d6d4b92858b582ba59df30d482ff907a868",
+      "origin": "mixed"
+    },
+    {
+      "id": "pagecontrol--examples",
+      "title": "Components/PageControl/Examples",
+      "component": "PageControl",
+      "name": "Examples",
+      "args": {
+        "value": 0,
+        "count": 5,
+        "disabled": false
+      },
+      "controls": {
+        "value": {
+          "control": "number",
+          "type": "number"
+        },
+        "count": {
+          "control": "number",
+          "type": "number"
+        },
+        "disabled": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [],
+      "cases": [
+        "entry.key || index"
+      ],
+      "caseMatrix": {
+        "entries": [
+          {
+            "title": "Figma default",
+            "args": {
+              "value": 0,
+              "count": 5
+            }
+          },
+          {
+            "title": "自主扩展：当前页",
+            "args": {
+              "value": 2,
+              "count": 5
+            }
+          },
+          {
+            "title": "自主扩展：动态数量",
+            "args": {
+              "value": 1,
+              "count": 4
+            }
+          },
+          {
+            "title": "Disabled",
+            "args": {
+              "value": 0,
+              "count": 5,
+              "disabled": true
+            }
+          }
+        ]
+      },
+      "sourceHash": "ee773290c6b1dff43df8736e9e9c7d6d4b92858b582ba59df30d482ff907a868",
+      "origin": "mixed"
+    },
+    {
+      "id": "progress--playground",
+      "title": "Components/Progress/Playground",
+      "component": "Progress",
+      "name": "Playground",
+      "args": {
+        "value": 20,
+        "label": "Progress title",
+        "showLabel": true
+      },
+      "controls": {
+        "value": {
+          "control": "number",
+          "type": "number"
+        },
+        "label": {
+          "control": "text",
+          "type": "string"
+        },
+        "showLabel": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [
+        "value",
+        "label",
+        "showLabel",
+        "accessibleLabel"
+      ],
+      "cases": [
+        "component-event",
+        "component-value"
+      ],
+      "caseMatrix": {},
+      "sourceHash": "17756d64abd1e7466ea3820d26cde2bf02d8dbae56ddfd7d5e216503c6c30c45",
+      "origin": "figma"
+    },
+    {
+      "id": "progress--examples",
+      "title": "Components/Progress/Examples",
+      "component": "Progress",
+      "name": "Examples",
+      "args": {
+        "value": 20,
+        "label": "Progress title",
+        "showLabel": true
+      },
+      "controls": {
+        "value": {
+          "control": "number",
+          "type": "number"
+        },
+        "label": {
+          "control": "text",
+          "type": "string"
+        },
+        "showLabel": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [],
+      "cases": [
+        "entry.key || index"
+      ],
+      "caseMatrix": {
+        "entries": [
+          {
+            "title": "20%",
+            "args": {
+              "value": 20
+            }
+          },
+          {
+            "title": "60%",
+            "args": {
+              "value": 60
+            }
+          },
+          {
+            "title": "Complete",
+            "args": {
+              "value": 100
+            }
+          },
+          {
+            "title": "Without label",
+            "args": {
+              "value": 35,
+              "showLabel": false
+            }
+          }
+        ]
+      },
+      "sourceHash": "17756d64abd1e7466ea3820d26cde2bf02d8dbae56ddfd7d5e216503c6c30c45",
+      "origin": "figma"
+    },
+    {
+      "id": "radio--selection",
+      "title": "Components/Radio/Selection",
+      "component": "Radio",
+      "name": "Selection",
+      "args": {
+        "value": "a",
+        "optionValue": "a",
+        "label": "",
+        "disabled": false,
+        "block": false,
+        "name": "playground-radio"
+      },
+      "controls": {
+        "value": {
+          "control": "text",
+          "type": "string"
+        },
+        "optionValue": {
+          "control": "text",
+          "type": "string"
+        },
+        "name": {
+          "control": "text",
+          "type": "string"
+        },
+        "label": {
+          "control": "text",
+          "type": "string"
+        },
+        "disabled": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "block": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [],
+      "cases": [
+        "selection-value"
+      ],
+      "caseMatrix": {},
+      "sourceHash": "c70bcc97a0145dd2bd621042913ca71dc4c56fb54ea89d3a8273c696e171b530",
+      "origin": "figma"
+    },
+    {
+      "id": "radio--playground",
+      "title": "Components/Radio/Playground",
+      "component": "Radio",
+      "name": "Playground",
+      "args": {
+        "value": "a",
+        "optionValue": "a",
+        "label": "",
+        "disabled": false,
+        "block": false,
+        "name": "playground-radio"
+      },
+      "controls": {
+        "value": {
+          "control": "text",
+          "type": "string"
+        },
+        "optionValue": {
+          "control": "text",
+          "type": "string"
+        },
+        "name": {
+          "control": "text",
+          "type": "string"
+        },
+        "label": {
+          "control": "text",
+          "type": "string"
+        },
+        "disabled": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "block": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [
+        "value",
+        "optionValue",
+        "name",
+        "label",
+        "disabled",
+        "block"
+      ],
+      "cases": [
+        "component-event",
+        "component-value"
+      ],
+      "caseMatrix": {},
+      "sourceHash": "c70bcc97a0145dd2bd621042913ca71dc4c56fb54ea89d3a8273c696e171b530",
+      "origin": "figma"
+    },
+    {
+      "id": "radio--examples",
+      "title": "Components/Radio/Examples",
+      "component": "Radio",
+      "name": "Examples",
+      "args": {
+        "value": "a",
+        "optionValue": "a",
+        "label": "",
+        "disabled": false,
+        "block": false,
+        "name": "playground-radio"
+      },
+      "controls": {
+        "value": {
+          "control": "text",
+          "type": "string"
+        },
+        "optionValue": {
+          "control": "text",
+          "type": "string"
+        },
+        "name": {
+          "control": "text",
+          "type": "string"
+        },
+        "label": {
+          "control": "text",
+          "type": "string"
+        },
+        "disabled": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "block": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [],
+      "cases": [
+        "entry.key || index"
+      ],
+      "caseMatrix": {
+        "entries": [
+          {
+            "title": "Unchecked",
+            "args": {
+              "value": "b",
+              "optionValue": "a",
+              "name": "radio-case-a"
+            }
+          },
+          {
+            "title": "Checked",
+            "args": {
+              "value": "a",
+              "optionValue": "a",
+              "name": "radio-case-b"
+            }
+          },
+          {
+            "title": "Disabled",
+            "args": {
+              "value": "b",
+              "optionValue": "a",
+              "disabled": true,
+              "name": "radio-case-c"
+            }
+          },
+          {
+            "title": "Checked disabled",
+            "args": {
+              "value": "a",
+              "optionValue": "a",
+              "disabled": true,
+              "name": "radio-case-d"
+            }
+          },
+          {
+            "title": "Labelled row",
+            "args": {
+              "value": "b",
+              "optionValue": "a",
+              "label": "Label",
+              "block": true,
+              "name": "radio-case-e"
+            }
+          }
+        ]
+      },
+      "sourceHash": "c70bcc97a0145dd2bd621042913ca71dc4c56fb54ea89d3a8273c696e171b530",
+      "origin": "figma"
+    },
+    {
+      "id": "search--playground",
+      "title": "Components/Search/Playground",
+      "component": "Search",
+      "name": "Playground",
+      "args": {
+        "value": "",
+        "placeholder": "Search...",
+        "label": "Search",
+        "state": "auto",
+        "disabled": false
+      },
+      "controls": {
+        "value": {
+          "control": "text",
+          "type": "string"
+        },
+        "placeholder": {
+          "control": "text",
+          "type": "string"
+        },
+        "label": {
+          "control": "text",
+          "type": "string"
+        },
+        "disabled": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "state": {
+          "control": "select",
+          "options": [
+            "auto",
+            "default",
+            "active"
+          ]
+        }
+      },
+      "configurable": [
+        "value",
+        "placeholder",
+        "label",
+        "clearLabel",
+        "cancelLabel",
+        "clearable",
+        "disabled",
+        "state"
+      ],
+      "cases": [
+        "component-event",
+        "component-value"
+      ],
+      "caseMatrix": {},
+      "sourceHash": "3d0995945d8322082e9c639e9e41b380d78c3cfa8c2bb9f30b8fdf373d8182f0",
+      "origin": "figma"
+    },
+    {
+      "id": "search--examples",
+      "title": "Components/Search/Examples",
+      "component": "Search",
+      "name": "Examples",
+      "args": {
+        "value": "",
+        "placeholder": "Search...",
+        "label": "Search",
+        "state": "auto",
+        "disabled": false
+      },
+      "controls": {
+        "value": {
+          "control": "text",
+          "type": "string"
+        },
+        "placeholder": {
+          "control": "text",
+          "type": "string"
+        },
+        "label": {
+          "control": "text",
+          "type": "string"
+        },
+        "disabled": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "state": {
+          "control": "select",
+          "options": [
+            "auto",
+            "default",
+            "active"
+          ]
+        }
+      },
+      "configurable": [],
+      "cases": [
+        "entry.key || index"
+      ],
+      "caseMatrix": {
+        "entries": [
+          {
+            "title": "Default",
+            "args": {
+              "value": "",
+              "state": "default"
+            }
+          },
+          {
+            "title": "Active",
+            "args": {
+              "value": "Search text",
+              "state": "active"
+            }
+          },
+          {
+            "title": "Disabled",
+            "args": {
+              "value": "Search text",
+              "disabled": true
+            }
+          }
+        ]
+      },
+      "sourceHash": "3d0995945d8322082e9c639e9e41b380d78c3cfa8c2bb9f30b8fdf373d8182f0",
+      "origin": "figma"
+    },
+    {
+      "id": "segmentedcontrol--playground",
+      "title": "Components/SegmentedControl/Playground",
+      "component": "SegmentedControl",
+      "name": "Playground",
+      "args": {
+        "value": "a",
+        "options": [
+          {
+            "value": "a",
+            "label": "Label"
+          },
+          {
+            "value": "b",
+            "label": "Label"
+          }
+        ],
+        "label": "Choose a segment",
+        "disabled": false
+      },
+      "controls": {
+        "value": {
+          "control": "text",
+          "type": "string"
+        },
+        "label": {
+          "control": "text",
+          "type": "string"
+        },
+        "disabled": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [
+        "value",
+        "options",
+        "label",
+        "disabled"
+      ],
+      "cases": [
+        "component-event",
+        "component-value"
+      ],
+      "caseMatrix": {},
+      "sourceHash": "93e98b19a59daa8de97b9af3f657cce1a65e2d34d5a16b89953b786dbefb66f5",
+      "origin": "figma"
+    },
+    {
+      "id": "segmentedcontrol--examples",
+      "title": "Components/SegmentedControl/Examples",
+      "component": "SegmentedControl",
+      "name": "Examples",
+      "args": {
+        "value": "a",
+        "options": [
+          {
+            "value": "a",
+            "label": "Label"
+          },
+          {
+            "value": "b",
+            "label": "Label"
+          }
+        ],
+        "label": "Choose a segment",
+        "disabled": false
+      },
+      "controls": {
+        "value": {
+          "control": "text",
+          "type": "string"
+        },
+        "label": {
+          "control": "text",
+          "type": "string"
+        },
+        "disabled": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [],
+      "cases": [
+        "entry.key || index"
+      ],
+      "caseMatrix": {
+        "entries": [
+          {
+            "title": "Two options",
+            "args": {
+              "value": "a",
+              "options": [
+                {
+                  "value": "a",
+                  "label": "Label"
+                },
+                {
+                  "value": "b",
+                  "label": "Label"
+                }
+              ]
+            }
+          },
+          {
+            "title": "Three options",
+            "args": {
+              "value": "b",
+              "options": [
+                {
+                  "value": "a",
+                  "label": "First"
+                },
+                {
+                  "value": "b",
+                  "label": "Second"
+                },
+                {
+                  "value": "c",
+                  "label": "Third"
+                }
+              ]
+            }
+          },
+          {
+            "title": "Disabled option",
+            "args": {
+              "value": "a",
+              "options": [
+                {
+                  "value": "a",
+                  "label": "First"
+                },
+                {
+                  "value": "b",
+                  "label": "Unavailable",
+                  "disabled": true
+                },
+                {
+                  "value": "c",
+                  "label": "Third"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "sourceHash": "93e98b19a59daa8de97b9af3f657cce1a65e2d34d5a16b89953b786dbefb66f5",
+      "origin": "figma"
+    },
+    {
+      "id": "select--playground",
+      "title": "Components/Select/Playground",
+      "component": "Select",
+      "name": "Playground",
+      "args": {
+        "value": "",
+        "label": "Label",
+        "options": [
+          {
+            "value": "a",
+            "label": "First option"
+          },
+          {
+            "value": "b",
+            "label": "Second option"
+          },
+          {
+            "value": "c",
+            "label": "Unavailable",
+            "disabled": true
+          }
+        ],
+        "disabled": false,
+        "error": "",
+        "caption": "",
+        "searchable": false
+      },
+      "controls": {
+        "value": {
+          "control": "text",
+          "type": "string"
+        },
+        "label": {
+          "control": "text",
+          "type": "string"
+        },
+        "disabled": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "error": {
+          "control": "text",
+          "type": "string"
+        },
+        "caption": {
+          "control": "text",
+          "type": "string"
+        },
+        "searchable": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [
+        "value",
+        "options",
+        "label",
+        "name",
+        "id",
+        "disabled",
+        "error",
+        "caption",
+        "searchable",
+        "searchLabel",
+        "emptyLabel"
+      ],
+      "cases": [
+        "component-event",
+        "component-value"
+      ],
+      "caseMatrix": {},
+      "sourceHash": "701c89b74410962a232f04945b5bfbe9e8309781a1a68424509b7f81c63ba411",
+      "origin": "mixed"
+    },
+    {
+      "id": "select--examples",
+      "title": "Components/Select/Examples",
+      "component": "Select",
+      "name": "Examples",
+      "args": {
+        "value": "",
+        "label": "Label",
+        "options": [
+          {
+            "value": "a",
+            "label": "First option"
+          },
+          {
+            "value": "b",
+            "label": "Second option"
+          },
+          {
+            "value": "c",
+            "label": "Unavailable",
+            "disabled": true
+          }
+        ],
+        "disabled": false,
+        "error": "",
+        "caption": "",
+        "searchable": false
+      },
+      "controls": {
+        "value": {
+          "control": "text",
+          "type": "string"
+        },
+        "label": {
+          "control": "text",
+          "type": "string"
+        },
+        "disabled": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "error": {
+          "control": "text",
+          "type": "string"
+        },
+        "caption": {
+          "control": "text",
+          "type": "string"
+        },
+        "searchable": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [],
+      "cases": [
+        "entry.key || index"
+      ],
+      "caseMatrix": {
+        "entries": [
+          {
+            "title": "Blank",
+            "args": {
+              "value": "",
+              "options": [
+                "Value",
+                "Other"
+              ]
+            }
+          },
+          {
+            "title": "Filled",
+            "args": {
+              "value": "Value",
+              "options": [
+                "Value",
+                "Other"
+              ]
+            }
+          },
+          {
+            "title": "Disabled",
+            "args": {
+              "value": "Value",
+              "options": [
+                "Value",
+                "Other"
+              ],
+              "disabled": true
+            }
+          },
+          {
+            "title": "Error",
+            "args": {
+              "value": "Value",
+              "options": [
+                "Value",
+                "Other"
+              ],
+              "error": "Error message"
+            }
+          },
+          {
+            "title": "自主扩展：搜索弹层",
+            "args": {
+              "value": "",
+              "options": [
+                "Apple",
+                "Apricot",
+                "Banana"
+              ],
+              "searchable": true
+            }
+          }
+        ]
+      },
+      "sourceHash": "701c89b74410962a232f04945b5bfbe9e8309781a1a68424509b7f81c63ba411",
+      "origin": "mixed"
+    },
+    {
+      "id": "skeleton--playground",
+      "title": "Components/Skeleton/Playground",
+      "component": "Skeleton",
+      "name": "Playground",
+      "args": {
+        "loading": true,
+        "rows": 3,
+        "avatar": true,
+        "animated": false
+      },
+      "controls": {
+        "loading": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "rows": {
+          "control": "number",
+          "type": "number"
+        },
+        "avatar": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "animated": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [
+        "loading",
+        "rows",
+        "avatar",
+        "animated",
+        "label"
+      ],
+      "cases": [
+        "component-event",
+        "component-value"
+      ],
+      "caseMatrix": {},
+      "sourceHash": "6887214666dd2b8ecd6119f37874affe9a39edb0816d9d1f0497a5b533914ce6",
+      "origin": "original"
+    },
+    {
+      "id": "skeleton--examples",
+      "title": "Components/Skeleton/Examples",
+      "component": "Skeleton",
+      "name": "Examples",
+      "args": {
+        "loading": true,
+        "rows": 3,
+        "avatar": true,
+        "animated": false
+      },
+      "controls": {
+        "loading": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "rows": {
+          "control": "number",
+          "type": "number"
+        },
+        "avatar": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "animated": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [],
+      "cases": [
+        "entry.key || index"
+      ],
+      "caseMatrix": {
+        "entries": [
+          {
+            "title": "Text rows",
+            "args": {
+              "loading": true,
+              "rows": 3
+            }
+          },
+          {
+            "title": "With avatar",
+            "args": {
+              "loading": true,
+              "rows": 3,
+              "avatar": true
+            }
+          },
+          {
+            "title": "自主动画",
+            "args": {
+              "loading": true,
+              "rows": 3,
+              "animated": true
+            }
+          },
+          {
+            "title": "Loaded",
+            "args": {
+              "loading": false
+            }
+          }
+        ]
+      },
+      "sourceHash": "6887214666dd2b8ecd6119f37874affe9a39edb0816d9d1f0497a5b533914ce6",
+      "origin": "original"
+    },
+    {
+      "id": "slider--playground",
+      "title": "Components/Slider/Playground",
+      "component": "Slider",
+      "name": "Playground",
+      "args": {
+        "value": 20,
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "label": "Slider title",
+        "valueText": "",
+        "minLabel": "Min",
+        "maxLabel": "Max",
+        "disabled": false,
+        "error": ""
+      },
+      "controls": {
+        "value": {
+          "control": "number",
+          "type": "number"
+        },
+        "min": {
+          "control": "number",
+          "type": "number"
+        },
+        "max": {
+          "control": "number",
+          "type": "number"
+        },
+        "step": {
+          "control": "number",
+          "type": "number"
+        },
+        "label": {
+          "control": "text",
+          "type": "string"
+        },
+        "valueText": {
+          "control": "text",
+          "type": "string"
+        },
+        "minLabel": {
+          "control": "text",
+          "type": "string"
+        },
+        "maxLabel": {
+          "control": "text",
+          "type": "string"
+        },
+        "error": {
+          "control": "text",
+          "type": "string"
+        },
+        "disabled": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [
+        "value",
+        "min",
+        "max",
+        "step",
+        "label",
+        "valueText",
+        "minLabel",
+        "maxLabel",
+        "error",
+        "disabled",
+        "id"
+      ],
+      "cases": [
+        "component-event",
+        "component-value"
+      ],
+      "caseMatrix": {},
+      "sourceHash": "2331f37964998db66d7c5eef55b041a3ddc2a8f079ec3fd9c80e47ee78d6def9",
+      "origin": "figma"
+    },
+    {
+      "id": "slider--examples",
+      "title": "Components/Slider/Examples",
+      "component": "Slider",
+      "name": "Examples",
+      "args": {
+        "value": 20,
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "label": "Slider title",
+        "valueText": "",
+        "minLabel": "Min",
+        "maxLabel": "Max",
+        "disabled": false,
+        "error": ""
+      },
+      "controls": {
+        "value": {
+          "control": "number",
+          "type": "number"
+        },
+        "min": {
+          "control": "number",
+          "type": "number"
+        },
+        "max": {
+          "control": "number",
+          "type": "number"
+        },
+        "step": {
+          "control": "number",
+          "type": "number"
+        },
+        "label": {
+          "control": "text",
+          "type": "string"
+        },
+        "valueText": {
+          "control": "text",
+          "type": "string"
+        },
+        "minLabel": {
+          "control": "text",
+          "type": "string"
+        },
+        "maxLabel": {
+          "control": "text",
+          "type": "string"
+        },
+        "error": {
+          "control": "text",
+          "type": "string"
+        },
+        "disabled": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [],
+      "cases": [
+        "entry.key || index"
+      ],
+      "caseMatrix": {
+        "entries": [
+          {
+            "title": "Default",
+            "args": {
+              "value": 20,
+              "valueText": "Value",
+              "minLabel": "Min",
+              "maxLabel": "Max"
+            }
+          },
+          {
+            "title": "Disabled",
+            "args": {
+              "value": 20,
+              "valueText": "Value",
+              "minLabel": "Min",
+              "maxLabel": "Max",
+              "disabled": true
+            }
+          },
+          {
+            "title": "Error",
+            "args": {
+              "value": 20,
+              "valueText": "Value",
+              "minLabel": "Min",
+              "maxLabel": "Max",
+              "error": "Error message"
+            }
+          },
+          {
+            "title": "Custom range",
+            "args": {
+              "value": 5,
+              "min": 0,
+              "max": 10,
+              "step": 1,
+              "label": "Quantity"
+            }
+          }
+        ]
+      },
+      "sourceHash": "2331f37964998db66d7c5eef55b041a3ddc2a8f079ec3fd9c80e47ee78d6def9",
+      "origin": "figma"
+    },
+    {
+      "id": "space--playground",
+      "title": "Components/Space/Playground",
+      "component": "Space",
+      "name": "Playground",
+      "args": {
+        "gap": "xs",
+        "direction": "horizontal",
+        "align": "center",
+        "wrap": true
+      },
+      "controls": {
+        "gap": {
+          "control": "select",
+          "options": [
+            "none",
+            "xxxs",
+            "xxs",
+            "xs",
+            "s",
+            "m",
+            "l",
+            "xl",
+            "xxl",
+            "xxxl"
+          ]
+        },
+        "direction": {
+          "control": "select",
+          "options": [
+            "horizontal",
+            "vertical"
+          ]
+        },
+        "align": {
+          "control": "select",
+          "options": [
+            "start",
+            "center",
+            "end",
+            "stretch"
+          ]
+        },
+        "wrap": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [
+        "gap",
+        "direction",
+        "align",
+        "wrap"
+      ],
+      "cases": [
+        "component-event",
+        "component-value"
+      ],
+      "caseMatrix": {},
+      "sourceHash": "c98c4afb9dfa44cb76fdbf1b2c65c9f79e71133ea9fd6e4e3bf787f28b878256",
+      "origin": "original"
+    },
+    {
+      "id": "space--examples",
+      "title": "Components/Space/Examples",
+      "component": "Space",
+      "name": "Examples",
+      "args": {
+        "gap": "xs",
+        "direction": "horizontal",
+        "align": "center",
+        "wrap": true
+      },
+      "controls": {
+        "gap": {
+          "control": "select",
+          "options": [
+            "none",
+            "xxxs",
+            "xxs",
+            "xs",
+            "s",
+            "m",
+            "l",
+            "xl",
+            "xxl",
+            "xxxl"
+          ]
+        },
+        "direction": {
+          "control": "select",
+          "options": [
+            "horizontal",
+            "vertical"
+          ]
+        },
+        "align": {
+          "control": "select",
+          "options": [
+            "start",
+            "center",
+            "end",
+            "stretch"
+          ]
+        },
+        "wrap": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [],
+      "cases": [
+        "entry.key || index"
+      ],
+      "caseMatrix": {
+        "entries": [
+          {
+            "title": "Horizontal",
+            "args": {
+              "gap": "xs",
+              "direction": "horizontal"
+            }
+          },
+          {
+            "title": "Vertical",
+            "args": {
+              "gap": "xs",
+              "direction": "vertical",
+              "align": "start"
+            }
+          },
+          {
+            "title": "Large gap",
+            "args": {
+              "gap": "l",
+              "direction": "horizontal"
+            }
+          }
+        ]
+      },
+      "sourceHash": "c98c4afb9dfa44cb76fdbf1b2c65c9f79e71133ea9fd6e4e3bf787f28b878256",
+      "origin": "original"
+    },
+    {
+      "id": "spinner--playground",
+      "title": "Components/Spinner/Playground",
+      "component": "Spinner",
+      "name": "Playground",
+      "args": {
+        "size": "medium",
+        "label": "Loading"
+      },
+      "controls": {
+        "size": {
+          "control": "select",
+          "options": [
+            "small",
+            "medium",
+            "large"
+          ]
+        },
+        "label": {
+          "control": "text",
+          "type": "string"
+        }
+      },
+      "configurable": [
+        "size",
+        "label"
+      ],
+      "cases": [
+        "component-event",
+        "component-value"
+      ],
+      "caseMatrix": {},
+      "sourceHash": "31e72eb62492359e44868e6e3f083168a5eef29b6655c8306fe87e4be842fe0c",
+      "origin": "original"
+    },
+    {
+      "id": "spinner--examples",
+      "title": "Components/Spinner/Examples",
+      "component": "Spinner",
+      "name": "Examples",
+      "args": {
+        "size": "medium",
+        "label": "Loading"
+      },
+      "controls": {
+        "size": {
+          "control": "select",
+          "options": [
+            "small",
+            "medium",
+            "large"
+          ]
+        },
+        "label": {
+          "control": "text",
+          "type": "string"
+        }
+      },
+      "configurable": [],
+      "cases": [
+        "entry.key || index"
+      ],
+      "caseMatrix": {
+        "entries": [
+          {
+            "title": "small",
+            "args": {
+              "size": "small",
+              "label": "Loading"
+            }
+          },
+          {
+            "title": "medium",
+            "args": {
+              "size": "medium",
+              "label": "Loading"
+            }
+          },
+          {
+            "title": "large",
+            "args": {
+              "size": "large",
+              "label": "Loading"
+            }
+          }
+        ]
+      },
+      "sourceHash": "31e72eb62492359e44868e6e3f083168a5eef29b6655c8306fe87e4be842fe0c",
+      "origin": "original"
+    },
+    {
+      "id": "switch--playground",
+      "title": "Components/Switch/Playground",
+      "component": "Switch",
+      "name": "Playground",
+      "args": {
+        "value": true,
+        "label": "",
+        "disabled": false,
+        "block": false
+      },
+      "controls": {
+        "value": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "disabled": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "block": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "label": {
+          "control": "text",
+          "type": "string"
+        }
+      },
+      "configurable": [
+        "value",
+        "disabled",
+        "block",
+        "label",
+        "description"
+      ],
+      "cases": [
+        "component-event",
+        "component-value"
+      ],
+      "caseMatrix": {},
+      "sourceHash": "b7be8af052e17be84529a2f870ec950105c83984f0f7c821cc0eff3dcd3a91c5",
+      "origin": "figma"
+    },
+    {
+      "id": "switch--examples",
+      "title": "Components/Switch/Examples",
+      "component": "Switch",
+      "name": "Examples",
+      "args": {
+        "value": true,
+        "label": "",
+        "disabled": false,
+        "block": false
+      },
+      "controls": {
+        "value": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "disabled": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "block": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "label": {
+          "control": "text",
+          "type": "string"
+        }
+      },
+      "configurable": [],
+      "cases": [
+        "entry.key || index"
+      ],
+      "caseMatrix": {
+        "entries": [
+          {
+            "title": "Off",
+            "args": {
+              "value": false
+            }
+          },
+          {
+            "title": "On",
+            "args": {
+              "value": true
+            }
+          },
+          {
+            "title": "Disabled off",
+            "args": {
+              "value": false,
+              "disabled": true
+            }
+          },
+          {
+            "title": "Disabled on",
+            "args": {
+              "value": true,
+              "disabled": true
+            }
+          },
+          {
+            "title": "Labelled row",
+            "args": {
+              "value": false,
+              "label": "Label",
+              "description": "Description",
+              "block": true
+            }
+          }
+        ]
+      },
+      "sourceHash": "b7be8af052e17be84529a2f870ec950105c83984f0f7c821cc0eff3dcd3a91c5",
+      "origin": "figma"
+    },
+    {
+      "id": "tabs--playground",
+      "title": "Components/Tabs/Playground",
+      "component": "Tabs",
+      "name": "Playground",
+      "args": {
+        "value": "a",
+        "options": [
+          {
+            "value": "a",
+            "label": "Active"
+          },
+          {
+            "value": "b",
+            "label": "Default"
+          },
+          {
+            "value": "c",
+            "label": "Default"
+          }
+        ],
+        "label": "Tabs",
+        "disabled": false
+      },
+      "controls": {
+        "value": {
+          "control": "text",
+          "type": "string"
+        },
+        "label": {
+          "control": "text",
+          "type": "string"
+        },
+        "disabled": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [
+        "value",
+        "options",
+        "label",
+        "disabled"
+      ],
+      "cases": [
+        "component-event",
+        "component-value"
+      ],
+      "caseMatrix": {},
+      "sourceHash": "93f179ae7f996be546a1da0d3828c5570cfe39b8d2b1a9cd6fd8557d7d06f832",
+      "origin": "figma"
+    },
+    {
+      "id": "tabs--examples",
+      "title": "Components/Tabs/Examples",
+      "component": "Tabs",
+      "name": "Examples",
+      "args": {
+        "value": "a",
+        "options": [
+          {
+            "value": "a",
+            "label": "Active"
+          },
+          {
+            "value": "b",
+            "label": "Default"
+          },
+          {
+            "value": "c",
+            "label": "Default"
+          }
+        ],
+        "label": "Tabs",
+        "disabled": false
+      },
+      "controls": {
+        "value": {
+          "control": "text",
+          "type": "string"
+        },
+        "label": {
+          "control": "text",
+          "type": "string"
+        },
+        "disabled": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [],
+      "cases": [
+        "entry.key || index"
+      ],
+      "caseMatrix": {
+        "entries": [
+          {
+            "title": "Three tabs",
+            "args": {
+              "value": "a",
+              "options": [
+                {
+                  "value": "a",
+                  "label": "Active"
+                },
+                {
+                  "value": "b",
+                  "label": "Default"
+                },
+                {
+                  "value": "c",
+                  "label": "Default"
+                }
+              ]
+            }
+          },
+          {
+            "title": "Disabled option",
+            "args": {
+              "value": "a",
+              "options": [
+                {
+                  "value": "a",
+                  "label": "Overview"
+                },
+                {
+                  "value": "b",
+                  "label": "Unavailable",
+                  "disabled": true
+                },
+                {
+                  "value": "c",
+                  "label": "Details"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "sourceHash": "93f179ae7f996be546a1da0d3828c5570cfe39b8d2b1a9cd6fd8557d7d06f832",
+      "origin": "figma"
+    },
+    {
+      "id": "tag--playground",
+      "title": "Components/Tag/Playground",
+      "component": "Tag",
+      "name": "Playground",
+      "args": {
+        "value": false,
+        "disabled": false,
+        "error": false
+      },
+      "controls": {
+        "value": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "disabled": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "error": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [
+        "value",
+        "disabled",
+        "error",
+        "removeLabel"
+      ],
+      "cases": [
+        "component-event",
+        "component-value"
+      ],
+      "caseMatrix": {},
+      "sourceHash": "e02b62a56b6302b6f087ba0e9ce5af0c226ef9853dd70a10ffab7c08cd7ac3a5",
+      "origin": "figma"
+    },
+    {
+      "id": "tag--examples",
+      "title": "Components/Tag/Examples",
+      "component": "Tag",
+      "name": "Examples",
+      "args": {
+        "value": false,
+        "disabled": false,
+        "error": false
+      },
+      "controls": {
+        "value": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "disabled": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "error": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [],
+      "cases": [
+        "entry.key || index"
+      ],
+      "caseMatrix": {
+        "entries": [
+          {
+            "title": "Default",
+            "args": {
+              "value": false
+            }
+          },
+          {
+            "title": "Selected",
+            "args": {
+              "value": true
+            }
+          },
+          {
+            "title": "Error",
+            "args": {
+              "value": false,
+              "error": true
+            }
+          },
+          {
+            "title": "Selected error",
+            "args": {
+              "value": true,
+              "error": true
+            }
+          },
+          {
+            "title": "Disabled",
+            "args": {
+              "value": false,
+              "disabled": true
+            }
+          }
+        ]
+      },
+      "sourceHash": "e02b62a56b6302b6f087ba0e9ce5af0c226ef9853dd70a10ffab7c08cd7ac3a5",
+      "origin": "figma"
+    },
+    {
+      "id": "timepicker--playground",
+      "title": "Components/TimePicker/Playground",
+      "component": "TimePicker",
+      "name": "Playground",
+      "args": {
+        "value": "05:10",
+        "format12": true,
+        "minuteStep": 1,
+        "disabled": false,
+        "title": "Select time"
+      },
+      "controls": {
+        "value": {
+          "control": "text",
+          "type": "string"
+        },
+        "format12": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "minuteStep": {
+          "control": "number",
+          "type": "number"
+        },
+        "disabled": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "title": {
+          "control": "text",
+          "type": "string"
+        }
+      },
+      "configurable": [
+        "value",
+        "format12",
+        "minuteStep",
+        "disabled",
+        "title",
+        "confirmLabel",
+        "cancelLabel",
+        "hourLabel",
+        "minuteLabel",
+        "periodLabel"
+      ],
+      "cases": [
+        "component-event",
+        "component-value"
+      ],
+      "caseMatrix": {},
+      "sourceHash": "fd658e5b435075d7ce6f21bf56d72e28325e7cc71d9c8df625fb3b9ca7d7d302",
+      "origin": "figma"
+    },
+    {
+      "id": "timepicker--examples",
+      "title": "Components/TimePicker/Examples",
+      "component": "TimePicker",
+      "name": "Examples",
+      "args": {
+        "value": "05:10",
+        "format12": true,
+        "minuteStep": 1,
+        "disabled": false,
+        "title": "Select time"
+      },
+      "controls": {
+        "value": {
+          "control": "text",
+          "type": "string"
+        },
+        "format12": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "minuteStep": {
+          "control": "number",
+          "type": "number"
+        },
+        "disabled": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "title": {
+          "control": "text",
+          "type": "string"
+        }
+      },
+      "configurable": [],
+      "cases": [
+        "entry.key || index"
+      ],
+      "caseMatrix": {
+        "entries": [
+          {
+            "title": "12 hour",
+            "args": {
+              "value": "05:10",
+              "format12": true
+            }
+          },
+          {
+            "title": "24 hour",
+            "args": {
+              "value": "17:30",
+              "format12": false
+            }
+          },
+          {
+            "title": "Minute step",
+            "args": {
+              "value": "05:10",
+              "minuteStep": 5
+            }
+          },
+          {
+            "title": "Disabled",
+            "args": {
+              "value": "05:10",
+              "disabled": true
+            }
+          }
+        ]
+      },
+      "sourceHash": "fd658e5b435075d7ce6f21bf56d72e28325e7cc71d9c8df625fb3b9ca7d7d302",
+      "origin": "figma"
+    },
+    {
+      "id": "toast--playground",
+      "title": "Components/Toast/Playground",
+      "component": "Toast",
+      "name": "Playground",
+      "args": {
+        "visible": true,
+        "type": "info",
+        "message": "Text",
+        "duration": 0,
+        "inline": true
+      },
+      "controls": {
+        "visible": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "type": {
+          "control": "select",
+          "options": [
+            "info",
+            "error",
+            "warning",
+            "success"
+          ]
+        },
+        "message": {
+          "control": "text",
+          "type": "string"
+        },
+        "duration": {
+          "control": "number",
+          "type": "number"
+        },
+        "inline": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [
+        "visible",
+        "type",
+        "message",
+        "duration",
+        "inline"
+      ],
+      "cases": [
+        "show-component",
+        "component-event",
+        "component-value"
+      ],
+      "caseMatrix": {},
+      "sourceHash": "be15dd4dea057919149457faceb0fce0dcacfe18beaf6cff4ce2a263840ff49e",
+      "origin": "figma"
+    },
+    {
+      "id": "toast--examples",
+      "title": "Components/Toast/Examples",
+      "component": "Toast",
+      "name": "Examples",
+      "args": {
+        "visible": true,
+        "type": "info",
+        "message": "Text",
+        "duration": 0,
+        "inline": true
+      },
+      "controls": {
+        "visible": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "type": {
+          "control": "select",
+          "options": [
+            "info",
+            "error",
+            "warning",
+            "success"
+          ]
+        },
+        "message": {
+          "control": "text",
+          "type": "string"
+        },
+        "duration": {
+          "control": "number",
+          "type": "number"
+        },
+        "inline": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [],
+      "cases": [
+        "entry.key || index"
+      ],
+      "caseMatrix": {
+        "entries": [
+          {
+            "title": "info",
+            "args": {
+              "visible": true,
+              "type": "info",
+              "message": "Text",
+              "duration": 0,
+              "inline": true
+            }
+          },
+          {
+            "title": "error",
+            "args": {
+              "visible": true,
+              "type": "error",
+              "message": "Text",
+              "duration": 0,
+              "inline": true
+            }
+          },
+          {
+            "title": "warning",
+            "args": {
+              "visible": true,
+              "type": "warning",
+              "message": "Text",
+              "duration": 0,
+              "inline": true
+            }
+          },
+          {
+            "title": "success",
+            "args": {
+              "visible": true,
+              "type": "success",
+              "message": "Text",
+              "duration": 0,
+              "inline": true
+            }
+          }
+        ]
+      },
+      "sourceHash": "be15dd4dea057919149457faceb0fce0dcacfe18beaf6cff4ce2a263840ff49e",
+      "origin": "figma"
+    },
+    {
+      "id": "tooltip--playground",
+      "title": "Components/Tooltip/Playground",
+      "component": "Tooltip",
+      "name": "Playground",
+      "args": {
+        "content": "Short supporting text",
+        "placement": "top"
+      },
+      "controls": {
+        "content": {
+          "control": "text",
+          "type": "string"
+        },
+        "placement": {
+          "control": "select",
+          "options": [
+            "top",
+            "bottom"
+          ]
+        }
+      },
+      "configurable": [
+        "content",
+        "placement"
+      ],
+      "cases": [
+        "component-event",
+        "component-value"
+      ],
+      "caseMatrix": {},
+      "sourceHash": "4c96f0d7bd804c16155a6fb1bed525aaac80a20edd12b2634ce93c2002fdf402",
+      "origin": "original"
+    },
+    {
+      "id": "tooltip--examples",
+      "title": "Components/Tooltip/Examples",
+      "component": "Tooltip",
+      "name": "Examples",
+      "args": {
+        "content": "Short supporting text",
+        "placement": "top"
+      },
+      "controls": {
+        "content": {
+          "control": "text",
+          "type": "string"
+        },
+        "placement": {
+          "control": "select",
+          "options": [
+            "top",
+            "bottom"
+          ]
+        }
+      },
+      "configurable": [],
+      "cases": [
+        "entry.key || index"
+      ],
+      "caseMatrix": {
+        "entries": [
+          {
+            "title": "Top",
+            "args": {
+              "content": "Short supporting text",
+              "placement": "top"
+            }
+          },
+          {
+            "title": "Bottom",
+            "args": {
+              "content": "Supporting text below the trigger.",
+              "placement": "bottom"
+            }
+          }
+        ]
+      },
+      "sourceHash": "4c96f0d7bd804c16155a6fb1bed525aaac80a20edd12b2634ce93c2002fdf402",
+      "origin": "original"
+    },
+    {
+      "id": "typography--playground",
+      "title": "Components/Typography/Playground",
+      "component": "Typography",
+      "name": "Playground",
+      "args": {
+        "variant": "body-regular",
+        "as": "span",
+        "color": "primary",
+        "truncate": false
+      },
+      "controls": {
+        "as": {
+          "control": "text",
+          "type": "string"
+        },
+        "variant": {
+          "control": "select",
+          "options": [
+            "large-title",
+            "header-title",
+            "section-title",
+            "label-bold",
+            "label-semibold",
+            "label-medium",
+            "label-regular",
+            "label-textlink",
+            "label-strike",
+            "body-bold",
+            "body-semibold",
+            "body-medium",
+            "body-regular",
+            "body-textlink",
+            "body-strike",
+            "caption-bold",
+            "caption-semibold",
+            "caption-medium",
+            "caption-regular",
+            "caption-textlink",
+            "caption-strike",
+            "overline-semibold",
+            "overline-medium",
+            "overline-regular",
+            "overline-textlink",
+            "overline-strike"
+          ]
+        },
+        "color": {
+          "control": "select",
+          "options": [
+            "primary",
+            "secondary",
+            "success",
+            "warning",
+            "danger"
+          ]
+        },
+        "truncate": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [
+        "as",
+        "variant",
+        "color",
+        "truncate"
+      ],
+      "cases": [
+        "component-event",
+        "component-value"
+      ],
+      "caseMatrix": {},
+      "sourceHash": "2e5798de4f118315de6e1aac79640f155bb05dadf2f2bebbe146b239f6cc151e",
+      "origin": "original"
+    },
+    {
+      "id": "typography--examples",
+      "title": "Components/Typography/Examples",
+      "component": "Typography",
+      "name": "Examples",
+      "args": {
+        "variant": "body-regular",
+        "as": "span",
+        "color": "primary",
+        "truncate": false
+      },
+      "controls": {
+        "as": {
+          "control": "text",
+          "type": "string"
+        },
+        "variant": {
+          "control": "select",
+          "options": [
+            "large-title",
+            "header-title",
+            "section-title",
+            "label-bold",
+            "label-semibold",
+            "label-medium",
+            "label-regular",
+            "label-textlink",
+            "label-strike",
+            "body-bold",
+            "body-semibold",
+            "body-medium",
+            "body-regular",
+            "body-textlink",
+            "body-strike",
+            "caption-bold",
+            "caption-semibold",
+            "caption-medium",
+            "caption-regular",
+            "caption-textlink",
+            "caption-strike",
+            "overline-semibold",
+            "overline-medium",
+            "overline-regular",
+            "overline-textlink",
+            "overline-strike"
+          ]
+        },
+        "color": {
+          "control": "select",
+          "options": [
+            "primary",
+            "secondary",
+            "success",
+            "warning",
+            "danger"
+          ]
+        },
+        "truncate": {
+          "control": "boolean",
+          "type": "boolean"
+        }
+      },
+      "configurable": [],
+      "cases": [
+        "entry.key || index"
+      ],
+      "caseMatrix": {
+        "entries": [
+          {
+            "title": "Title",
+            "args": {
+              "variant": "large-title",
+              "as": "h2"
+            }
+          },
+          {
+            "title": "Section",
+            "args": {
+              "variant": "section-title",
+              "as": "h3"
+            }
+          },
+          {
+            "title": "Body",
+            "args": {
+              "variant": "body-regular",
+              "color": "primary"
+            }
+          },
+          {
+            "title": "Caption",
+            "args": {
+              "variant": "caption-regular",
+              "color": "secondary"
+            }
+          }
+        ]
+      },
+      "sourceHash": "2e5798de4f118315de6e1aac79640f155bb05dadf2f2bebbe146b239f6cc151e",
+      "origin": "original"
+    },
+    {
+      "id": "upload--playground",
+      "title": "Components/Upload/Playground",
+      "component": "Upload",
+      "name": "Playground",
+      "args": {
+        "value": [],
+        "label": "Attachment",
+        "chooseLabel": "Choose file",
+        "caption": "Caption",
+        "multiple": false,
+        "accept": "",
+        "maxCount": 0,
+        "maxSize": 0,
+        "disabled": false
+      },
+      "controls": {
+        "label": {
+          "control": "text",
+          "type": "string"
+        },
+        "chooseLabel": {
+          "control": "text",
+          "type": "string"
+        },
+        "caption": {
+          "control": "text",
+          "type": "string"
+        },
+        "accept": {
+          "control": "text",
+          "type": "string"
+        },
+        "multiple": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "disabled": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "maxSize": {
+          "control": "number",
+          "type": "number"
+        },
+        "maxCount": {
+          "control": "number",
+          "type": "number"
+        }
+      },
+      "configurable": [
+        "value",
+        "label",
+        "chooseLabel",
+        "caption",
+        "accept",
+        "multiple",
+        "disabled",
+        "maxSize",
+        "maxCount"
+      ],
+      "cases": [
+        "component-event",
+        "component-value"
+      ],
+      "caseMatrix": {},
+      "sourceHash": "0be69ba80a801af92e36e7527e6cc2aaf18abe4e5ec50ba8a43ecb3bf99ff909",
+      "origin": "figma"
+    },
+    {
+      "id": "upload--examples",
+      "title": "Components/Upload/Examples",
+      "component": "Upload",
+      "name": "Examples",
+      "args": {
+        "value": [],
+        "label": "Attachment",
+        "chooseLabel": "Choose file",
+        "caption": "Caption",
+        "multiple": false,
+        "accept": "",
+        "maxCount": 0,
+        "maxSize": 0,
+        "disabled": false
+      },
+      "controls": {
+        "label": {
+          "control": "text",
+          "type": "string"
+        },
+        "chooseLabel": {
+          "control": "text",
+          "type": "string"
+        },
+        "caption": {
+          "control": "text",
+          "type": "string"
+        },
+        "accept": {
+          "control": "text",
+          "type": "string"
+        },
+        "multiple": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "disabled": {
+          "control": "boolean",
+          "type": "boolean"
+        },
+        "maxSize": {
+          "control": "number",
+          "type": "number"
+        },
+        "maxCount": {
+          "control": "number",
+          "type": "number"
+        }
+      },
+      "configurable": [],
+      "cases": [
+        "entry.key || index"
+      ],
+      "caseMatrix": {
+        "entries": [
+          {
+            "title": "Default",
+            "args": {
+              "value": []
+            }
+          },
+          {
+            "title": "Multiple files",
+            "args": {
+              "value": [],
+              "multiple": true,
+              "maxCount": 3,
+              "caption": "Choose up to 3 files"
+            }
+          },
+          {
+            "title": "Images only",
+            "args": {
+              "value": [],
+              "accept": "image/*",
+              "caption": "Image files only"
+            }
+          },
+          {
+            "title": "Disabled",
+            "args": {
+              "value": [],
+              "disabled": true
+            }
+          }
+        ]
+      },
+      "sourceHash": "0be69ba80a801af92e36e7527e6cc2aaf18abe4e5ec50ba8a43ecb3bf99ff909",
+      "origin": "figma"
+    },
+    {
+      "id": "trial--blur-interactions",
+      "title": "Design System/Asset Validation/BlurInteractions",
+      "component": null,
+      "name": "BlurInteractions",
+      "args": {
+        "component": "BottomSheet",
+        "validationMode": "form-item"
+      },
+      "controls": {
+        "component": {
+          "control": "select",
+          "options": [
+            "BottomSheet",
+            "BottomSheetActions",
+            "Dialog",
+            "DatePicker",
+            "TimePicker",
+            "Button",
+            "ActionGroup",
+            "Input",
+            "Search",
+            "Select"
+          ]
+        },
+        "validationMode": {
+          "control": "select",
+          "options": [
+            "form-item",
+            "direct"
+          ]
+        }
+      },
+      "configurable": [
+        "component",
+        "validationMode"
+      ],
+      "cases": [],
+      "caseMatrix": {},
+      "sourceHash": "9f558fed0d277c23f7546d1cf4f78033d4579d824fb0b17f0e9fb25848b0f583",
+      "origin": "test-fixture"
+    }
+  ],
+  "unavailableComponents": [
+    {
+      "name": "AppBar",
+      "designName": "AppBar",
+      "status": "unavailable",
+      "figma": {
+        "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+        "master": "90:2777"
+      },
+      "note": "没有公开 当前基准实现/API/Storybook 条目；不自动用基础组件或相似组件替代。"
+    },
+    {
+      "name": "BottomNavbar",
+      "designName": "Bottom navbar",
+      "status": "unavailable",
+      "figma": {
+        "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+        "master": "5148:11649"
+      },
+      "note": "没有公开 当前基准实现/API/Storybook 条目；不自动用基础组件或相似组件替代。"
+    },
+    {
+      "name": "CardSelect",
+      "designName": "Card select",
+      "status": "unavailable",
+      "figma": {
+        "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+        "master": "7400:14993"
+      },
+      "note": "没有公开 当前基准实现/API/Storybook 条目；不自动用基础组件或相似组件替代。"
+    },
+    {
+      "name": "Coachmark",
+      "designName": "Coachmark",
+      "status": "unavailable",
+      "figma": {
+        "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+        "master": "489:35583"
+      },
+      "note": "没有公开 当前基准实现/API/Storybook 条目；不自动用基础组件或相似组件替代。"
+    },
+    {
+      "name": "Countdown",
+      "designName": "Countdown",
+      "status": "unavailable",
+      "figma": {
+        "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+        "master": "9671:5672"
+      },
+      "note": "没有公开 当前基准实现/API/Storybook 条目；不自动用基础组件或相似组件替代。"
+    },
+    {
+      "name": "FilterCategory",
+      "designName": "Filter category",
+      "status": "unavailable",
+      "figma": {
+        "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+        "master": "7074:14723"
+      },
+      "note": "没有公开 当前基准实现/API/Storybook 条目；不自动用基础组件或相似组件替代。"
+    },
+    {
+      "name": "RadioSelect",
+      "designName": "Radio select",
+      "status": "unavailable",
+      "figma": {
+        "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+        "master": "7232:2437"
+      },
+      "note": "没有公开 当前基准实现/API/Storybook 条目；不自动用基础组件或相似组件替代。"
+    },
+    {
+      "name": "Stories",
+      "designName": "Stories",
+      "status": "unavailable",
+      "figma": {
+        "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+        "master": "619:36866"
+      },
+      "note": "没有公开 当前基准实现/API/Storybook 条目；不自动用基础组件或相似组件替代。"
+    },
+    {
+      "name": "Timeline",
+      "designName": "Timeline",
+      "status": "unavailable",
+      "figma": {
+        "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+        "master": "1493:122"
+      },
+      "note": "没有公开 当前基准实现/API/Storybook 条目；不自动用基础组件或相似组件替代。"
+    }
+  ]
+}

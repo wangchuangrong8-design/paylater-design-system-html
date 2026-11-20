@@ -1,0 +1,195 @@
+{
+  "name": "DatePicker",
+  "origin": "figma",
+  "originLabel": "Figma 来源",
+  "purpose": "通过日历网格选择并确认单个日期。",
+  "constraints": [
+    "仅支持 Grid 单日期；Range、Scroll、Full screen 未交付。"
+  ],
+  "marker": "<div data-pd=\"DatePicker\" data-options='{}'></div>",
+  "options": [
+    {
+      "name": "value",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "''",
+        "value": ""
+      },
+      "required": false
+    },
+    {
+      "name": "min",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "''",
+        "value": ""
+      },
+      "required": false
+    },
+    {
+      "name": "max",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "''",
+        "value": ""
+      },
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "vue-implicit",
+        "value": false,
+        "note": "未传 Boolean prop 时 当前基准实现 使用 false。"
+      },
+      "required": false
+    },
+    {
+      "name": "locale",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'en-US'",
+        "value": "en-US"
+      },
+      "required": false
+    },
+    {
+      "name": "title",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Select date'",
+        "value": "Select date"
+      },
+      "required": false
+    },
+    {
+      "name": "confirmLabel",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Select'",
+        "value": "Select"
+      },
+      "required": false
+    },
+    {
+      "name": "cancelLabel",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Cancel date selection'",
+        "value": "Cancel date selection"
+      },
+      "required": false
+    },
+    {
+      "name": "previousLabel",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Previous month'",
+        "value": "Previous month"
+      },
+      "required": false
+    },
+    {
+      "name": "nextLabel",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Next month'",
+        "value": "Next month"
+      },
+      "required": false
+    },
+    {
+      "name": "monthChangeLabel",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Change month'",
+        "value": "Change month"
+      },
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "pd:cancel",
+      "detail": "{ value, args }",
+      "description": "无载荷；取消当前编辑。"
+    },
+    {
+      "name": "pd:change",
+      "detail": "{ value, args }",
+      "description": "String：YYYY-MM-DD，确认时发出。"
+    },
+    {
+      "name": "pd:confirm",
+      "detail": "{ value, args }",
+      "description": "String：YYYY-MM-DD，确认时发出。"
+    },
+    {
+      "name": "pd:input",
+      "detail": "{ value, args }",
+      "description": "String：YYYY-MM-DD，确认时发出。"
+    },
+    {
+      "name": "pd:select",
+      "detail": "{ value, args }",
+      "description": "String：当前待确认日期 YYYY-MM-DD。"
+    }
+  ],
+  "contents": [],
+  "methods": [],
+  "knownDifferences": [],
+  "designTarget": {
+    "origin": "figma",
+    "figma": {
+      "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+      "page": "2:98",
+      "master": "2484:4811",
+      "reference": "2484:4812",
+      "snapshot": "tokens/sources/figma-library/DatePicker.json"
+    },
+    "tokenReference": "tokens/component.json#date-picker",
+    "gaps": "Scroll、Full screen、Range、Month/Year专用选择网格及更多阶段"
+  },
+  "verification": {
+    "status": "requires-current-evidence",
+    "report": "verification/report.json",
+    "scope": "当前 HTML 构建的交互、尺寸和截图对照；不扩大为完整设计认证。"
+  },
+  "examples": [
+    "datepicker--playground",
+    "datepicker--examples"
+  ]
+}

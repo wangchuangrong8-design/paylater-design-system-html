@@ -1,0 +1,181 @@
+{
+  "name": "Search",
+  "origin": "figma",
+  "originLabel": "Figma 来源",
+  "purpose": "编辑检索词并发出搜索请求。",
+  "constraints": [
+    "检索与结果由页面处理；cancel 不清空已有值，受控 state 由父级更新。"
+  ],
+  "marker": "<div data-pd=\"Search\" data-options='{}'></div>",
+  "options": [
+    {
+      "name": "value",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "''",
+        "value": ""
+      },
+      "required": false
+    },
+    {
+      "name": "placeholder",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Search...'",
+        "value": "Search..."
+      },
+      "required": false
+    },
+    {
+      "name": "label",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Search'",
+        "value": "Search"
+      },
+      "required": false
+    },
+    {
+      "name": "clearLabel",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Clear search'",
+        "value": "Clear search"
+      },
+      "required": false
+    },
+    {
+      "name": "cancelLabel",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Cancel'",
+        "value": "Cancel"
+      },
+      "required": false
+    },
+    {
+      "name": "clearable",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "true",
+        "value": true
+      },
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "vue-implicit",
+        "value": false,
+        "note": "未传 Boolean prop 时 当前基准实现 使用 false。"
+      },
+      "required": false
+    },
+    {
+      "name": "state",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'auto'",
+        "value": "auto"
+      },
+      "required": false,
+      "allowed": [
+        "auto",
+        "default",
+        "active"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "name": "pd:blur",
+      "detail": "{ value, args }",
+      "description": "原生 FocusEvent。"
+    },
+    {
+      "name": "pd:cancel",
+      "detail": "{ value, args }",
+      "description": "无载荷；请求取消搜索并移除实际焦点，不自动清空已有值；受控 state 由父级更新。"
+    },
+    {
+      "name": "pd:clear",
+      "detail": "{ value, args }",
+      "description": "无载荷；字段已请求清空。"
+    },
+    {
+      "name": "pd:focus",
+      "detail": "{ value, args }",
+      "description": "原生 FocusEvent。"
+    },
+    {
+      "name": "pd:input",
+      "detail": "{ value, args }",
+      "description": "String：当前检索词，清空时为空字符串。"
+    },
+    {
+      "name": "pd:search",
+      "detail": "{ value, args }",
+      "description": "String：当前搜索词。"
+    }
+  ],
+  "contents": [],
+  "methods": [],
+  "knownDifferences": [
+    {
+      "id": "S07",
+      "component": "Search",
+      "description": "Active cancel/reset layout, border color and placement",
+      "nodes": [
+        "90:3522",
+        "90:3533"
+      ],
+      "status": "resolved",
+      "verification": "docs/verification/assets-completion/design-regression.json"
+    }
+  ],
+  "designTarget": {
+    "origin": "figma",
+    "figma": {
+      "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+      "page": "2:107",
+      "master": "90:3521",
+      "reference": "90:3522",
+      "snapshot": "tokens/sources/figma-library/Search.json"
+    },
+    "tokenReference": "tokens/component.json#search",
+    "gaps": "Advanced search 与 Spacer 属性未实现。"
+  },
+  "verification": {
+    "status": "requires-current-evidence",
+    "report": "verification/report.json",
+    "scope": "当前 HTML 构建的交互、尺寸和截图对照；不扩大为完整设计认证。"
+  },
+  "examples": [
+    "search--playground",
+    "search--examples"
+  ]
+}

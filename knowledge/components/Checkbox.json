@@ -1,0 +1,128 @@
+{
+  "name": "Checkbox",
+  "origin": "figma",
+  "originLabel": "Figma 来源",
+  "purpose": "表达独立布尔选择或数组多选。",
+  "constraints": [
+    "数组模式使用 optionValue；选择范围与是否必选由需求决定，禁用不等于业务不符合资格。"
+  ],
+  "marker": "<div data-pd=\"Checkbox\" data-options='{}'></div>",
+  "options": [
+    {
+      "name": "value",
+      "types": [
+        "Boolean",
+        "Array"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "false",
+        "value": false
+      },
+      "required": false
+    },
+    {
+      "name": "optionValue",
+      "types": [
+        "String",
+        "Number",
+        "Boolean"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "true",
+        "value": true
+      },
+      "required": false
+    },
+    {
+      "name": "label",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "''",
+        "value": ""
+      },
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "vue-implicit",
+        "value": false,
+        "note": "未传 Boolean prop 时 当前基准实现 使用 false。"
+      },
+      "required": false
+    },
+    {
+      "name": "block",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "vue-implicit",
+        "value": false,
+        "note": "未传 Boolean prop 时 当前基准实现 使用 false。"
+      },
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "pd:blur",
+      "detail": "{ value, args }",
+      "description": "原生 FocusEvent。"
+    },
+    {
+      "name": "pd:change",
+      "detail": "{ value, args }",
+      "description": "Boolean 或 optionValue 数组，与当前 value 模式一致。"
+    },
+    {
+      "name": "pd:focus",
+      "detail": "{ value, args }",
+      "description": "原生 FocusEvent。"
+    },
+    {
+      "name": "pd:input",
+      "detail": "{ value, args }",
+      "description": "Boolean 或 optionValue 数组，与当前 value 模式一致。"
+    }
+  ],
+  "contents": [
+    {
+      "name": "default",
+      "description": "默认内容；回退内容及条件按模板。",
+      "usage": "原生 DOM 节点或接收内容上下文的函数"
+    }
+  ],
+  "methods": [],
+  "knownDifferences": [],
+  "designTarget": {
+    "origin": "figma",
+    "figma": {
+      "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+      "page": "2:96",
+      "master": "121:2075",
+      "reference": "121:2079",
+      "snapshot": "tokens/sources/figma-library/Checkbox.json"
+    },
+    "tokenReference": "tokens/component.json#checkbox",
+    "gaps": "List的Icon/Avatar形态及完整左右位置配置"
+  },
+  "verification": {
+    "status": "requires-current-evidence",
+    "report": "verification/report.json",
+    "scope": "当前 HTML 构建的交互、尺寸和截图对照；不扩大为完整设计认证。"
+  },
+  "examples": [
+    "checkbox--selection",
+    "checkbox--playground",
+    "checkbox--examples"
+  ]
+}

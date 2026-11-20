@@ -1,0 +1,107 @@
+{
+  "name": "Tag",
+  "origin": "figma",
+  "originLabel": "Figma 来源",
+  "purpose": "表达标签选择或移除。",
+  "constraints": [
+    "选中与移除需要父级更新值；标签颜色或错误态不决定业务资格。"
+  ],
+  "marker": "<div data-pd=\"Tag\" data-options='{}'></div>",
+  "options": [
+    {
+      "name": "value",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "vue-implicit",
+        "value": false,
+        "note": "未传 Boolean prop 时 当前基准实现 使用 false。"
+      },
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "vue-implicit",
+        "value": false,
+        "note": "未传 Boolean prop 时 当前基准实现 使用 false。"
+      },
+      "required": false
+    },
+    {
+      "name": "error",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "vue-implicit",
+        "value": false,
+        "note": "未传 Boolean prop 时 当前基准实现 使用 false。"
+      },
+      "required": false
+    },
+    {
+      "name": "removeLabel",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Remove tag'",
+        "value": "Remove tag"
+      },
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "pd:change",
+      "detail": "{ value, args }",
+      "description": "Boolean：新的选中值。"
+    },
+    {
+      "name": "pd:input",
+      "detail": "{ value, args }",
+      "description": "Boolean：新的选中值。"
+    },
+    {
+      "name": "pd:remove",
+      "detail": "{ value, args }",
+      "description": "无载荷；请求移除标签。"
+    }
+  ],
+  "contents": [
+    {
+      "name": "default",
+      "description": "默认内容；回退内容及条件按模板。",
+      "usage": "原生 DOM 节点或接收内容上下文的函数"
+    }
+  ],
+  "methods": [],
+  "knownDifferences": [],
+  "designTarget": {
+    "origin": "figma",
+    "figma": {
+      "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+      "page": "2:114",
+      "master": "489:32007",
+      "reference": "489:32008",
+      "snapshot": "tokens/sources/figma-library/Tag.json"
+    },
+    "tokenReference": "tokens/component.json#tag",
+    "gaps": "本轮所查主变体未检出尺寸/文字/背景偏差，插槽与长文案仍需具体场景验收"
+  },
+  "verification": {
+    "status": "requires-current-evidence",
+    "report": "verification/report.json",
+    "scope": "当前 HTML 构建的交互、尺寸和截图对照；不扩大为完整设计认证。"
+  },
+  "examples": [
+    "tag--playground",
+    "tag--examples"
+  ]
+}

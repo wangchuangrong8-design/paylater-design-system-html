@@ -1,0 +1,101 @@
+{
+  "name": "Accordion",
+  "origin": "figma",
+  "originLabel": "Figma 来源",
+  "purpose": "折叠辅助内容，保留可识别的标题与展开状态。",
+  "constraints": [
+    "展开高度由调用方插槽决定；不可用不同正文的截图高度判断样式一致。"
+  ],
+  "marker": "<div data-pd=\"Accordion\" data-options='{}'></div>",
+  "options": [
+    {
+      "name": "value",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "vue-implicit",
+        "value": false,
+        "note": "未传 Boolean prop 时 当前基准实现 使用 false。"
+      },
+      "required": false
+    },
+    {
+      "name": "title",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Label'",
+        "value": "Label"
+      },
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "vue-implicit",
+        "value": false,
+        "note": "未传 Boolean prop 时 当前基准实现 使用 false。"
+      },
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "pd:change",
+      "detail": "{ value, args }",
+      "description": "Boolean：新的展开状态。"
+    },
+    {
+      "name": "pd:input",
+      "detail": "{ value, args }",
+      "description": "Boolean：新的展开状态。"
+    }
+  ],
+  "contents": [
+    {
+      "name": "default",
+      "description": "默认内容；回退内容及条件按模板。",
+      "usage": "原生 DOM 节点或接收内容上下文的函数"
+    }
+  ],
+  "methods": [],
+  "knownDifferences": [
+    {
+      "id": "S01",
+      "component": "Accordion",
+      "description": "Collapsed title weight",
+      "nodes": [
+        "37:1689"
+      ],
+      "status": "resolved",
+      "verification": "docs/verification/assets-completion/design-regression.json"
+    }
+  ],
+  "designTarget": {
+    "origin": "figma",
+    "figma": {
+      "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+      "page": "2:84",
+      "master": "37:1688",
+      "reference": "37:1689",
+      "snapshot": "tokens/sources/figma-library/Accordion.json"
+    },
+    "tokenReference": "tokens/component.json#accordion",
+    "gaps": "展开内容依赖调用方；需要用相同插槽内容验收。"
+  },
+  "verification": {
+    "status": "requires-current-evidence",
+    "report": "verification/report.json",
+    "scope": "当前 HTML 构建的交互、尺寸和截图对照；不扩大为完整设计认证。"
+  },
+  "examples": [
+    "accordion--playground",
+    "accordion--examples"
+  ]
+}

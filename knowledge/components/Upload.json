@@ -1,0 +1,167 @@
+{
+  "name": "Upload",
+  "origin": "figma",
+  "originLabel": "Figma 来源",
+  "purpose": "提供本地文件选择、拖放及数量/类型/大小校验。",
+  "constraints": [
+    "只发出 File 列表，不上传到服务端；Uploading/Error/缩略图列表未交付。"
+  ],
+  "marker": "<div data-pd=\"Upload\" data-options='{}'></div>",
+  "options": [
+    {
+      "name": "value",
+      "types": [
+        "Array"
+      ],
+      "default": {
+        "kind": "factory-literal",
+        "expression": "() => []",
+        "value": []
+      },
+      "required": false
+    },
+    {
+      "name": "label",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Attachment'",
+        "value": "Attachment"
+      },
+      "required": false
+    },
+    {
+      "name": "chooseLabel",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Choose file'",
+        "value": "Choose file"
+      },
+      "required": false
+    },
+    {
+      "name": "caption",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "'Caption'",
+        "value": "Caption"
+      },
+      "required": false
+    },
+    {
+      "name": "accept",
+      "types": [
+        "String"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "''",
+        "value": ""
+      },
+      "required": false
+    },
+    {
+      "name": "multiple",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "vue-implicit",
+        "value": false,
+        "note": "未传 Boolean prop 时 当前基准实现 使用 false。"
+      },
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "types": [
+        "Boolean"
+      ],
+      "default": {
+        "kind": "vue-implicit",
+        "value": false,
+        "note": "未传 Boolean prop 时 当前基准实现 使用 false。"
+      },
+      "required": false
+    },
+    {
+      "name": "maxSize",
+      "types": [
+        "Number"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "0",
+        "value": 0
+      },
+      "required": false
+    },
+    {
+      "name": "maxCount",
+      "types": [
+        "Number"
+      ],
+      "default": {
+        "kind": "literal",
+        "expression": "0",
+        "value": 0
+      },
+      "required": false
+    }
+  ],
+  "events": [
+    {
+      "name": "pd:change",
+      "detail": "{ value, args }",
+      "description": "File[]：选择后的本地文件列表，clear 时为空数组。"
+    },
+    {
+      "name": "pd:input",
+      "detail": "{ value, args }",
+      "description": "File[]：选择后的本地文件列表，clear 时为空数组。"
+    },
+    {
+      "name": "pd:reject",
+      "detail": "{ value, args }",
+      "description": "{ file: File, reason: type | size | count }：被拒绝的文件及原因。"
+    }
+  ],
+  "contents": [
+    {
+      "name": "default",
+      "description": "文件展示扩展区；作用域 files 为当前 File 列表，不代表已上传成功。",
+      "usage": "原生 DOM 节点或接收内容上下文的函数"
+    }
+  ],
+  "methods": [],
+  "knownDifferences": [],
+  "designTarget": {
+    "origin": "figma",
+    "figma": {
+      "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+      "page": "2:120",
+      "master": "4717:604",
+      "reference": "4717:605",
+      "snapshot": "tokens/sources/figma-library/Upload.json"
+    },
+    "tokenReference": "tokens/component.json#upload",
+    "gaps": "Content List、Square/Small、Uploaded/Uploading/Error、缩略图/文件列表"
+  },
+  "verification": {
+    "status": "requires-current-evidence",
+    "report": "verification/report.json",
+    "scope": "当前 HTML 构建的交互、尺寸和截图对照；不扩大为完整设计认证。"
+  },
+  "examples": [
+    "upload--playground",
+    "upload--examples"
+  ]
+}

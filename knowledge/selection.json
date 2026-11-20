@@ -1,0 +1,3225 @@
+{
+  "version": "1.1.0",
+  "observationSource": "docs/observations/production-ui.json",
+  "note": "本批37个组件与8组比较经用户2026-11-18确认为项目UI约定；实现事实与设计来源仍分开记录，金融政策另行确认。后续新推导继续先保留草稿。",
+  "generated": {
+    "sourceHashes": [
+      {
+        "path": "agent/component-selection.yaml",
+        "sha256": "cdc0c254e6b52304c7584bc9c0de9abfe2352d22e2ac19f6b17e4ba37347dc54"
+      },
+      {
+        "path": "docs/observations/production-ui.json",
+        "sha256": "d6e83efdc278f2ffaa3774a3f1b0dd536263f88e4e6cf067ab0850e688413af4"
+      }
+    ],
+    "contractsHash": "28fa594a259daed6ff8ec572f8c431347e0acc85b3543693cac320b958082dd1"
+  },
+  "establishedRules": [
+    {
+      "id": "component.choose-by-contract",
+      "scope": [
+        "generic"
+      ],
+      "components": [
+        "*"
+      ],
+      "priority": "high",
+      "status": "approved",
+      "domain": "ui",
+      "when": "选择组件或准备组合组件。",
+      "decision": [
+        "先核实已实现的 API、支持范围与已知差异。",
+        "缺失组件、未实现变体、原始组件及自主扩展分别说明，不静默替换或宣称完整对齐。"
+      ],
+      "rationale": "同名概念与 API 可配置性都不能证明设计覆盖。",
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:three-layer-plan",
+          "note": "用户确认的本次三层建设计划；仅确认 UI 资料治理，不批准新的金融政策。"
+        },
+        {
+          "type": "project-rule",
+          "reference": "AGENTS.md",
+          "note": "项目内真源、单位与业务边界。"
+        }
+      ],
+      "exceptions": [],
+      "goodExamples": [
+        "需求需要 Card select 时报告缺失，再按当前任务讨论实现。"
+      ],
+      "badExamples": [
+        "用 Card + Radio 拼出页面后直接标记 Figma Card select 已完成。"
+      ]
+    },
+    {
+      "id": "design.units-follow-target-repository",
+      "scope": [
+        "generic"
+      ],
+      "components": [
+        "*"
+      ],
+      "priority": "high",
+      "status": "approved",
+      "domain": "ui",
+      "when": "将组件库设计资料或源码用于其他消费载体。",
+      "decision": [
+        "组件库使用 Figma 1x CSS px。",
+        "按目标项目实际单位与构建处理接入；SDK 的 750px 转换是具体示例，不适用于所有原型或工程。",
+        "不通过修改共享 Token 适配单一宿主；按工程指南验证转换边界后再导入 CSS 或替换组件。"
+      ],
+      "rationale": "设计资产可跨用途消费，工程接入要验证具体目标的单位与构建行为。",
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:multi-purpose-engineering-guide-2026-11-19",
+          "note": "用户明确要求项目用途不限于 SDK，包括前期原型方案设计。"
+        },
+        {
+          "type": "project-rule",
+          "reference": "AGENTS.md",
+          "note": "项目内真源、单位与业务边界。"
+        },
+        {
+          "type": "user",
+          "reference": "conversation:three-layer-plan",
+          "note": "用户确认的本次三层建设计划；仅确认 UI 资料治理，不批准新的金融政策。"
+        }
+      ],
+      "exceptions": [],
+      "goodExamples": [
+        "先在目标仓库核对转换配置和实际渲染尺寸。"
+      ],
+      "badExamples": [
+        "把 1x 组件样式直接送入 750px 转换，导致显示缩小。"
+      ]
+    },
+    {
+      "id": "component.provenance-remains-explicit",
+      "scope": [
+        "generic"
+      ],
+      "components": [
+        "*"
+      ],
+      "priority": "high",
+      "status": "approved",
+      "domain": "ui",
+      "when": "新增能力、更新说明或报告验证结果。",
+      "decision": [
+        "保留 figma、original、mixed 来源及自主范围。",
+        "验证结论只覆盖实际检查过的属性、状态和内容，不将构建通过写成视觉全部通过。"
+      ],
+      "rationale": "来源与验收结果需要独立表达。",
+      "sources": [
+        {
+          "type": "project-rule",
+          "reference": "AGENTS.md",
+          "note": "项目内真源、单位与业务边界。"
+        },
+        {
+          "type": "user",
+          "reference": "conversation:three-layer-plan",
+          "note": "用户确认的本次三层建设计划；仅确认 UI 资料治理，不批准新的金融政策。"
+        }
+      ],
+      "exceptions": [],
+      "goodExamples": [
+        "Select 字段与自主下拉面板分别说明来源。"
+      ],
+      "badExamples": [
+        "Figma 来源组件只通过尺寸检查就被标记全部一致。"
+      ]
+    },
+    {
+      "id": "form.controlled-events-remain-ui",
+      "scope": [
+        "form",
+        "selection"
+      ],
+      "components": [
+        "Input",
+        "Select",
+        "Radio",
+        "Checkbox",
+        "Switch",
+        "DatePicker",
+        "TimePicker",
+        "Slider",
+        "Form",
+        "FormItem"
+      ],
+      "priority": "high",
+      "status": "approved",
+      "domain": "ui",
+      "when": "组合字段或处理确认事件。",
+      "decision": [
+        "按实际 prop/event 契约更新受控值；区分编辑、选择、确认与业务提交。",
+        "组件事件不负责金额计算、资格判定、支付或接口请求。"
+      ],
+      "rationale": "可复用组件只提供 UI 与交互能力。",
+      "sources": [
+        {
+          "type": "project-rule",
+          "reference": "AGENTS.md",
+          "note": "项目内真源、单位与业务边界。"
+        }
+      ],
+      "exceptions": [],
+      "goodExamples": [
+        "DatePicker select 更新待选反馈，confirm 后由页面按需求处理。"
+      ],
+      "badExamples": [
+        "把 input 事件自动解释为发起还款请求。"
+      ]
+    },
+    {
+      "id": "feedback.dialog-vs-input-task",
+      "scope": [
+        "form",
+        "feedback"
+      ],
+      "components": [
+        "Dialog",
+        "BottomSheet"
+      ],
+      "priority": "high",
+      "status": "approved",
+      "domain": "ui",
+      "when": "选择任务承载容器。",
+      "decision": [
+        "Dialog 用于短消息与确认；需要输入的任务按已记录的 Figma 说明使用 BottomSheet。",
+        "异步确认按现有 closeOnAction 契约保留父级控制。"
+      ],
+      "rationale": "沿用当前组件设计用途与受控交互。",
+      "sources": [
+        {
+          "type": "figma",
+          "reference": "docs/components/dialog.md",
+          "note": "本地 Dialog Master 用途说明；源快照 tokens/sources/figma-components.json。"
+        }
+      ],
+      "exceptions": [],
+      "goodExamples": [
+        "关闭由业务成功结果控制，而非点击即关闭。"
+      ],
+      "badExamples": [
+        "把复杂输入任务放入短消息对话框并默认立即关闭。"
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "actions",
+      "title": "操作：单个动作与操作组",
+      "status": "approved",
+      "components": [
+        "Button",
+        "IconButton",
+        "ActionGroup"
+      ],
+      "scope": [
+        "generic",
+        "form",
+        "feedback"
+      ],
+      "comparisons": [
+        {
+          "components": [
+            "Button",
+            "IconButton"
+          ],
+          "when": "动作需要文字才能清楚表达时，考虑 Button；图标足以表达且能提供名称时，考虑 IconButton。",
+          "reason": "两者都需要明确动作含义；空间紧凑本身不能替代可读性。"
+        },
+        {
+          "components": [
+            "Button",
+            "ActionGroup"
+          ],
+          "when": "一组相关操作的排列与主次已明确时，考虑 ActionGroup；独立动作使用 Button。",
+          "reason": "ActionGroup 提供组织能力，不决定业务主次。"
+        },
+        {
+          "components": [
+            "Button",
+            "ActionGroup"
+          ],
+          "when": "primary/secondary/ghost 根据当前任务层级选择，危险操作再核对 danger。",
+          "reason": "默认样式及数组位置不是业务推荐依据；仍受实际变体支持范围约束。"
+        }
+      ],
+      "ruleIds": [],
+      "observationIds": [
+        "coupons.action-levels",
+        "repayment.agreement-control"
+      ],
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:selection-activation-2026-11-18",
+          "note": "用户在阅读45项选型技术审阅后，明确选择“采用为项目 UI 约定”。仅批准本批37个组件与8组比较的通用UI选型，不批准新的金融规则。"
+        }
+      ]
+    },
+    {
+      "id": "choice",
+      "title": "选择：互斥、多选与即时开关",
+      "status": "approved",
+      "components": [
+        "Radio",
+        "Checkbox",
+        "Select",
+        "Switch",
+        "SegmentedControl",
+        "Tag"
+      ],
+      "scope": [
+        "form",
+        "selection",
+        "repayment-plan"
+      ],
+      "comparisons": [
+        {
+          "components": [
+            "Radio",
+            "Checkbox"
+          ],
+          "when": "互斥选择考虑 Radio；可同时保留多个选择或独立勾选考虑 Checkbox。",
+          "reason": "需要先确认值的语义，不能从外观圆形/方形推导规则。"
+        },
+        {
+          "components": [
+            "Radio",
+            "Select"
+          ],
+          "when": "需要同时比较候选细节时考虑直接展示；候选不便同时展示时考虑 Select。",
+          "reason": "页面空间、信息量及比较任务共同决定，尚未设定固定选项数量阈值。"
+        },
+        {
+          "components": [
+            "Switch",
+            "Checkbox"
+          ],
+          "when": "设置即时切换并有保存反馈时考虑 Switch；随任务确认的独立勾选考虑 Checkbox。",
+          "reason": "这是交互时机建议，失败回退由页面处理。"
+        },
+        {
+          "components": [
+            "SegmentedControl",
+            "Tag",
+            "Radio"
+          ],
+          "when": "紧凑的同层选项切换可考虑 SegmentedControl；可移除/选择的短标签考虑 Tag；需要明确候选行时考虑 Radio。",
+          "reason": "先核对当前 API 与信息承载能力；SegmentedControl 的两项/三项来自实现范围。"
+        }
+      ],
+      "ruleIds": [
+        "form.controlled-events-remain-ui"
+      ],
+      "observationIds": [
+        "repayment.pending-choice",
+        "repayment.agreement-control"
+      ],
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:selection-activation-2026-11-18",
+          "note": "用户在阅读45项选型技术审阅后，明确选择“采用为项目 UI 约定”。仅批准本批37个组件与8组比较的通用UI选型，不批准新的金融规则。"
+        }
+      ]
+    },
+    {
+      "id": "navigation",
+      "title": "内容导航：分类、切换与分页",
+      "status": "approved",
+      "components": [
+        "Tabs",
+        "SegmentedControl",
+        "PageControl"
+      ],
+      "scope": [
+        "generic",
+        "selection",
+        "account-status"
+      ],
+      "comparisons": [
+        {
+          "components": [
+            "Tabs",
+            "SegmentedControl"
+          ],
+          "when": "需要带标题的内容区和面板关联时考虑 Tabs；紧凑选项切换考虑 SegmentedControl。",
+          "reason": "分类导航与选项值切换需要先分清。"
+        },
+        {
+          "components": [
+            "Tabs",
+            "PageControl"
+          ],
+          "when": "分类内容使用有意义的标题；已有按页内容的位置可用 PageControl。",
+          "reason": "PageControl 的数字索引不提供分类名称。"
+        },
+        {
+          "components": [
+            "Tabs",
+            "PageControl"
+          ],
+          "when": "需求为顶级底部导航时，先报告 BottomNavbar 缺失。",
+          "reason": "现有组件不能仅因排列位置相近就被视为完整替代。"
+        }
+      ],
+      "ruleIds": [],
+      "observationIds": [
+        "coupons.content-tabs"
+      ],
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:selection-activation-2026-11-18",
+          "note": "用户在阅读45项选型技术审阅后，明确选择“采用为项目 UI 约定”。仅批准本批37个组件与8组比较的通用UI选型，不批准新的金融规则。"
+        }
+      ]
+    },
+    {
+      "id": "overlays",
+      "title": "弹层：确认、补充任务与辅助说明",
+      "status": "approved",
+      "components": [
+        "Dialog",
+        "BottomSheet",
+        "Tooltip"
+      ],
+      "scope": [
+        "form",
+        "feedback",
+        "selection",
+        "repayment-plan"
+      ],
+      "comparisons": [
+        {
+          "components": [
+            "Dialog",
+            "BottomSheet"
+          ],
+          "when": "短消息和确认按现有规范使用 Dialog；输入任务按现有说明使用 BottomSheet。",
+          "reason": "这部分已有有效规则；复杂内容与具体关闭方式仍需按契约核实。"
+        },
+        {
+          "components": [
+            "Tooltip",
+            "BottomSheet"
+          ],
+          "when": "附加的简短说明可考虑 Tooltip；需要操作或更多内容时考虑 BottomSheet。",
+          "reason": "必要信息不只依赖辅助浮层；Coachmark 仍缺失。"
+        },
+        {
+          "components": [
+            "Dialog",
+            "BottomSheet"
+          ],
+          "when": "异步任务与临时编辑先明确取消、确认和关闭时机。",
+          "reason": "弹层关闭请求与业务成功是不同状态，不能从默认行为推导业务时序。"
+        }
+      ],
+      "ruleIds": [
+        "feedback.dialog-vs-input-task"
+      ],
+      "observationIds": [
+        "repayment.pending-choice",
+        "bill.request-lifecycle"
+      ],
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:selection-activation-2026-11-18",
+          "note": "用户在阅读45项选型技术审阅后，明确选择“采用为项目 UI 约定”。仅批准本批37个组件与8组比较的通用UI选型，不批准新的金融规则。"
+        }
+      ]
+    },
+    {
+      "id": "feedback",
+      "title": "消息反馈：短暂、持续与确认",
+      "status": "approved",
+      "components": [
+        "Toast",
+        "Banner",
+        "Dialog"
+      ],
+      "scope": [
+        "feedback",
+        "repayment-summary",
+        "account-status"
+      ],
+      "comparisons": [
+        {
+          "components": [
+            "Toast",
+            "Banner"
+          ],
+          "when": "短暂结果反馈可考虑 Toast；需要持续阅读的页内消息考虑 Banner。",
+          "reason": "信息持续时间与是否需要回看影响选型。"
+        },
+        {
+          "components": [
+            "Banner",
+            "Dialog"
+          ],
+          "when": "不阻断任务的持续消息可考虑 Banner；需要暂停并确认的短消息使用 Dialog。",
+          "reason": "重要程度不能单独决定是否中断，需要核对用户任务。"
+        },
+        {
+          "components": [
+            "Toast",
+            "Banner",
+            "Dialog"
+          ],
+          "when": "必要的金额/费用/风险信息应有持续可识别位置。",
+          "reason": "不从历史调用方式推导新的风险政策或把自动消失提示作为唯一载体。"
+        }
+      ],
+      "ruleIds": [],
+      "observationIds": [
+        "home.persistent-notice",
+        "repayment.request-error",
+        "bill.request-lifecycle"
+      ],
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:selection-activation-2026-11-18",
+          "note": "用户在阅读45项选型技术审阅后，明确选择“采用为项目 UI 约定”。仅批准本批37个组件与8组比较的通用UI选型，不批准新的金融规则。"
+        }
+      ]
+    },
+    {
+      "id": "status",
+      "title": "过程与结果：等待、进度和无内容",
+      "status": "approved",
+      "components": [
+        "Spinner",
+        "Skeleton",
+        "Progress",
+        "EmptyState"
+      ],
+      "scope": [
+        "feedback",
+        "account-status"
+      ],
+      "comparisons": [
+        {
+          "components": [
+            "Spinner",
+            "Skeleton"
+          ],
+          "when": "仅知道任务进行中时可用 Spinner；预计内容结构明确时可考虑 Skeleton。",
+          "reason": "等待指示与内容占位承载不同信息。"
+        },
+        {
+          "components": [
+            "Spinner",
+            "Progress"
+          ],
+          "when": "存在可信数值进度时考虑 Progress，否则保留未量化等待指示。",
+          "reason": "不能虚构完成比例或审批概率。"
+        },
+        {
+          "components": [
+            "Skeleton",
+            "EmptyState"
+          ],
+          "when": "结果尚未到达保留加载状态；已确认无内容时使用 EmptyState。",
+          "reason": "错误与空数据需要分别表达，不能都视为无内容。"
+        }
+      ],
+      "ruleIds": [],
+      "observationIds": [
+        "withdraw.input-feedback",
+        "home.placeholder-shape",
+        "coupons.empty-state",
+        "bill.request-lifecycle"
+      ],
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:selection-activation-2026-11-18",
+          "note": "用户在阅读45项选型技术审阅后，明确选择“采用为项目 UI 约定”。仅批准本批37个组件与8组比较的通用UI选型，不批准新的金融规则。"
+        }
+      ]
+    },
+    {
+      "id": "fields",
+      "title": "输入与表单：编辑、专用选择与校验",
+      "status": "approved",
+      "components": [
+        "Input",
+        "Search",
+        "DatePicker",
+        "TimePicker",
+        "Slider",
+        "Upload",
+        "Form",
+        "FormItem"
+      ],
+      "scope": [
+        "form",
+        "selection"
+      ],
+      "comparisons": [
+        {
+          "components": [
+            "Input",
+            "Search"
+          ],
+          "when": "一般字段编辑使用 Input；检索词编辑与检索动作考虑 Search。",
+          "reason": "结果区域和搜索时机由页面处理。"
+        },
+        {
+          "components": [
+            "Input",
+            "DatePicker",
+            "TimePicker"
+          ],
+          "when": "需要专用日期或时间选择过程时核对对应 Picker；自由编辑值仍需页面校验。",
+          "reason": "当前 DatePicker 仅单日期，TimePicker 不支持 Duration。"
+        },
+        {
+          "components": [
+            "Slider",
+            "Input"
+          ],
+          "when": "有界数值的滑动调整可考虑 Slider；直接文本编辑考虑 Input。",
+          "reason": "精度、边界、步长来自任务要求，Slider 只有单值能力。"
+        },
+        {
+          "components": [
+            "Upload",
+            "Input"
+          ],
+          "when": "本地文件选择、拖放与拒绝原因使用 Upload 的现有契约。",
+          "reason": "选中文件不等于服务端上传成功，后续请求由页面管理。"
+        },
+        {
+          "components": [
+            "Form",
+            "FormItem",
+            "Input"
+          ],
+          "when": "多字段汇总校验使用 Form；单字段标签错误关联使用 FormItem；具体值由字段组件编辑。",
+          "reason": "三者分工明确，作用域绑定仍需连接实际控件。"
+        }
+      ],
+      "ruleIds": [
+        "form.controlled-events-remain-ui"
+      ],
+      "observationIds": [
+        "withdraw.input-feedback",
+        "repayment.field-state"
+      ],
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:selection-activation-2026-11-18",
+          "note": "用户在阅读45项选型技术审阅后，明确选择“采用为项目 UI 约定”。仅批准本批37个组件与8组比较的通用UI选型，不批准新的金融规则。"
+        }
+      ]
+    },
+    {
+      "id": "content",
+      "title": "内容组织：容器、条目、标识与文字",
+      "status": "approved",
+      "components": [
+        "Card",
+        "ListItem",
+        "Accordion",
+        "Space",
+        "Divider",
+        "Typography",
+        "Badge",
+        "Tag",
+        "Avatar",
+        "Icon"
+      ],
+      "scope": [
+        "generic",
+        "repayment-summary",
+        "account-status"
+      ],
+      "comparisons": [
+        {
+          "components": [
+            "Card",
+            "ListItem",
+            "Accordion"
+          ],
+          "when": "成组内容可用 Card；重复条目可用 ListItem；可按需阅读的辅助正文可考虑 Accordion。",
+          "reason": "承载结构与展开交互不同；必要说明不能只存在于收起区域。"
+        },
+        {
+          "components": [
+            "Space",
+            "Divider"
+          ],
+          "when": "只需排列留白时使用 Space；需要可见分隔线时考虑 Divider。",
+          "reason": "两者不替代标题与状态语义。"
+        },
+        {
+          "components": [
+            "Badge",
+            "Tag"
+          ],
+          "when": "只读状态标注考虑 Badge；选择或移除标签考虑 Tag。",
+          "reason": "交互性决定需要哪套事件契约。"
+        },
+        {
+          "components": [
+            "Avatar",
+            "Icon"
+          ],
+          "when": "对象照片/缩写考虑 Avatar；通用符号使用已有 Icon 名称。",
+          "reason": "对象标识与通用图形不是同一用途。"
+        },
+        {
+          "components": [
+            "Typography",
+            "Card",
+            "ListItem"
+          ],
+          "when": "文字样式使用 Typography，并以恰当的容器组织内容。",
+          "reason": "语义标签、金额格式及长文案仍由页面结构和项目工具决定。"
+        }
+      ],
+      "ruleIds": [],
+      "observationIds": [
+        "home.persistent-notice"
+      ],
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:selection-activation-2026-11-18",
+          "note": "用户在阅读45项选型技术审阅后，明确选择“采用为项目 UI 约定”。仅批准本批37个组件与8组比较的通用UI选型，不批准新的金融规则。"
+        }
+      ]
+    }
+  ],
+  "components": [
+    {
+      "id": "selection.component.Accordion",
+      "component": "Accordion",
+      "title": "折叠辅助内容",
+      "status": "approved",
+      "useWhen": [
+        "正文较长且用户可按需展开辅助信息时。"
+      ],
+      "avoidWhen": [
+        "必要金额、错误或任务关键说明必须持续可见时，不把它们只放进折叠区。"
+      ],
+      "differences": [
+        {
+          "component": "Card",
+          "reason": "Card 始终组织内容；Accordion 增加展开/收起的交互。"
+        }
+      ],
+      "composition": [
+        "标题保持明确；展开内容由调用方提供，并检查展开后的长文案。"
+      ],
+      "goodExample": "把可选的补充说明放入折叠区，关键摘要留在外部。",
+      "badExample": "把唯一的错误原因放在默认收起的区域。",
+      "ruleIds": [],
+      "observationIds": [],
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:selection-activation-2026-11-18",
+          "note": "用户在阅读45项选型技术审阅后，明确选择“采用为项目 UI 约定”。仅批准本批37个组件与8组比较的通用UI选型，不批准新的金融规则。"
+        }
+      ],
+      "groups": [
+        "content"
+      ],
+      "scope": [
+        "generic",
+        "repayment-summary"
+      ],
+      "facts": {
+        "purpose": "折叠辅助内容，保留可识别的标题与展开状态。",
+        "constraints": [
+          "展开高度由调用方插槽决定；不可用不同正文的截图高度判断样式一致。"
+        ],
+        "supportedScope": "开/合、内容插槽",
+        "designGaps": "展开内容依赖调用方；需要用相同插槽内容验收。",
+        "origin": "figma",
+        "knownDifferences": [
+          {
+            "id": "S01",
+            "component": "Accordion",
+            "description": "Collapsed title weight",
+            "nodes": [
+              "37:1689"
+            ],
+            "status": "resolved",
+            "verification": "docs/verification/assets-completion/design-regression.json"
+          }
+        ],
+        "apiReference": "docs/components/accordion.md"
+      },
+      "evidenceNote": "未附直接生产页面观察；建议依据当前组件能力提出，仍需确认。"
+    },
+    {
+      "id": "selection.component.ActionGroup",
+      "component": "ActionGroup",
+      "title": "组织一组相关操作",
+      "status": "approved",
+      "useWhen": [
+        "多个相关操作需要统一排列，并且其主次已由需求确认时。"
+      ],
+      "avoidWhen": [
+        "动作彼此无关或需要独立页面导航结构时。"
+      ],
+      "differences": [
+        {
+          "component": "Button",
+          "reason": "Button 表达单个动作；ActionGroup 组织一组操作，不决定业务优先级。"
+        }
+      ],
+      "composition": [
+        "先确认动作层级，再配置 actions；遵循现有数量和水平布局限制。"
+      ],
+      "goodExample": "将已确认的继续、返回等相关操作放在同一操作区。",
+      "badExample": "依靠数组默认顺序决定哪一种金融方案更值得推荐。",
+      "ruleIds": [],
+      "observationIds": [
+        "coupons.action-levels"
+      ],
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:selection-activation-2026-11-18",
+          "note": "用户在阅读45项选型技术审阅后，明确选择“采用为项目 UI 约定”。仅批准本批37个组件与8组比较的通用UI选型，不批准新的金融规则。"
+        }
+      ],
+      "groups": [
+        "actions"
+      ],
+      "scope": [
+        "generic",
+        "form",
+        "feedback"
+      ],
+      "facts": {
+        "purpose": "组织最多三个相关操作，表达操作方向与层级。",
+        "constraints": [
+          "水平布局仅支持两个操作；操作主次由当前需求确认，不由数组默认顺序推导业务优先级。"
+        ],
+        "supportedScope": "Single / Double / Side-by-side / Triple",
+        "designGaps": "Action detail、Action icons两组",
+        "origin": "figma",
+        "knownDifferences": [],
+        "apiReference": "docs/components/action-group.md"
+      },
+      "evidenceNote": "页面观察只支持任务与交互场景，不代表旧组件与本组件等价。"
+    },
+    {
+      "id": "selection.component.Avatar",
+      "component": "Avatar",
+      "title": "展示头像或姓名缩写",
+      "status": "approved",
+      "useWhen": [
+        "内容需要人员/对象的照片或缩写标识，且调用方能提供合适标签时。"
+      ],
+      "avoidWhen": [
+        "只表达通用动作或状态符号时。"
+      ],
+      "differences": [
+        {
+          "component": "Icon",
+          "reason": "Avatar 用于对象标识及图片回退；Icon 用于已收录的通用符号。"
+        }
+      ],
+      "composition": [
+        "传入实际图片与可读名称，并验证图片失败后的缩写内容。"
+      ],
+      "goodExample": "列表中用头像与可读姓名共同标识对象。",
+      "badExample": "把头像图片存在与否当作身份验证结果。",
+      "ruleIds": [],
+      "observationIds": [],
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:selection-activation-2026-11-18",
+          "note": "用户在阅读45项选型技术审阅后，明确选择“采用为项目 UI 约定”。仅批准本批37个组件与8组比较的通用UI选型，不批准新的金融规则。"
+        }
+      ],
+      "groups": [
+        "content"
+      ],
+      "scope": [
+        "generic",
+        "account-status"
+      ],
+      "facts": {
+        "purpose": "展示调用方照片或姓名缩写及图片失败回退。",
+        "constraints": [
+          "照片由调用方提供；不将缩写款视为已实现 Icon、Thumbnail 或完整人物资产库。"
+        ],
+        "supportedScope": "Initial / 调用方Photo，5档尺寸",
+        "designGaps": "Icon、Thumbnail、状态标记及完整People/Team资产；照片内容由调用方提供",
+        "origin": "figma",
+        "knownDifferences": [],
+        "apiReference": "docs/components/avatar.md"
+      },
+      "evidenceNote": "未附直接生产页面观察；建议依据当前组件能力提出，仍需确认。"
+    },
+    {
+      "id": "selection.component.Badge",
+      "component": "Badge",
+      "title": "标记简短状态",
+      "status": "approved",
+      "useWhen": [
+        "信息旁需要简短的只读状态标签时。"
+      ],
+      "avoidWhen": [
+        "标签需要被选择、取消选择或删除时。"
+      ],
+      "differences": [
+        {
+          "component": "Tag",
+          "reason": "Badge 标注状态；Tag 具有选择或移除事件。"
+        }
+      ],
+      "composition": [
+        "状态用文字说明，颜色作为补充；绑定含义由页面提供。"
+      ],
+      "goodExample": "在条目标题旁显示由业务返回的状态文本。",
+      "badExample": "仅凭标签颜色推导账户资格。",
+      "ruleIds": [],
+      "observationIds": [],
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:selection-activation-2026-11-18",
+          "note": "用户在阅读45项选型技术审阅后，明确选择“采用为项目 UI 约定”。仅批准本批37个组件与8组比较的通用UI选型，不批准新的金融规则。"
+        }
+      ],
+      "groups": [
+        "content"
+      ],
+      "scope": [
+        "generic",
+        "account-status"
+      ],
+      "facts": {
+        "purpose": "用短标签标记局部状态。",
+        "constraints": [
+          "状态含义需配合文字；不将标签颜色作为资格或风险判断结果。"
+        ],
+        "supportedScope": "Label五色、Small Others五色",
+        "designGaps": "Corner / Status / Small Status，共14个主变体",
+        "origin": "figma",
+        "knownDifferences": [],
+        "apiReference": "docs/components/badge.md"
+      },
+      "evidenceNote": "未附直接生产页面观察；建议依据当前组件能力提出，仍需确认。"
+    },
+    {
+      "id": "selection.component.Banner",
+      "component": "Banner",
+      "title": "持续显示页内消息",
+      "status": "approved",
+      "useWhen": [
+        "用户在当前页面操作时仍需要看到消息、说明或相关动作时。"
+      ],
+      "avoidWhen": [
+        "只需一次短暂反馈，或必须阻断任务等待确认时。"
+      ],
+      "differences": [
+        {
+          "component": "Toast",
+          "reason": "Banner 留在页内承载持续消息；Toast 承载短暂反馈。"
+        }
+      ],
+      "composition": [
+        "由父级控制 visible；消息动作与关闭行为分开处理，核对无标题布局差异。"
+      ],
+      "goodExample": "把需要持续阅读的状态说明保留在页面消息区。",
+      "badExample": "用自动消失的提示替代唯一的持续状态说明。",
+      "ruleIds": [],
+      "observationIds": [
+        "home.persistent-notice"
+      ],
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:selection-activation-2026-11-18",
+          "note": "用户在阅读45项选型技术审阅后，明确选择“采用为项目 UI 约定”。仅批准本批37个组件与8组比较的通用UI选型，不批准新的金融规则。"
+        }
+      ],
+      "groups": [
+        "feedback"
+      ],
+      "scope": [
+        "feedback",
+        "account-status"
+      ],
+      "facts": {
+        "purpose": "在当前页面展示消息、说明与相关操作。",
+        "constraints": [
+          "关闭请求由父级更新 visible；无标题操作与说明同排，自定义内容按实际数据验收。"
+        ],
+        "supportedScope": "3种类型、有/无标题",
+        "designGaps": "标题/正文与自定义动作仍按实际内容验收；已实现无标题同排操作。",
+        "origin": "figma",
+        "knownDifferences": [
+          {
+            "id": "S06",
+            "component": "Banner",
+            "description": "No-title action placement",
+            "nodes": [
+              "173:10859",
+              "173:10848",
+              "983:22516"
+            ],
+            "status": "resolved",
+            "verification": "docs/verification/assets-completion/design-regression.json"
+          }
+        ],
+        "apiReference": "docs/components/banner.md"
+      },
+      "evidenceNote": "页面观察只支持任务与交互场景，不代表旧组件与本组件等价。"
+    },
+    {
+      "id": "selection.component.BottomSheet",
+      "component": "BottomSheet",
+      "title": "承载补充任务或输入",
+      "status": "approved",
+      "useWhen": [
+        "当前任务需要展开补充内容、字段输入或选择，并保留原页面上下文时。"
+      ],
+      "avoidWhen": [
+        "任务已需要独立页面流程，或仅需一条简短确认消息时。"
+      ],
+      "differences": [
+        {
+          "component": "Dialog",
+          "reason": "BottomSheet 承载补充内容和输入；Dialog 的现有设计用途是短消息与确认。"
+        }
+      ],
+      "composition": [
+        "根据 PRD 管理临时值、确认、取消和 visible；预置选择组合尚未交付。"
+      ],
+      "goodExample": "在补充面板内编辑临时选择，确认后由页面更新值。",
+      "badExample": "把库的通用外壳当作已实现所有 Figma 选择面板。",
+      "ruleIds": [
+        "feedback.dialog-vs-input-task"
+      ],
+      "observationIds": [
+        "repayment.pending-choice"
+      ],
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:selection-activation-2026-11-18",
+          "note": "用户在阅读45项选型技术审阅后，明确选择“采用为项目 UI 约定”。仅批准本批37个组件与8组比较的通用UI选型，不批准新的金融规则。"
+        }
+      ],
+      "groups": [
+        "overlays"
+      ],
+      "scope": [
+        "form",
+        "selection",
+        "repayment-plan"
+      ],
+      "facts": {
+        "purpose": "承载当前任务的补充内容或输入操作。",
+        "constraints": [
+          "正文与 actions 由调用方提供；现有通用外壳不等于已交付全部 Figma 预置组合。"
+        ],
+        "supportedScope": "List外壳、通用正文/操作、键盘与嵌套",
+        "designGaps": "Radio / Checkbox / Toggle / Feedback没有已交付预置组合；多种Header及Search/Grid子结构未开放",
+        "origin": "figma",
+        "knownDifferences": [],
+        "apiReference": "docs/components/bottom-sheet.md"
+      },
+      "evidenceNote": "页面观察只支持任务与交互场景，不代表旧组件与本组件等价。"
+    },
+    {
+      "id": "selection.component.Button",
+      "component": "Button",
+      "title": "触发清楚的文字操作",
+      "status": "approved",
+      "useWhen": [
+        "需要可读动作名称和原生按钮语义时。"
+      ],
+      "avoidWhen": [
+        "只展示状态、切换内容分类或缺少明确动作含义时。"
+      ],
+      "differences": [
+        {
+          "component": "IconButton",
+          "reason": "Button 以文字说明动作；IconButton 用图标表达且仍需要可访问名称。"
+        }
+      ],
+      "composition": [
+        "按已确认任务层级选择 primary、secondary 或 ghost；danger 用于已明确的危险操作，禁用与请求状态由页面管理。"
+      ],
+      "goodExample": "确认当前任务使用 primary；并列替代动作按需求使用 secondary，低强调补充动作可考虑 ghost。",
+      "badExample": "把所有按钮都设为 primary，或将 danger + xs 标成 Figma 已支持组合。",
+      "ruleIds": [],
+      "observationIds": [
+        "coupons.action-levels",
+        "repayment.agreement-control"
+      ],
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:selection-activation-2026-11-18",
+          "note": "用户在阅读45项选型技术审阅后，明确选择“采用为项目 UI 约定”。仅批准本批37个组件与8组比较的通用UI选型，不批准新的金融规则。"
+        }
+      ],
+      "groups": [
+        "actions"
+      ],
+      "scope": [
+        "generic",
+        "form",
+        "selection",
+        "feedback"
+      ],
+      "facts": {
+        "purpose": "触发单个明确操作，提供原生按钮语义。",
+        "constraints": [
+          "禁用业务判断由调用方提供；danger + xs 不属于 Figma 支持组合，异步任务是否关闭或重复提交由业务层处理。"
+        ],
+        "supportedScope": "108个主变体可通过现有属性配置",
+        "designGaps": "Payment Button另有3个变体，无独立实现；未校准的额外API组合不能宣称Figma支持。",
+        "origin": "figma",
+        "knownDifferences": [
+          {
+            "id": "S02",
+            "component": "Button",
+            "description": "Secondary stroke placement",
+            "nodes": [
+              "39:2910",
+              "39:2913",
+              "39:2916",
+              "39:3042",
+              "39:3045",
+              "39:3048"
+            ],
+            "status": "resolved",
+            "verification": "docs/verification/assets-completion/design-regression.json"
+          },
+          {
+            "id": "S03",
+            "component": "Button",
+            "description": "Small secondary Tap foreground",
+            "nodes": [
+              "39:3048",
+              "39:3050",
+              "39:3053"
+            ],
+            "status": "resolved",
+            "verification": "docs/verification/assets-completion/design-regression.json"
+          },
+          {
+            "id": "S04",
+            "component": "Button",
+            "description": "Small Sticky label metrics",
+            "nodes": [
+              "39:3112",
+              "39:3115",
+              "39:3118",
+              "39:3121",
+              "39:3124",
+              "39:3127",
+              "39:3133",
+              "39:3136"
+            ],
+            "status": "resolved",
+            "verification": "docs/verification/assets-completion/design-regression.json"
+          },
+          {
+            "id": "S05",
+            "component": "Button",
+            "description": "Sticky background shadow",
+            "nodes": [
+              "39:2980",
+              "39:3112"
+            ],
+            "status": "resolved",
+            "verification": "docs/verification/assets-completion/design-regression.json"
+          }
+        ],
+        "apiReference": "docs/components/button.md"
+      },
+      "evidenceNote": "页面观察只支持任务与交互场景，不代表旧组件与本组件等价。"
+    },
+    {
+      "id": "selection.component.Card",
+      "component": "Card",
+      "title": "分组相关内容",
+      "status": "approved",
+      "useWhen": [
+        "一组内容需要共同容器、标题或底部补充区时。"
+      ],
+      "avoidWhen": [
+        "需求明确要求选择卡片视觉或复合选择行为时。"
+      ],
+      "differences": [
+        {
+          "component": "ListItem",
+          "reason": "Card 容纳成组内容；ListItem 组织重复条目及侧边内容。"
+        }
+      ],
+      "composition": [
+        "用 header/default/footer 组织内容；选择卡片需求应报告 CardSelect 缺失。"
+      ],
+      "goodExample": "把同一主题的摘要与补充信息组织在一个容器中。",
+      "badExample": "加一个点击事件就宣称已交付 CardSelect。",
+      "ruleIds": [],
+      "observationIds": [],
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:selection-activation-2026-11-18",
+          "note": "用户在阅读45项选型技术审阅后，明确选择“采用为项目 UI 约定”。仅批准本批37个组件与8组比较的通用UI选型，不批准新的金融规则。"
+        }
+      ],
+      "groups": [
+        "content"
+      ],
+      "scope": [
+        "generic",
+        "repayment-summary",
+        "account-status"
+      ],
+      "facts": {
+        "purpose": "按本地 Token 分组相关内容。",
+        "constraints": [
+          "通用容器没有 Card select 的选择视觉与契约，不能替代缺失组件。"
+        ],
+        "supportedScope": "标题、默认正文、header/footer 插槽与 elevated 样式。",
+        "designGaps": "自主组件按本地 Token 验收，不宣称有对应 Figma 完整变体。",
+        "origin": "original",
+        "knownDifferences": [],
+        "apiReference": "docs/components/card.md"
+      },
+      "evidenceNote": "未附直接生产页面观察；建议依据当前组件能力提出，仍需确认。"
+    },
+    {
+      "id": "selection.component.Checkbox",
+      "component": "Checkbox",
+      "title": "表达独立勾选或多选",
+      "status": "approved",
+      "useWhen": [
+        "选项可独立勾选，或允许同时保留多个选择时。"
+      ],
+      "avoidWhen": [
+        "同一组只能保留一个选项，或需要表达即时开关时。"
+      ],
+      "differences": [
+        {
+          "component": "Radio",
+          "reason": "Checkbox 支持独立布尔或数组多选；Radio 表达互斥选择。"
+        }
+      ],
+      "composition": [
+        "数组模式明确 optionValue；是否必选、默认状态与提交时机由 PRD 决定。"
+      ],
+      "goodExample": "页面维护独立勾选值，再依据已确认条件决定操作可用性。",
+      "badExample": "从旧页面勾选框推导所有页面都必须采用相同同意条件。",
+      "ruleIds": [
+        "form.controlled-events-remain-ui"
+      ],
+      "observationIds": [
+        "repayment.agreement-control"
+      ],
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:selection-activation-2026-11-18",
+          "note": "用户在阅读45项选型技术审阅后，明确选择“采用为项目 UI 约定”。仅批准本批37个组件与8组比较的通用UI选型，不批准新的金融规则。"
+        }
+      ],
+      "groups": [
+        "choice"
+      ],
+      "scope": [
+        "form",
+        "selection"
+      ],
+      "facts": {
+        "purpose": "表达独立布尔选择或数组多选。",
+        "constraints": [
+          "数组模式使用 optionValue；选择范围与是否必选由需求决定，禁用不等于业务不符合资格。"
+        ],
+        "supportedScope": "4种基本状态、简单标签行",
+        "designGaps": "List的Icon/Avatar形态及完整左右位置配置",
+        "origin": "figma",
+        "knownDifferences": [],
+        "apiReference": "docs/components/checkbox.md"
+      },
+      "evidenceNote": "页面观察只支持任务与交互场景，不代表旧组件与本组件等价。"
+    },
+    {
+      "id": "selection.component.DatePicker",
+      "component": "DatePicker",
+      "title": "选择单个日历日期",
+      "status": "approved",
+      "useWhen": [
+        "任务需要在日期范围约束内选择并确认一个日期时。"
+      ],
+      "avoidWhen": [
+        "需要日期区间、滚轮或专用年月选择网格时。"
+      ],
+      "differences": [
+        {
+          "component": "Input",
+          "reason": "DatePicker 提供单日期网格及确认；Input 仅编辑值，不提供完整日期选择过程。"
+        }
+      ],
+      "composition": [
+        "区分 select 的待选反馈与 confirm 后的受控值更新；日期边界由页面传入。"
+      ],
+      "goodExample": "使用 Grid 单日期能力并按实际需求设置 min/max。",
+      "badExample": "把两个实例拼在一起后直接标记支持 Figma Range。",
+      "ruleIds": [
+        "form.controlled-events-remain-ui"
+      ],
+      "observationIds": [],
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:selection-activation-2026-11-18",
+          "note": "用户在阅读45项选型技术审阅后，明确选择“采用为项目 UI 约定”。仅批准本批37个组件与8组比较的通用UI选型，不批准新的金融规则。"
+        }
+      ],
+      "groups": [
+        "fields"
+      ],
+      "scope": [
+        "form",
+        "selection"
+      ],
+      "facts": {
+        "purpose": "通过日历网格选择并确认单个日期。",
+        "constraints": [
+          "仅支持 Grid 单日期；Range、Scroll、Full screen 未交付。"
+        ],
+        "supportedScope": "Grid单日期",
+        "designGaps": "Scroll、Full screen、Range、Month/Year专用选择网格及更多阶段",
+        "origin": "figma",
+        "knownDifferences": [],
+        "apiReference": "docs/components/date-picker.md"
+      },
+      "evidenceNote": "未附直接生产页面观察；建议依据当前组件能力提出，仍需确认。"
+    },
+    {
+      "id": "selection.component.Dialog",
+      "component": "Dialog",
+      "title": "确认或说明短消息",
+      "status": "approved",
+      "useWhen": [
+        "需要中断当前操作，让用户阅读短消息或完成明确确认时。"
+      ],
+      "avoidWhen": [
+        "主要任务是填写字段或处理较长的补充内容时。"
+      ],
+      "differences": [
+        {
+          "component": "BottomSheet",
+          "reason": "Dialog 用于短消息/确认；输入任务按既有设计说明使用 BottomSheet。"
+        }
+      ],
+      "composition": [
+        "异步确认使用 closeOnAction=false，成功后由父级关闭；区分 action 与业务提交。"
+      ],
+      "goodExample": "确认异步操作时保留弹层，待页面得到结果后关闭。",
+      "badExample": "点击确认立即关闭，再把失败信息留在已消失的内容里。",
+      "ruleIds": [
+        "feedback.dialog-vs-input-task"
+      ],
+      "observationIds": [
+        "bill.request-lifecycle"
+      ],
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:selection-activation-2026-11-18",
+          "note": "用户在阅读45项选型技术审阅后，明确选择“采用为项目 UI 约定”。仅批准本批37个组件与8组比较的通用UI选型，不批准新的金融规则。"
+        }
+      ],
+      "groups": [
+        "overlays",
+        "feedback"
+      ],
+      "scope": [
+        "feedback",
+        "repayment-plan"
+      ],
+      "facts": {
+        "purpose": "中断当前任务，请用户确认或了解短消息。",
+        "constraints": [
+          "异步确认使用 closeOnAction=false；输入任务按 Figma 使用 BottomSheet，不把任意表单塞入短消息设计。"
+        ],
+        "supportedScope": "已公开的标题/插图/正文与1–3操作组合",
+        "designGaps": "按已公开API验收；不代表所有任意内容/尺寸组合均完成像素比对",
+        "origin": "figma",
+        "knownDifferences": [],
+        "apiReference": "docs/components/dialog.md"
+      },
+      "evidenceNote": "页面观察只支持任务与交互场景，不代表旧组件与本组件等价。"
+    },
+    {
+      "id": "selection.component.Divider",
+      "component": "Divider",
+      "title": "分隔内容区段",
+      "status": "approved",
+      "useWhen": [
+        "相邻内容需要视觉分组，或横向区段需要简短分隔文本时。"
+      ],
+      "avoidWhen": [
+        "任务需要标题、错误解释或明确状态表达时。"
+      ],
+      "differences": [
+        {
+          "component": "Space",
+          "reason": "Divider 以分隔线表达组界；Space 只组织间距和排列。"
+        }
+      ],
+      "composition": [
+        "根据容器方向选择 orientation，语义信息由标题或正文承担。"
+      ],
+      "goodExample": "在两个相关内容组之间使用分隔线，并保留各组标题。",
+      "badExample": "只画一条红色分隔线代替错误说明。",
+      "ruleIds": [],
+      "observationIds": [],
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:selection-activation-2026-11-18",
+          "note": "用户在阅读45项选型技术审阅后，明确选择“采用为项目 UI 约定”。仅批准本批37个组件与8组比较的通用UI选型，不批准新的金融规则。"
+        }
+      ],
+      "groups": [
+        "content"
+      ],
+      "scope": [
+        "generic",
+        "repayment-summary"
+      ],
+      "facts": {
+        "purpose": "分隔相关内容组或标注区段。",
+        "constraints": [
+          "分隔线不能单独承担标题、错误或状态语义。"
+        ],
+        "supportedScope": "横向/纵向分隔线；横向支持默认插槽文本。",
+        "designGaps": "自主组件按本地 Token 验收，不宣称有对应 Figma 完整变体。",
+        "origin": "original",
+        "knownDifferences": [],
+        "apiReference": "docs/components/divider.md"
+      },
+      "evidenceNote": "未附直接生产页面观察；建议依据当前组件能力提出，仍需确认。"
+    },
+    {
+      "id": "selection.component.EmptyState",
+      "component": "EmptyState",
+      "title": "解释当前没有内容",
+      "status": "approved",
+      "useWhen": [
+        "查询完成后确实没有可展示内容，并需要解释或给出后续动作时。"
+      ],
+      "avoidWhen": [
+        "请求仍在加载或失败原因尚未说明时。"
+      ],
+      "differences": [
+        {
+          "component": "Skeleton",
+          "reason": "EmptyState 解释无内容；Skeleton 表达内容尚未到达的占位结构。"
+        }
+      ],
+      "composition": [
+        "区分加载、失败和空数据；实际标题、说明与操作由页面提供。"
+      ],
+      "goodExample": "空列表完成返回后展示明确空态。",
+      "badExample": "请求失败时直接显示没有账单而隐藏失败原因。",
+      "ruleIds": [],
+      "observationIds": [
+        "coupons.empty-state"
+      ],
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:selection-activation-2026-11-18",
+          "note": "用户在阅读45项选型技术审阅后，明确选择“采用为项目 UI 约定”。仅批准本批37个组件与8组比较的通用UI选型，不批准新的金融规则。"
+        }
+      ],
+      "groups": [
+        "status"
+      ],
+      "scope": [
+        "feedback",
+        "account-status"
+      ],
+      "facts": {
+        "purpose": "说明当前内容为空并提供可选操作。",
+        "constraints": [
+          "Illustration=false 仅隐藏图片，不会生成 Figma Icon 款；空态原因与操作由页面提供。"
+        ],
+        "supportedScope": "Illustration款",
+        "designGaps": "Icon款；关闭illustration只隐藏图片，不会生成该款图标结构",
+        "origin": "figma",
+        "knownDifferences": [],
+        "apiReference": "docs/components/empty-state.md"
+      },
+      "evidenceNote": "页面观察只支持任务与交互场景，不代表旧组件与本组件等价。"
+    },
+    {
+      "id": "selection.component.Form",
+      "component": "Form",
+      "title": "汇总字段校验",
+      "status": "approved",
+      "useWhen": [
+        "多个字段需要统一校验及提交/无效结果通知时。"
+      ],
+      "avoidWhen": [
+        "只展示只读摘要，或准备让基础组件执行支付等业务流程时。"
+      ],
+      "differences": [
+        {
+          "component": "FormItem",
+          "reason": "Form 管理字段集合；FormItem 关联单个字段及其错误。"
+        }
+      ],
+      "composition": [
+        "配合 FormItem 的 prop 与作用域绑定；提交事件交由页面处理，model prop 不是 双向值绑定。"
+      ],
+      "goodExample": "收到 submit 事件后由页面按当前业务流程请求。",
+      "badExample": "把接口和金融计算写进基础表单组件。",
+      "ruleIds": [
+        "form.controlled-events-remain-ui"
+      ],
+      "observationIds": [
+        "repayment.field-state"
+      ],
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:selection-activation-2026-11-18",
+          "note": "用户在阅读45项选型技术审阅后，明确选择“采用为项目 UI 约定”。仅批准本批37个组件与8组比较的通用UI选型，不批准新的金融规则。"
+        }
+      ],
+      "groups": [
+        "fields"
+      ],
+      "scope": [
+        "form"
+      ],
+      "facts": {
+        "purpose": "汇总字段校验并发出提交或无效事件。",
+        "constraints": [
+          "只管理 UI 校验；model prop 不是 双向值绑定 契约，不执行金融业务提交。"
+        ],
+        "supportedScope": "model/rules/disabled、字段注册校验、validate/resetValidation 公开方法及结果事件。",
+        "designGaps": "自主组件按本地 Token 验收，不宣称有对应 Figma 完整变体。",
+        "origin": "original",
+        "knownDifferences": [],
+        "apiReference": "docs/components/form.md"
+      },
+      "evidenceNote": "页面观察只支持任务与交互场景，不代表旧组件与本组件等价。"
+    },
+    {
+      "id": "selection.component.FormItem",
+      "component": "FormItem",
+      "title": "关联标签与字段错误",
+      "status": "approved",
+      "useWhen": [
+        "字段需要一致的标签、帮助说明、校验和可聚焦关联时。"
+      ],
+      "avoidWhen": [
+        "只是无输入的内容行或分组容器时。"
+      ],
+      "differences": [
+        {
+          "component": "ListItem",
+          "reason": "FormItem 管理字段语义与校验；ListItem 展示条目信息。"
+        }
+      ],
+      "composition": [
+        "把作用域 id、error、disabled、described-by 绑定到实际控件。"
+      ],
+      "goodExample": "让字段标签和错误提示正确关联到 Input。",
+      "badExample": "只展示一条错误文字，却没有把状态传入控件。",
+      "ruleIds": [
+        "form.controlled-events-remain-ui"
+      ],
+      "observationIds": [
+        "repayment.field-state"
+      ],
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:selection-activation-2026-11-18",
+          "note": "用户在阅读45项选型技术审阅后，明确选择“采用为项目 UI 约定”。仅批准本批37个组件与8组比较的通用UI选型，不批准新的金融规则。"
+        }
+      ],
+      "groups": [
+        "fields"
+      ],
+      "scope": [
+        "form"
+      ],
+      "facts": {
+        "purpose": "关联字段标签、提示、错误与可聚焦控件。",
+        "constraints": [
+          "搭配 Form 时 prop 对应 model 路径；调用方必须将作用域插槽 id、error、described-by 等接到实际控件。"
+        ],
+        "supportedScope": "独立或 Form 内字段，标签/提示/错误、作用域绑定、异步校验与聚焦。",
+        "designGaps": "自主组件按本地 Token 验收，不宣称有对应 Figma 完整变体。",
+        "origin": "original",
+        "knownDifferences": [],
+        "apiReference": "docs/components/form-item.md"
+      },
+      "evidenceNote": "页面观察只支持任务与交互场景，不代表旧组件与本组件等价。"
+    },
+    {
+      "id": "selection.component.Icon",
+      "component": "Icon",
+      "title": "展示已收录的通用符号",
+      "status": "approved",
+      "useWhen": [
+        "内容需要本地图标库已经提供的符号时。"
+      ],
+      "avoidWhen": [
+        "符号本身是一个需要键盘操作的动作时。"
+      ],
+      "differences": [
+        {
+          "component": "IconButton",
+          "reason": "Icon 负责图形展示；IconButton 负责按钮交互与名称。"
+        }
+      ],
+      "composition": [
+        "先核对公开名称；图标含义由相邻文字或合适语义说明补足。"
+      ],
+      "goodExample": "在带文字的消息旁使用已有状态符号。",
+      "badExample": "给装饰图标随意加点击事件并当作完整按钮。",
+      "ruleIds": [],
+      "observationIds": [],
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:selection-activation-2026-11-18",
+          "note": "用户在阅读45项选型技术审阅后，明确选择“采用为项目 UI 约定”。仅批准本批37个组件与8组比较的通用UI选型，不批准新的金融规则。"
+        }
+      ],
+      "groups": [
+        "content"
+      ],
+      "scope": [
+        "generic"
+      ],
+      "facts": {
+        "purpose": "按本地名称展示已有图标资源。",
+        "constraints": [
+          "兼容原有 13 个别名；新 ID 必须来自本地正式图标清单，插画 ID 不用于 PdIcon。",
+          "按条目逻辑尺寸渲染，保留原颜色和变体；页面负责图标语义与可访问标签。"
+        ],
+        "supportedScope": "13 个历史别名及正式图库的 1,808 个图标 ID；按原逻辑尺寸渲染。",
+        "designGaps": "仅覆盖冻结的正式图库；画布外参考不公开为运行时资产。全量加载与几何验收和代表性视觉对照见独立图库报告，不等于逐项像素对照。",
+        "origin": "figma",
+        "knownDifferences": [],
+        "apiReference": "docs/components/icon.md"
+      },
+      "evidenceNote": "未附直接生产页面观察；建议依据当前组件能力提出，仍需确认。"
+    },
+    {
+      "id": "selection.component.IconButton",
+      "component": "IconButton",
+      "title": "用图标触发操作",
+      "status": "approved",
+      "useWhen": [
+        "动作可通过图标识别，并能提供明确可访问名称时。"
+      ],
+      "avoidWhen": [
+        "动作含义需要文字解释，或需求要求尚未实现的 Dropdown 状态时。"
+      ],
+      "differences": [
+        {
+          "component": "Button",
+          "reason": "IconButton 节省文字展示空间；Button 更直接呈现动作名称。"
+        }
+      ],
+      "composition": [
+        "提供描述动作的 label，遵循已有 active/disabled 契约。"
+      ],
+      "goodExample": "关闭入口使用带明确名称的图标按钮。",
+      "badExample": "用无名称图标承载关键确认操作。",
+      "ruleIds": [],
+      "observationIds": [],
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:selection-activation-2026-11-18",
+          "note": "用户在阅读45项选型技术审阅后，明确选择“采用为项目 UI 约定”。仅批准本批37个组件与8组比较的通用UI选型，不批准新的金融规则。"
+        }
+      ],
+      "groups": [
+        "actions"
+      ],
+      "scope": [
+        "generic",
+        "form"
+      ],
+      "facts": {
+        "purpose": "用带可访问名称的图标触发操作。",
+        "constraints": [
+          "label 应说明动作；没有交付 Dropdown 三状态，不能因能添加插槽就宣称设计覆盖。"
+        ],
+        "supportedScope": "Default / Active / Disabled",
+        "designGaps": "Dropdown的3个状态",
+        "origin": "figma",
+        "knownDifferences": [],
+        "apiReference": "docs/components/icon-button.md"
+      },
+      "evidenceNote": "未附直接生产页面观察；建议依据当前组件能力提出，仍需确认。"
+    },
+    {
+      "id": "selection.component.Input",
+      "component": "Input",
+      "title": "编辑文本或原生字段值",
+      "status": "approved",
+      "useWhen": [
+        "用户需要输入、修改或查看可编辑字段，并得到标签与错误反馈时。"
+      ],
+      "avoidWhen": [
+        "值来自固定候选项且任务需要引导选择，或需要专门日期/时间选择过程时。"
+      ],
+      "differences": [
+        {
+          "component": "Select",
+          "reason": "Input 接收编辑值；Select 从已有选项中选择。"
+        }
+      ],
+      "composition": [
+        "使用 value/input，明确 label、error 和原生属性；金额解析与业务边界由页面负责。"
+      ],
+      "goodExample": "页面负责校验，再把值和错误消息回传给字段。",
+      "badExample": "给真实空值填入 Figma 样例 Value 来伪造一致。",
+      "ruleIds": [
+        "form.controlled-events-remain-ui"
+      ],
+      "observationIds": [
+        "withdraw.input-feedback",
+        "repayment.field-state"
+      ],
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:selection-activation-2026-11-18",
+          "note": "用户在阅读45项选型技术审阅后，明确选择“采用为项目 UI 约定”。仅批准本批37个组件与8组比较的通用UI选型，不批准新的金融规则。"
+        }
+      ],
+      "groups": [
+        "fields"
+      ],
+      "scope": [
+        "form"
+      ],
+      "facts": {
+        "purpose": "使用 当前基准实现 value/input 编辑字段并呈现说明与错误。",
+        "constraints": [
+          "国家选择由调用方实现；不向真实空值注入示例 Value 来对齐有冲突的 Figma Blank/Disabled 样例。",
+          "Input 默认不预留外层左右间距；页面级间距由父容器负责，输入框内部左右与底部间距仍为12px。"
+        ],
+        "supportedScope": "7种类型、57个命名状态可配置",
+        "designGaps": "3 个 Blank/Disabled Master 的 Value 示例内容与状态名冲突；本地保持空值并按 Master 显示浮动标签。更多插槽内容需按实际数据验收。 外层左右0px为用户确认的项目布局调整，Figma原始控件宽度差异单独保留。",
+        "origin": "mixed",
+        "knownDifferences": [
+          {
+            "component": "Input",
+            "nodes": [
+              "101:12828",
+              "101:12843",
+              "101:13027"
+            ],
+            "status": "unresolved",
+            "id": "Input.source-conflict",
+            "description": "Blank/Disabled 源稿样例冲突；不得通过填入示例值改变真实空值。"
+          }
+        ],
+        "apiReference": "docs/components/input.md"
+      },
+      "evidenceNote": "页面观察只支持任务与交互场景，不代表旧组件与本组件等价。"
+    },
+    {
+      "id": "selection.component.ListItem",
+      "component": "ListItem",
+      "title": "组织重复信息条目",
+      "status": "approved",
+      "useWhen": [
+        "列表中需要一至三行信息、侧边内容和可选点击行为时。"
+      ],
+      "avoidWhen": [
+        "内容包含多组复杂区块，或主要目的为字段校验时。"
+      ],
+      "differences": [
+        {
+          "component": "Card",
+          "reason": "ListItem 组织条目；Card 容纳一组结构更自由的内容。"
+        }
+      ],
+      "composition": [
+        "点击与跳转由页面处理；复杂选择列表不自动算作已交付预置。"
+      ],
+      "goodExample": "用重复条目展示摘要，并由页面处理点击后的动作。",
+      "badExample": "把业务资格判断隐藏在列表项内部。",
+      "ruleIds": [],
+      "observationIds": [],
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:selection-activation-2026-11-18",
+          "note": "用户在阅读45项选型技术审阅后，明确选择“采用为项目 UI 约定”。仅批准本批37个组件与8组比较的通用UI选型，不批准新的金融规则。"
+        }
+      ],
+      "groups": [
+        "content"
+      ],
+      "scope": [
+        "generic",
+        "repayment-summary",
+        "account-status"
+      ],
+      "facts": {
+        "purpose": "组织一至三行信息及侧边插槽。",
+        "constraints": [
+          "clickable 只控制界面操作语义；金额、资格和跳转由调用方决定。"
+        ],
+        "supportedScope": "1 / 2 / 3行与侧插槽",
+        "designGaps": "Prefix、Overline、独立Section/Select及复合内容配置",
+        "origin": "figma",
+        "knownDifferences": [],
+        "apiReference": "docs/components/list-item.md"
+      },
+      "evidenceNote": "未附直接生产页面观察；建议依据当前组件能力提出，仍需确认。"
+    },
+    {
+      "id": "selection.component.PageControl",
+      "component": "PageControl",
+      "title": "表达分页位置",
+      "status": "approved",
+      "useWhen": [
+        "内容已按页组织，需要显示当前位置并请求切换时。"
+      ],
+      "avoidWhen": [
+        "选项代表语义分类或顶级导航目的地时。"
+      ],
+      "differences": [
+        {
+          "component": "Tabs",
+          "reason": "PageControl 表达页索引；Tabs 以标题区分同层内容区。"
+        }
+      ],
+      "composition": [
+        "受控维护从 0 开始的 value；动态页数属于本地自主扩展。"
+      ],
+      "goodExample": "在已分页内容下显示当前位置。",
+      "badExample": "用没有分类标题的圆点替代账户内容导航。",
+      "ruleIds": [],
+      "observationIds": [],
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:selection-activation-2026-11-18",
+          "note": "用户在阅读45项选型技术审阅后，明确选择“采用为项目 UI 约定”。仅批准本批37个组件与8组比较的通用UI选型，不批准新的金融规则。"
+        }
+      ],
+      "groups": [
+        "navigation"
+      ],
+      "scope": [
+        "generic"
+      ],
+      "facts": {
+        "purpose": "显示分页位置并请求切换当前项。",
+        "constraints": [
+          "动态数量及当前页属于自主扩展；不能视为已实现 White、More、Slider 设计。"
+        ],
+        "supportedScope": "默认五点；动态数量/当前页为自主扩展",
+        "designGaps": "White、More、Slider等5个主变体及位置子状态",
+        "origin": "mixed",
+        "knownDifferences": [],
+        "apiReference": "docs/components/page-control.md"
+      },
+      "evidenceNote": "未附直接生产页面观察；建议依据当前组件能力提出，仍需确认。"
+    },
+    {
+      "id": "selection.component.Progress",
+      "component": "Progress",
+      "title": "展示已知百分比进度",
+      "status": "approved",
+      "useWhen": [
+        "页面拥有真实可用的数值进度，需要持续展示完成程度时。"
+      ],
+      "avoidWhen": [
+        "只有等待状态，没有可信百分比，或需要 Step 结构时。"
+      ],
+      "differences": [
+        {
+          "component": "Spinner",
+          "reason": "Progress 展示已知进度；Spinner 只表达活动仍在进行。"
+        }
+      ],
+      "composition": [
+        "数值由页面传入，注明真实含义，不推导审批概率。"
+      ],
+      "goodExample": "使用真实上传进度数据驱动百分比。",
+      "badExample": "请求期间随时间增加虚构的审批百分比。",
+      "ruleIds": [],
+      "observationIds": [],
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:selection-activation-2026-11-18",
+          "note": "用户在阅读45项选型技术审阅后，明确选择“采用为项目 UI 约定”。仅批准本批37个组件与8组比较的通用UI选型，不批准新的金融规则。"
+        }
+      ],
+      "groups": [
+        "status"
+      ],
+      "scope": [
+        "feedback",
+        "account-status"
+      ],
+      "facts": {
+        "purpose": "展示调用方提供的百分比进度。",
+        "constraints": [
+          "不把百分比推导为审批进度或成功概率；Step 和步骤标签未交付。"
+        ],
+        "supportedScope": "Percentage",
+        "designGaps": "Step与步骤标签结构",
+        "origin": "figma",
+        "knownDifferences": [],
+        "apiReference": "docs/components/progress.md"
+      },
+      "evidenceNote": "未附直接生产页面观察；建议依据当前组件能力提出，仍需确认。"
+    },
+    {
+      "id": "selection.component.Radio",
+      "component": "Radio",
+      "title": "在互斥项中选择",
+      "status": "approved",
+      "useWhen": [
+        "用户需要比较候选并且同一组只保留一个值时。"
+      ],
+      "avoidWhen": [
+        "允许同时选择多个值，或需要完整的选择卡片预置时。"
+      ],
+      "differences": [
+        {
+          "component": "Select",
+          "reason": "Radio 可直接呈现候选；Select 将候选放入下拉面板。是否同时可见取决于信息结构与页面空间。"
+        }
+      ],
+      "composition": [
+        "同组 name 一致、optionValue 不同；是否先暂存再确认由任务决定。"
+      ],
+      "goodExample": "在页面中清楚显示互斥候选，并受控维护选择值。",
+      "badExample": "看到旧自定义选择卡片就直接认定新 Radio 完整替代。",
+      "ruleIds": [
+        "form.controlled-events-remain-ui"
+      ],
+      "observationIds": [
+        "repayment.pending-choice"
+      ],
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:selection-activation-2026-11-18",
+          "note": "用户在阅读45项选型技术审阅后，明确选择“采用为项目 UI 约定”。仅批准本批37个组件与8组比较的通用UI选型，不批准新的金融规则。"
+        }
+      ],
+      "groups": [
+        "choice"
+      ],
+      "scope": [
+        "form",
+        "selection",
+        "repayment-plan"
+      ],
+      "facts": {
+        "purpose": "表达一组互斥的基础选择。",
+        "constraints": [
+          "同组使用一致 name 和不同 optionValue；基础 Radio 不等于 Radio select 复合组件。"
+        ],
+        "supportedScope": "4种基本状态、简单标签行",
+        "designGaps": "Icon/Payment列表、Single/Double Radio field及错误态组合",
+        "origin": "figma",
+        "knownDifferences": [],
+        "apiReference": "docs/components/radio.md"
+      },
+      "evidenceNote": "页面观察只支持任务与交互场景，不代表旧组件与本组件等价。"
+    },
+    {
+      "id": "selection.component.Search",
+      "component": "Search",
+      "title": "编辑并提交检索词",
+      "status": "approved",
+      "useWhen": [
+        "字段的任务是查找内容，需要输入词、清空及搜索事件时。"
+      ],
+      "avoidWhen": [
+        "任务是填写普通资料而无需检索结果时。"
+      ],
+      "differences": [
+        {
+          "component": "Input",
+          "reason": "Search 提供检索事件；Input 用于一般字段编辑。"
+        }
+      ],
+      "composition": [
+        "页面管理搜索结果、加载与空态；IME 输入与提交按实际契约处理。"
+      ],
+      "goodExample": "提交检索词后由页面更新结果区域。",
+      "badExample": "把 Search 的清空事件自动解释成业务表单提交。",
+      "ruleIds": [],
+      "observationIds": [],
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:selection-activation-2026-11-18",
+          "note": "用户在阅读45项选型技术审阅后，明确选择“采用为项目 UI 约定”。仅批准本批37个组件与8组比较的通用UI选型，不批准新的金融规则。"
+        }
+      ],
+      "groups": [
+        "fields"
+      ],
+      "scope": [
+        "form"
+      ],
+      "facts": {
+        "purpose": "编辑检索词并发出搜索请求。",
+        "constraints": [
+          "检索与结果由页面处理；cancel 不清空已有值，受控 state 由父级更新。"
+        ],
+        "supportedScope": "基础输入、IME、清空、激活态取消入口及 cancel 请求事件。",
+        "designGaps": "Advanced search 与 Spacer 属性未实现。",
+        "origin": "figma",
+        "knownDifferences": [
+          {
+            "id": "S07",
+            "component": "Search",
+            "description": "Active cancel/reset layout, border color and placement",
+            "nodes": [
+              "90:3522",
+              "90:3533"
+            ],
+            "status": "resolved",
+            "verification": "docs/verification/assets-completion/design-regression.json"
+          }
+        ],
+        "apiReference": "docs/components/search.md"
+      },
+      "evidenceNote": "未附直接生产页面观察；建议依据当前组件能力提出，仍需确认。"
+    },
+    {
+      "id": "selection.component.SegmentedControl",
+      "component": "SegmentedControl",
+      "title": "切换紧凑的同层选项",
+      "status": "approved",
+      "useWhen": [
+        "现有两项或三项能力适合表达紧凑的同层切换，且标签内容能够容纳时。"
+      ],
+      "avoidWhen": [
+        "需要完整内容面板关联、复杂方案说明或更多未支持布局时。"
+      ],
+      "differences": [
+        {
+          "component": "Tabs",
+          "reason": "SegmentedControl 侧重紧凑选项切换；Tabs 关联同层内容区与面板。"
+        }
+      ],
+      "composition": [
+        "先确定切换语义和选项值；不从默认选项推导业务推荐。"
+      ],
+      "goodExample": "标签可清楚表达的同层显示方式切换。",
+      "badExample": "用短标签挤掉还款方案的必要明细。",
+      "ruleIds": [],
+      "observationIds": [
+        "coupons.content-tabs"
+      ],
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:selection-activation-2026-11-18",
+          "note": "用户在阅读45项选型技术审阅后，明确选择“采用为项目 UI 约定”。仅批准本批37个组件与8组比较的通用UI选型，不批准新的金融规则。"
+        }
+      ],
+      "groups": [
+        "choice",
+        "navigation"
+      ],
+      "scope": [
+        "selection"
+      ],
+      "facts": {
+        "purpose": "在两个或三个同层选项之间切换。",
+        "constraints": [
+          "选项值及业务意义由调用方提供；不能从默认选中值推导业务推荐。"
+        ],
+        "supportedScope": "2 / 3项及键盘",
+        "designGaps": "自定义内容及非已校准组合仍需按实际数据验收。",
+        "origin": "figma",
+        "knownDifferences": [
+          {
+            "id": "S11",
+            "component": "SegmentedControl",
+            "description": "Selected shadow blur/spread 3/0 instead of 6/-2",
+            "nodes": [
+              "1323:3271"
+            ],
+            "status": "resolved",
+            "verification": "docs/verification/assets-completion/design-regression.json"
+          }
+        ],
+        "apiReference": "docs/components/segmented-control.md"
+      },
+      "evidenceNote": "页面观察只支持任务与交互场景，不代表旧组件与本组件等价。"
+    },
+    {
+      "id": "selection.component.Select",
+      "component": "Select",
+      "title": "从候选列表选择值",
+      "status": "approved",
+      "useWhen": [
+        "候选不便全部同时展示，字段以当前值为主要信息时。"
+      ],
+      "avoidWhen": [
+        "用户必须同时比较候选细节，或需要 Date/Time 字段设计时。"
+      ],
+      "differences": [
+        {
+          "component": "Radio",
+          "reason": "Select 将候选收进下拉面板；Radio 可让候选持续可见。"
+        }
+      ],
+      "composition": [
+        "维护 value 与 options，并处理禁用选项；下拉面板为自主扩展。"
+      ],
+      "goodExample": "普通枚举字段用列表选择，并保留已选值。",
+      "badExample": "把 Basic Select 的自定义面板标成已校准 Date/Time 选择。",
+      "ruleIds": [
+        "form.controlled-events-remain-ui"
+      ],
+      "observationIds": [
+        "repayment.pending-choice"
+      ],
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:selection-activation-2026-11-18",
+          "note": "用户在阅读45项选型技术审阅后，明确选择“采用为项目 UI 约定”。仅批准本批37个组件与8组比较的通用UI选型，不批准新的金融规则。"
+        }
+      ],
+      "groups": [
+        "choice"
+      ],
+      "scope": [
+        "form",
+        "selection"
+      ],
+      "facts": {
+        "purpose": "从选项中选择一个值，支持本地下拉交互。",
+        "constraints": [
+          "Basic 字段来自 Figma，下拉面板为自主扩展；Date/Time 字段未实现。"
+        ],
+        "supportedScope": "Basic字段7个状态；自主下拉面板",
+        "designGaps": "Date / Time字段14个主变体及对应图标",
+        "origin": "mixed",
+        "knownDifferences": [],
+        "apiReference": "docs/components/select.md"
+      },
+      "evidenceNote": "页面观察只支持任务与交互场景，不代表旧组件与本组件等价。"
+    },
+    {
+      "id": "selection.component.Skeleton",
+      "component": "Skeleton",
+      "title": "以内容结构占位",
+      "status": "approved",
+      "useWhen": [
+        "预计内容形状已知，希望加载期间保留内容区结构时。"
+      ],
+      "avoidWhen": [
+        "没有确定内容结构，或已经得到失败/空数据结果时。"
+      ],
+      "differences": [
+        {
+          "component": "Spinner",
+          "reason": "Skeleton 预留内容结构；Spinner 显示活动指示。"
+        }
+      ],
+      "composition": [
+        "由页面控制 loading，完成后展示真实内容；保留自主来源标签。"
+      ],
+      "goodExample": "摘要加载期间提供结构占位，数据到达后显示内容。",
+      "badExample": "加载失败后一直保留占位而不说明失败。",
+      "ruleIds": [],
+      "observationIds": [
+        "home.placeholder-shape"
+      ],
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:selection-activation-2026-11-18",
+          "note": "用户在阅读45项选型技术审阅后，明确选择“采用为项目 UI 约定”。仅批准本批37个组件与8组比较的通用UI选型，不批准新的金融规则。"
+        }
+      ],
+      "groups": [
+        "status"
+      ],
+      "scope": [
+        "feedback"
+      ],
+      "facts": {
+        "purpose": "内容加载期间展示自主行或头像占位。",
+        "constraints": [
+          "本地方案未采用已知 Figma Master 14712:31478；不能标为已对齐。"
+        ],
+        "supportedScope": "loading 切换、0–12 行范围的有效行数、可选 avatar/animated；加载完成显示默认插槽。",
+        "designGaps": "已定位 Master 14712:31478；当前行/头像与透明度动画为自主方案，尚未采用该设计。",
+        "origin": "original",
+        "knownDifferences": [],
+        "apiReference": "docs/components/skeleton.md"
+      },
+      "evidenceNote": "页面观察只支持任务与交互场景，不代表旧组件与本组件等价。"
+    },
+    {
+      "id": "selection.component.Slider",
+      "component": "Slider",
+      "title": "调整有界单个数值",
+      "status": "approved",
+      "useWhen": [
+        "数值可在已知上下界内调整，滑动方式符合任务操作需求时。"
+      ],
+      "avoidWhen": [
+        "需要范围双值、精确文本编辑或 Slide to action 时。"
+      ],
+      "differences": [
+        {
+          "component": "Input",
+          "reason": "Slider 通过滑动调整单值；Input 提供直接编辑。"
+        }
+      ],
+      "composition": [
+        "min/max/step 来自已确认需求；金额计算与校验留在页面。"
+      ],
+      "goodExample": "使用已确认范围调整一个普通数值。",
+      "badExample": "用未确认的步长限制可还款金额。",
+      "ruleIds": [
+        "form.controlled-events-remain-ui"
+      ],
+      "observationIds": [],
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:selection-activation-2026-11-18",
+          "note": "用户在阅读45项选型技术审阅后，明确选择“采用为项目 UI 约定”。仅批准本批37个组件与8组比较的通用UI选型，不批准新的金融规则。"
+        }
+      ],
+      "groups": [
+        "fields"
+      ],
+      "scope": [
+        "form",
+        "selection"
+      ],
+      "facts": {
+        "purpose": "在最小最大值之间编辑单个数值。",
+        "constraints": [
+          "仅支持单值；金额边界、步长及计算结果由调用方确认，不提供 Range 或 Slide to action。"
+        ],
+        "supportedScope": "单值4状态",
+        "designGaps": "Range 4状态、Slider with input 8状态、Slide to action 3状态未实现。",
+        "origin": "figma",
+        "knownDifferences": [
+          {
+            "id": "S10",
+            "component": "Slider",
+            "description": "Thumb shadow uses #232933 instead of #000000",
+            "nodes": [
+              "381:2930"
+            ],
+            "status": "resolved",
+            "verification": "docs/verification/assets-completion/design-regression.json"
+          }
+        ],
+        "apiReference": "docs/components/slider.md"
+      },
+      "evidenceNote": "未附直接生产页面观察；建议依据当前组件能力提出，仍需确认。"
+    },
+    {
+      "id": "selection.component.Space",
+      "component": "Space",
+      "title": "统一排列与间距",
+      "status": "approved",
+      "useWhen": [
+        "一组内容需要按已有间距档位横向或纵向排列时。"
+      ],
+      "avoidWhen": [
+        "需要语义容器、内容分隔线或安全区处理时。"
+      ],
+      "differences": [
+        {
+          "component": "Divider",
+          "reason": "Space 管理排列与留白；Divider 明确展示分隔线。"
+        }
+      ],
+      "composition": [
+        "使用现有 spacing 名称并检查换行；安全区由适当布局层负责。"
+      ],
+      "goodExample": "用可换行布局容纳长度变化的操作文本。",
+      "badExample": "用未登记像素值或 safe-area 名称充当 gap。",
+      "ruleIds": [],
+      "observationIds": [],
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:selection-activation-2026-11-18",
+          "note": "用户在阅读45项选型技术审阅后，明确选择“采用为项目 UI 约定”。仅批准本批37个组件与8组比较的通用UI选型，不批准新的金融规则。"
+        }
+      ],
+      "groups": [
+        "content"
+      ],
+      "scope": [
+        "generic"
+      ],
+      "facts": {
+        "purpose": "用本地间距 Token 组织横向或纵向内容。",
+        "constraints": [
+          "gap 使用已有 spacing 名称，不接受 safe-area 名称；不能替代页面安全区处理。"
+        ],
+        "supportedScope": "Token 间距，横向/纵向、start/center/end/stretch 对齐及换行。",
+        "designGaps": "自主组件按本地 Token 验收，不宣称有对应 Figma 完整变体。",
+        "origin": "original",
+        "knownDifferences": [],
+        "apiReference": "docs/components/space.md"
+      },
+      "evidenceNote": "未附直接生产页面观察；建议依据当前组件能力提出，仍需确认。"
+    },
+    {
+      "id": "selection.component.Spinner",
+      "component": "Spinner",
+      "title": "表达未量化的活动",
+      "status": "approved",
+      "useWhen": [
+        "正在进行的任务缺少可信百分比，且需要可访问的等待指示时。"
+      ],
+      "avoidWhen": [
+        "任务已有真实数值进度，或需要完整内容骨架时。"
+      ],
+      "differences": [
+        {
+          "component": "Progress",
+          "reason": "Spinner 表达等待；Progress 表达已知百分比。"
+        }
+      ],
+      "composition": [
+        "提供清楚的 label；是否禁用页面操作由任务需求决定。"
+      ],
+      "goodExample": "局部请求期间显示等待指示并在结果后移除。",
+      "badExample": "把独立 Spinner 当作已实现完整 Loading 遮罩。",
+      "ruleIds": [],
+      "observationIds": [
+        "withdraw.input-feedback",
+        "bill.request-lifecycle"
+      ],
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:selection-activation-2026-11-18",
+          "note": "用户在阅读45项选型技术审阅后，明确选择“采用为项目 UI 约定”。仅批准本批37个组件与8组比较的通用UI选型，不批准新的金融规则。"
+        }
+      ],
+      "groups": [
+        "status"
+      ],
+      "scope": [
+        "feedback"
+      ],
+      "facts": {
+        "purpose": "表达正在进行的短时活动并提供名称。",
+        "constraints": [
+          "Spinner 不是 Figma Loading 整页/遮罩；是否阻断操作由当前任务决定。"
+        ],
+        "supportedScope": "small/medium/large 三档与可访问 label；仅独立旋转指示器。",
+        "designGaps": "自主组件按本地 Token 验收，不宣称有对应 Figma 完整变体。",
+        "origin": "original",
+        "knownDifferences": [],
+        "apiReference": "docs/components/spinner.md"
+      },
+      "evidenceNote": "页面观察只支持任务与交互场景，不代表旧组件与本组件等价。"
+    },
+    {
+      "id": "selection.component.Switch",
+      "component": "Switch",
+      "title": "表达即时开关",
+      "status": "approved",
+      "useWhen": [
+        "用户切换一个设置状态，并由页面即时处理生效与反馈时。"
+      ],
+      "avoidWhen": [
+        "选择需要随整张表单统一确认，或是互斥方案选择时。"
+      ],
+      "differences": [
+        {
+          "component": "Checkbox",
+          "reason": "Switch 候选用途是即时开关；Checkbox 适合独立勾选或多选提交。"
+        }
+      ],
+      "composition": [
+        "父级更新布尔值；保存失败的说明和回退由页面负责。"
+      ],
+      "goodExample": "切换设置后由页面处理请求及失败反馈。",
+      "badExample": "切换视觉状态后就假定服务端保存成功。",
+      "ruleIds": [
+        "form.controlled-events-remain-ui"
+      ],
+      "observationIds": [],
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:selection-activation-2026-11-18",
+          "note": "用户在阅读45项选型技术审阅后，明确选择“采用为项目 UI 约定”。仅批准本批37个组件与8组比较的通用UI选型，不批准新的金融规则。"
+        }
+      ],
+      "groups": [
+        "choice"
+      ],
+      "scope": [
+        "form",
+        "selection"
+      ],
+      "facts": {
+        "purpose": "编辑即时开关状态。",
+        "constraints": [
+          "只发出布尔值，服务端保存失败与回退由调用方处理；无完整 ListTile 预置。"
+        ],
+        "supportedScope": "4种基本状态、简单标签行",
+        "designGaps": "ListTile Toggle完整内容组合没有独立预置",
+        "origin": "figma",
+        "knownDifferences": [],
+        "apiReference": "docs/components/switch.md"
+      },
+      "evidenceNote": "未附直接生产页面观察；建议依据当前组件能力提出，仍需确认。"
+    },
+    {
+      "id": "selection.component.Tabs",
+      "component": "Tabs",
+      "title": "切换同层内容区域",
+      "status": "approved",
+      "useWhen": [
+        "页面有带标题的同层内容区，需要切换并关联面板时。"
+      ],
+      "avoidWhen": [
+        "需求是顶级底部导航或仅表达分页位置时。"
+      ],
+      "differences": [
+        {
+          "component": "PageControl",
+          "reason": "Tabs 表达内容分类；PageControl 表达页索引。"
+        }
+      ],
+      "composition": [
+        "配置有意义的 options，并通过默认插槽呈现选中内容；当前仅固定纯文字款。"
+      ],
+      "goodExample": "用标题切换同层列表，并分别呈现空态。",
+      "badExample": "用 Tabs 替代缺失的 BottomNavbar 后宣称设计已覆盖。",
+      "ruleIds": [],
+      "observationIds": [
+        "coupons.content-tabs"
+      ],
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:selection-activation-2026-11-18",
+          "note": "用户在阅读45项选型技术审阅后，明确选择“采用为项目 UI 约定”。仅批准本批37个组件与8组比较的通用UI选型，不批准新的金融规则。"
+        }
+      ],
+      "groups": [
+        "navigation"
+      ],
+      "scope": [
+        "selection",
+        "account-status"
+      ],
+      "facts": {
+        "purpose": "切换同层内容区，并关联对应面板。",
+        "constraints": [
+          "仅支持固定纯文字款；Tabs 不等于 Bottom navbar，默认首项选择不是业务推荐。"
+        ],
+        "supportedScope": "固定纯文字款",
+        "designGaps": "图标款、非固定/滚动款，共3个主变体",
+        "origin": "figma",
+        "knownDifferences": [],
+        "apiReference": "docs/components/tabs.md"
+      },
+      "evidenceNote": "页面观察只支持任务与交互场景，不代表旧组件与本组件等价。"
+    },
+    {
+      "id": "selection.component.Tag",
+      "component": "Tag",
+      "title": "选择或移除标签",
+      "status": "approved",
+      "useWhen": [
+        "内容以短标签呈现，且需要选择或移除行为时。"
+      ],
+      "avoidWhen": [
+        "仅表达不可操作的状态说明时。"
+      ],
+      "differences": [
+        {
+          "component": "Badge",
+          "reason": "Tag 带选择/移除事件；Badge 是状态标注。"
+        }
+      ],
+      "composition": [
+        "由父级维护 value 和移除后的列表；错误状态来自页面。"
+      ],
+      "goodExample": "明确展示标签选择与移除操作。",
+      "badExample": "把标签选中当作用户获得某种业务资格。",
+      "ruleIds": [],
+      "observationIds": [],
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:selection-activation-2026-11-18",
+          "note": "用户在阅读45项选型技术审阅后，明确选择“采用为项目 UI 约定”。仅批准本批37个组件与8组比较的通用UI选型，不批准新的金融规则。"
+        }
+      ],
+      "groups": [
+        "choice",
+        "content"
+      ],
+      "scope": [
+        "selection"
+      ],
+      "facts": {
+        "purpose": "表达标签选择或移除。",
+        "constraints": [
+          "选中与移除需要父级更新值；标签颜色或错误态不决定业务资格。"
+        ],
+        "supportedScope": "5个命名状态",
+        "designGaps": "本轮所查主变体未检出尺寸/文字/背景偏差，插槽与长文案仍需具体场景验收",
+        "origin": "figma",
+        "knownDifferences": [],
+        "apiReference": "docs/components/tag.md"
+      },
+      "evidenceNote": "未附直接生产页面观察；建议依据当前组件能力提出，仍需确认。"
+    },
+    {
+      "id": "selection.component.TimePicker",
+      "component": "TimePicker",
+      "title": "选择并确认时间",
+      "status": "approved",
+      "useWhen": [
+        "任务需要编辑时分并确认一个时间值时。"
+      ],
+      "avoidWhen": [
+        "需求是时间段长度、日期区间或未实现的 Duration 设计时。"
+      ],
+      "differences": [
+        {
+          "component": "DatePicker",
+          "reason": "TimePicker 编辑 HH:mm；DatePicker 编辑日历日期。"
+        }
+      ],
+      "composition": [
+        "区分 select 与 confirm；12 小时显示与 24 小时存储按实际契约处理。"
+      ],
+      "goodExample": "页面确认时间后再更新业务数据。",
+      "badExample": "把时分选择直接标为 Duration 组件。",
+      "ruleIds": [
+        "form.controlled-events-remain-ui"
+      ],
+      "observationIds": [],
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:selection-activation-2026-11-18",
+          "note": "用户在阅读45项选型技术审阅后，明确选择“采用为项目 UI 约定”。仅批准本批37个组件与8组比较的通用UI选型，不批准新的金融规则。"
+        }
+      ],
+      "groups": [
+        "fields"
+      ],
+      "scope": [
+        "form",
+        "selection"
+      ],
+      "facts": {
+        "purpose": "通过时分与可选 AM/PM 编辑并确认时间。",
+        "constraints": [
+          "input/change 在确认时发出；不支持 Duration，选中文字仍有 S09 差异。"
+        ],
+        "supportedScope": "Time、12/24小时显示、确认/取消",
+        "designGaps": "Duration及另一组Picker呈现未实现。",
+        "origin": "figma",
+        "knownDifferences": [
+          {
+            "id": "S09",
+            "component": "TimePicker",
+            "description": "Selected text color",
+            "nodes": [
+              "4991:10548"
+            ],
+            "status": "resolved",
+            "verification": "docs/verification/assets-completion/design-regression.json"
+          }
+        ],
+        "apiReference": "docs/components/time-picker.md"
+      },
+      "evidenceNote": "未附直接生产页面观察；建议依据当前组件能力提出，仍需确认。"
+    },
+    {
+      "id": "selection.component.Toast",
+      "component": "Toast",
+      "title": "提供短暂操作反馈",
+      "status": "approved",
+      "useWhen": [
+        "任务结果只需短暂告知，用户无需在提示中继续决策时。"
+      ],
+      "avoidWhen": [
+        "信息必须持续查阅，包含唯一必要说明，或需要用户确认时。"
+      ],
+      "differences": [
+        {
+          "component": "Banner",
+          "reason": "Toast 短暂反馈；Banner 持续展示页内消息。"
+        }
+      ],
+      "composition": [
+        "页面管理 visible 与 duration；必要说明另有持续可见位置。"
+      ],
+      "goodExample": "保存成功后提供简短反馈。",
+      "badExample": "只用自动消失的提示展示唯一费用或风险说明。",
+      "ruleIds": [],
+      "observationIds": [
+        "repayment.request-error"
+      ],
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:selection-activation-2026-11-18",
+          "note": "用户在阅读45项选型技术审阅后，明确选择“采用为项目 UI 约定”。仅批准本批37个组件与8组比较的通用UI选型，不批准新的金融规则。"
+        }
+      ],
+      "groups": [
+        "feedback"
+      ],
+      "scope": [
+        "feedback"
+      ],
+      "facts": {
+        "purpose": "显示短暂的操作反馈。",
+        "constraints": [
+          "不能作为必要金额、费用或风险说明的唯一载体；duration=0 保持，非零计时单位毫秒。"
+        ],
+        "supportedScope": "Info / Error / Warning / Success",
+        "designGaps": "4种类型已实现；插槽、长文案与场景位置仍需实际数据验收。",
+        "origin": "figma",
+        "knownDifferences": [
+          {
+            "id": "S08",
+            "component": "Toast",
+            "description": "Stroke placement and shadow color",
+            "nodes": [
+              "403:19997",
+              "403:20000",
+              "403:20003",
+              "403:20006"
+            ],
+            "status": "resolved",
+            "verification": "docs/verification/assets-completion/design-regression.json"
+          }
+        ],
+        "apiReference": "docs/components/toast.md"
+      },
+      "evidenceNote": "页面观察只支持任务与交互场景，不代表旧组件与本组件等价。"
+    },
+    {
+      "id": "selection.component.Tooltip",
+      "component": "Tooltip",
+      "title": "补充简短辅助说明",
+      "status": "approved",
+      "useWhen": [
+        "可聚焦触发对象需要额外的简短说明时。"
+      ],
+      "avoidWhen": [
+        "信息是完成任务所必需，或内容需要复杂交互与步骤时。"
+      ],
+      "differences": [
+        {
+          "component": "BottomSheet",
+          "reason": "Tooltip 补充简短说明；BottomSheet 承载可操作的补充内容。"
+        }
+      ],
+      "composition": [
+        "触发对象可聚焦，关键内容保持主界面可见；不替代 Coachmark。"
+      ],
+      "goodExample": "为已有清楚名称的控件提供辅助解释。",
+      "badExample": "把唯一操作说明藏在只能悬停看到的区域。",
+      "ruleIds": [],
+      "observationIds": [],
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:selection-activation-2026-11-18",
+          "note": "用户在阅读45项选型技术审阅后，明确选择“采用为项目 UI 约定”。仅批准本批37个组件与8组比较的通用UI选型，不批准新的金融规则。"
+        }
+      ],
+      "groups": [
+        "overlays"
+      ],
+      "scope": [
+        "generic",
+        "feedback"
+      ],
+      "facts": {
+        "purpose": "为可聚焦触发对象补充简短说明。",
+        "constraints": [
+          "不代替 Coachmark 或必要披露；关键操作信息应在主界面可见。"
+        ],
+        "supportedScope": "content 文案、top/bottom 优先方向、悬停/聚焦与 Escape 关闭；视口边界调整。",
+        "designGaps": "自主组件按本地 Token 验收，不宣称有对应 Figma 完整变体。",
+        "origin": "original",
+        "knownDifferences": [],
+        "apiReference": "docs/components/tooltip.md"
+      },
+      "evidenceNote": "未附直接生产页面观察；建议依据当前组件能力提出，仍需确认。"
+    },
+    {
+      "id": "selection.component.Typography",
+      "component": "Typography",
+      "title": "表达文字样式与语义",
+      "status": "approved",
+      "useWhen": [
+        "文本需要使用本地文字档位、颜色语义或截断能力时。"
+      ],
+      "avoidWhen": [
+        "准备依靠字号单独决定标题结构或格式化金额时。"
+      ],
+      "differences": [
+        {
+          "component": "Badge",
+          "reason": "Typography 处理文字；Badge 额外表达局部状态标签结构。"
+        }
+      ],
+      "composition": [
+        "按页面结构选择 as；按 Token 选择 variant，金额日期格式留在页面。"
+      ],
+      "goodExample": "用合适语义标签显示标题，并检查长金额布局。",
+      "badExample": "只改变字号就认为页面有正确标题语义。",
+      "ruleIds": [],
+      "observationIds": [],
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:selection-activation-2026-11-18",
+          "note": "用户在阅读45项选型技术审阅后，明确选择“采用为项目 UI 约定”。仅批准本批37个组件与8组比较的通用UI选型，不批准新的金融规则。"
+        }
+      ],
+      "groups": [
+        "content"
+      ],
+      "scope": [
+        "generic",
+        "repayment-summary"
+      ],
+      "facts": {
+        "purpose": "按本地文字 Token 渲染文本。",
+        "constraints": [
+          "视觉 variant 不决定语义标签；as 按页面结构选择，金额及日期格式由目标项目处理。"
+        ],
+        "supportedScope": "as 语义标签、semantic.typography 中的 variant、5 种颜色语义与 truncate。",
+        "designGaps": "自主组件按本地 Token 验收，不宣称有对应 Figma 完整变体。",
+        "origin": "original",
+        "knownDifferences": [],
+        "apiReference": "docs/components/typography.md"
+      },
+      "evidenceNote": "未附直接生产页面观察；建议依据当前组件能力提出，仍需确认。"
+    },
+    {
+      "id": "selection.component.Upload",
+      "component": "Upload",
+      "title": "选择并校验本地文件",
+      "status": "approved",
+      "useWhen": [
+        "用户需要选择或拖放本地文件，并进行已有类型、数量和大小校验时。"
+      ],
+      "avoidWhen": [
+        "任务要求完整服务端上传状态、缩略图列表或断点续传时。"
+      ],
+      "differences": [
+        {
+          "component": "Input",
+          "reason": "Upload 处理 File 列表及拒绝原因；Input 不提供这套文件选择契约。"
+        }
+      ],
+      "composition": [
+        "页面处理实际上传、进度与失败；插槽 files 仅代表当前本地文件列表。"
+      ],
+      "goodExample": "收到 File 列表后由页面执行实际上传并展示结果。",
+      "badExample": "文件选中后直接显示上传成功。",
+      "ruleIds": [],
+      "observationIds": [],
+      "sources": [
+        {
+          "type": "user",
+          "reference": "conversation:selection-activation-2026-11-18",
+          "note": "用户在阅读45项选型技术审阅后，明确选择“采用为项目 UI 约定”。仅批准本批37个组件与8组比较的通用UI选型，不批准新的金融规则。"
+        }
+      ],
+      "groups": [
+        "fields"
+      ],
+      "scope": [
+        "form"
+      ],
+      "facts": {
+        "purpose": "提供本地文件选择、拖放及数量/类型/大小校验。",
+        "constraints": [
+          "只发出 File 列表，不上传到服务端；Uploading/Error/缩略图列表未交付。"
+        ],
+        "supportedScope": "Area基础文件选择、拖放及校验",
+        "designGaps": "Content List、Square/Small、Uploaded/Uploading/Error、缩略图/文件列表",
+        "origin": "figma",
+        "knownDifferences": [],
+        "apiReference": "docs/components/upload.md"
+      },
+      "evidenceNote": "未附直接生产页面观察；建议依据当前组件能力提出，仍需确认。"
+    }
+  ],
+  "observations": {
+    "version": "1.0.0",
+    "capturedAt": "2026-11-17",
+    "sourceRoot": "../prod-sdk-internal",
+    "scopeNote": "页面任务与交互的静态证据，无新旧组件映射；源文件哈希变化只提示待复核。",
+    "records": [
+      {
+        "id": "repayment.pending-choice",
+        "title": "临时选择与确认分开",
+        "status": "observation",
+        "scope": [
+          "selection",
+          "repayment-plan"
+        ],
+        "task": "在多个方案中切换待选项，再确认当前选择。",
+        "interaction": [
+          "打开时复制已选值到临时值。",
+          "点击选项仅更新临时值；确认后更新已选值并关闭弹层。"
+        ],
+        "limitations": [
+          "工作区静态观察；未验证线上可达性或运行行为。",
+          "仅记录任务与交互，不确定原选择原因，不继承业务政策、视觉数值或组件契约。"
+        ],
+        "evidence": [
+          {
+            "file": "src/pages/pay-later/service/adjust-repayment-plan/NewLoan.source",
+            "startLine": 352,
+            "endLine": 367,
+            "fileHash": "23092a90c211390985c7f478c10cf06ec9c503c0c95496069c7c8cebc67a93e0",
+            "excerptHash": "cac5d8f2519852f80d2b4565d85ebaf58d35eef1c6dc9377fdd0b7d58d2acc3c"
+          }
+        ]
+      },
+      {
+        "id": "repayment.agreement-control",
+        "title": "勾选状态与继续操作关联",
+        "status": "observation",
+        "scope": [
+          "form",
+          "repayment-plan"
+        ],
+        "task": "页面展示独立勾选项及继续操作。",
+        "interaction": [
+          "勾选值由页面维护。",
+          "继续按钮绑定多个页面状态的禁用条件。"
+        ],
+        "limitations": [
+          "工作区静态观察；未验证线上可达性或运行行为。",
+          "仅记录任务与交互，不确定原选择原因，不继承业务政策、视觉数值或组件契约。"
+        ],
+        "evidence": [
+          {
+            "file": "src/pages/pay-later/service/adjust-repayment-plan/NewLoan.source",
+            "startLine": 89,
+            "endLine": 101,
+            "fileHash": "23092a90c211390985c7f478c10cf06ec9c503c0c95496069c7c8cebc67a93e0",
+            "excerptHash": "6c35c28591013b2a3814c39ac9d2388812d71134ecdb357442f7018d63470d83"
+          }
+        ]
+      },
+      {
+        "id": "withdraw.input-feedback",
+        "title": "输入编辑与计算反馈分区",
+        "status": "observation",
+        "scope": [
+          "form",
+          "feedback"
+        ],
+        "task": "编辑字段后，在局部区域反馈请求过程。",
+        "interaction": [
+          "字段分别绑定 change、focus、blur、confirm。",
+          "计算中和计算完成分别使用条件渲染。"
+        ],
+        "limitations": [
+          "工作区静态观察；未验证线上可达性或运行行为。",
+          "仅记录任务与交互，不确定原选择原因，不继承业务政策、视觉数值或组件契约。"
+        ],
+        "evidence": [
+          {
+            "file": "src/pages/pay-later/service/withdraw/Index.source",
+            "startLine": 11,
+            "endLine": 27,
+            "fileHash": "867278c93e79e37d7b0d9c8aaae545d8273ec3436e489477598ecc210774fdc4",
+            "excerptHash": "c12536d7ebac611c643ae74b4d0cd0ca53532060a32c11753f53996faa72cfc5"
+          },
+          {
+            "file": "src/pages/pay-later/service/withdraw/Index.source",
+            "startLine": 233,
+            "endLine": 238,
+            "fileHash": "867278c93e79e37d7b0d9c8aaae545d8273ec3436e489477598ecc210774fdc4",
+            "excerptHash": "3fb8ccc31758e2726f1d8b7b859ecb79f0ef9796c136cb522a836b1c67678dc4"
+          }
+        ]
+      },
+      {
+        "id": "repayment.field-state",
+        "title": "字段编辑与错误状态关联",
+        "status": "observation",
+        "scope": [
+          "form",
+          "repayment-summary"
+        ],
+        "task": "在选中方案内编辑一个字段。",
+        "interaction": [
+          "输入框绑定值、聚焦事件、页面错误标记及禁用状态。",
+          "编辑入口和输入区域处于同一内容区。"
+        ],
+        "limitations": [
+          "工作区静态观察；未验证线上可达性或运行行为。",
+          "仅记录任务与交互，不确定原选择原因，不继承业务政策、视觉数值或组件契约。"
+        ],
+        "evidence": [
+          {
+            "file": "src/pages/pay-later/service/repayment/regular/Index.source",
+            "startLine": 43,
+            "endLine": 61,
+            "fileHash": "b853780ed04709506de262418981466f03d04a600705fd7c00726819b867e861",
+            "excerptHash": "b5b514bb907885cc4f6ba46cfd9c970399768bd07851f787b9d98e83029cd32f"
+          }
+        ]
+      },
+      {
+        "id": "coupons.content-tabs",
+        "title": "标签值切换内容区域",
+        "status": "observation",
+        "scope": [
+          "selection",
+          "account-status"
+        ],
+        "task": "在同一页面切换不同内容类别。",
+        "interaction": [
+          "标签维护 active 值。",
+          "不同列表依据 active 与是否有数据展示。"
+        ],
+        "limitations": [
+          "工作区静态观察；未验证线上可达性或运行行为。",
+          "仅记录任务与交互，不确定原选择原因，不继承业务政策、视觉数值或组件契约。"
+        ],
+        "evidence": [
+          {
+            "file": "src/pages/pay-later/home/Coupons.source",
+            "startLine": 2,
+            "endLine": 12,
+            "fileHash": "8c3a2ccf6c400c18a16fa60f8a44a395e1fbf5aebec8ffd71afc0e8792eb7757",
+            "excerptHash": "1549945a054b3425aaa55bdf8194783674139ca9444299a2d19342b5af8a92ad"
+          }
+        ]
+      },
+      {
+        "id": "coupons.empty-state",
+        "title": "列表无数据时给出说明",
+        "status": "observation",
+        "scope": [
+          "feedback",
+          "account-status"
+        ],
+        "task": "无内容时呈现专门的空态说明。",
+        "interaction": [
+          "空态受列表长度条件控制。",
+          "空态分别传入标题与说明文字。"
+        ],
+        "limitations": [
+          "工作区静态观察；未验证线上可达性或运行行为。",
+          "仅记录任务与交互，不确定原选择原因，不继承业务政策、视觉数值或组件契约。"
+        ],
+        "evidence": [
+          {
+            "file": "src/pages/pay-later/home/Coupons.source",
+            "startLine": 18,
+            "endLine": 24,
+            "fileHash": "8c3a2ccf6c400c18a16fa60f8a44a395e1fbf5aebec8ffd71afc0e8792eb7757",
+            "excerptHash": "9af43b7bfe761beccb187ebef3aa8bdcff6452452974d34283fe25ff5b39fbae"
+          }
+        ]
+      },
+      {
+        "id": "coupons.action-levels",
+        "title": "操作区与补充弹层的操作组织",
+        "status": "observation",
+        "scope": [
+          "feedback",
+          "account-status"
+        ],
+        "task": "页面底部提供任务操作，弹层内另有继续与关闭入口。",
+        "interaction": [
+          "底部操作绑定页面状态决定可用性。",
+          "补充弹层提供明确操作与关闭入口。"
+        ],
+        "limitations": [
+          "工作区静态观察；未验证线上可达性或运行行为。",
+          "仅记录任务与交互，不确定原选择原因，不继承业务政策、视觉数值或组件契约。"
+        ],
+        "evidence": [
+          {
+            "file": "src/pages/pay-later/home/Coupons.source",
+            "startLine": 25,
+            "endLine": 32,
+            "fileHash": "8c3a2ccf6c400c18a16fa60f8a44a395e1fbf5aebec8ffd71afc0e8792eb7757",
+            "excerptHash": "50f69a7a43cbf3cec2da5e82d9ff143cfb8a73a4efc4978af589881047371e73"
+          },
+          {
+            "file": "src/pages/pay-later/home/Coupons.source",
+            "startLine": 40,
+            "endLine": 48,
+            "fileHash": "8c3a2ccf6c400c18a16fa60f8a44a395e1fbf5aebec8ffd71afc0e8792eb7757",
+            "excerptHash": "b1c5ee4f12c639743e78c059d2e5e8571c377dd33fc224a65795cbdd6ca8dc13"
+          }
+        ]
+      },
+      {
+        "id": "home.persistent-notice",
+        "title": "持续状态说明与局部操作",
+        "status": "observation",
+        "scope": [
+          "feedback",
+          "account-status"
+        ],
+        "task": "页面内持续呈现状态消息及相关动作。",
+        "interaction": [
+          "消息区根据传入状态条件展示。",
+          "消息包含标题与说明；部分消息另有独立操作事件。"
+        ],
+        "limitations": [
+          "工作区静态观察；未验证线上可达性或运行行为。",
+          "仅记录任务与交互，不确定原选择原因，不继承业务政策、视觉数值或组件契约。"
+        ],
+        "evidence": [
+          {
+            "file": "src/pages/pay-later/home/components/HomeV2WarningStack.source",
+            "startLine": 2,
+            "endLine": 22,
+            "fileHash": "7ae5ed7ef5b380fa072999dc4de652095fecc9cc791468c2a6acfcae95cdb88e",
+            "excerptHash": "f0f2a3c753760accc0182ea2945a7276e2012a0496d1f04db735749f02b72ece"
+          }
+        ]
+      },
+      {
+        "id": "bill.request-lifecycle",
+        "title": "请求过程、错误反馈与清理",
+        "status": "observation",
+        "scope": [
+          "feedback",
+          "repayment-summary"
+        ],
+        "task": "读取账单内容时显示过程反馈，并在完成后清理。",
+        "interaction": [
+          "请求前显示过程反馈并清空当前内容。",
+          "失败时显示错误说明。",
+          "finally 中隐藏过程反馈。"
+        ],
+        "limitations": [
+          "工作区静态观察；未验证线上可达性或运行行为。",
+          "仅记录任务与交互，不确定原选择原因，不继承业务政策、视觉数值或组件契约。"
+        ],
+        "evidence": [
+          {
+            "file": "src/pages/pay-later/bill/Index.source",
+            "startLine": 235,
+            "endLine": 250,
+            "fileHash": "c94f2fd187e38d4b73b06df93ba8cb37abe0fac170e5e829259c8ceb0118a33e",
+            "excerptHash": "cfc54462179ae11d766450e131e5e446aca2d33cd2c089300dc5f779c46dde8a"
+          }
+        ]
+      },
+      {
+        "id": "repayment.request-error",
+        "title": "请求失败使用页面反馈入口",
+        "status": "observation",
+        "scope": [
+          "feedback",
+          "repayment-summary"
+        ],
+        "task": "请求失败时显示返回的错误说明。",
+        "interaction": [
+          "catch 中调用反馈入口并传入错误消息。"
+        ],
+        "limitations": [
+          "工作区静态观察；未验证线上可达性或运行行为。",
+          "仅记录任务与交互，不确定原选择原因，不继承业务政策、视觉数值或组件契约。"
+        ],
+        "evidence": [
+          {
+            "file": "src/pages/pay-later/service/repayment/regular/Index.source",
+            "startLine": 518,
+            "endLine": 523,
+            "fileHash": "b853780ed04709506de262418981466f03d04a600705fd7c00726819b867e861",
+            "excerptHash": "10e6063e93253348412a65dcf4a114e3e4d5996567791da513f393f3eccd855d"
+          }
+        ]
+      },
+      {
+        "id": "home.placeholder-shape",
+        "title": "占位结构与调用方内容形状",
+        "status": "observation",
+        "scope": [
+          "feedback",
+          "account-status"
+        ],
+        "task": "提供可随容器调整的占位结构。",
+        "interaction": [
+          "占位块接受调用方传入的尺寸并用于样式。",
+          "本片段没有独立的加载成功/失败状态管理。"
+        ],
+        "limitations": [
+          "工作区静态观察；未验证线上可达性或运行行为。",
+          "仅记录任务与交互，不确定原选择原因，不继承业务政策、视觉数值或组件契约。"
+        ],
+        "evidence": [
+          {
+            "file": "src/pages/pay-later/home/components/HomeV2Skeleton.source",
+            "startLine": 1,
+            "endLine": 2,
+            "fileHash": "9a74781834e7eee6bdcd4bac622e554d664c3e9a105c0fdb5cfa075be5657c9c",
+            "excerptHash": "05c8a42140f32b6aac3b86facbcbb5739a45957b162710b5ffd69105f65f5620"
+          },
+          {
+            "file": "src/pages/pay-later/home/components/HomeV2Skeleton.source",
+            "startLine": 15,
+            "endLine": 21,
+            "fileHash": "9a74781834e7eee6bdcd4bac622e554d664c3e9a105c0fdb5cfa075be5657c9c",
+            "excerptHash": "574aa1b329b28e211e0c04def976c64873db52393a1eafd123c593591b2158fb"
+          }
+        ]
+      }
+    ]
+  },
+  "unavailableComponents": [
+    {
+      "name": "AppBar",
+      "designName": "AppBar",
+      "status": "unavailable",
+      "figma": {
+        "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+        "master": "90:2777"
+      },
+      "note": "没有公开 当前基准实现/API/Storybook 条目；不自动用基础组件或相似组件替代。"
+    },
+    {
+      "name": "BottomNavbar",
+      "designName": "Bottom navbar",
+      "status": "unavailable",
+      "figma": {
+        "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+        "master": "5148:11649"
+      },
+      "note": "没有公开 当前基准实现/API/Storybook 条目；不自动用基础组件或相似组件替代。"
+    },
+    {
+      "name": "CardSelect",
+      "designName": "Card select",
+      "status": "unavailable",
+      "figma": {
+        "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+        "master": "7400:14993"
+      },
+      "note": "没有公开 当前基准实现/API/Storybook 条目；不自动用基础组件或相似组件替代。"
+    },
+    {
+      "name": "Coachmark",
+      "designName": "Coachmark",
+      "status": "unavailable",
+      "figma": {
+        "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+        "master": "489:35583"
+      },
+      "note": "没有公开 当前基准实现/API/Storybook 条目；不自动用基础组件或相似组件替代。"
+    },
+    {
+      "name": "Countdown",
+      "designName": "Countdown",
+      "status": "unavailable",
+      "figma": {
+        "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+        "master": "9671:5672"
+      },
+      "note": "没有公开 当前基准实现/API/Storybook 条目；不自动用基础组件或相似组件替代。"
+    },
+    {
+      "name": "FilterCategory",
+      "designName": "Filter category",
+      "status": "unavailable",
+      "figma": {
+        "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+        "master": "7074:14723"
+      },
+      "note": "没有公开 当前基准实现/API/Storybook 条目；不自动用基础组件或相似组件替代。"
+    },
+    {
+      "name": "RadioSelect",
+      "designName": "Radio select",
+      "status": "unavailable",
+      "figma": {
+        "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+        "master": "7232:2437"
+      },
+      "note": "没有公开 当前基准实现/API/Storybook 条目；不自动用基础组件或相似组件替代。"
+    },
+    {
+      "name": "Stories",
+      "designName": "Stories",
+      "status": "unavailable",
+      "figma": {
+        "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+        "master": "619:36866"
+      },
+      "note": "没有公开 当前基准实现/API/Storybook 条目；不自动用基础组件或相似组件替代。"
+    },
+    {
+      "name": "Timeline",
+      "designName": "Timeline",
+      "status": "unavailable",
+      "figma": {
+        "fileKey": "UYIpU2RqNhptJmOT7bUJe8",
+        "master": "1493:122"
+      },
+      "note": "没有公开 当前基准实现/API/Storybook 条目；不自动用基础组件或相似组件替代。"
+    }
+  ]
+}
